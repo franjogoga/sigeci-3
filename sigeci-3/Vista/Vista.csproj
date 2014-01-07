@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8B25B92-515C-4659-AAE5-7CC6388D41DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vista</RootNamespace>
+    <AssemblyName>Vista</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>angelico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Design">
+      <HintPath>D:\terapia\DotNetBar\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>D:\terapia\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation">
+      <HintPath>D:\terapia\DotNetBar\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation.Design">
+      <HintPath>D:\terapia\DotNetBar\DevComponents.Instrumentation.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusquedaPacienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusquedaPacienteForm.Designer.cs">
+      <DependentUpon>BusquedaPacienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CitasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitasForm.Designer.cs">
+      <DependentUpon>CitasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CitasFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitasFormulario.Designer.cs">
+      <DependentUpon>CitasFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalidadesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalidadesForm.Designer.cs">
+      <DependentUpon>ModalidadesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalidadesFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalidadesFormulario.Designer.cs">
+      <DependentUpon>ModalidadesFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PacientesBusquedaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacientesBusquedaForm.Designer.cs">
+      <DependentUpon>PacientesBusquedaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PacientesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacientesForm.Designer.cs">
+      <DependentUpon>PacientesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PacientesFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacientesFormulario.Designer.cs">
+      <DependentUpon>PacientesFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipalForm.Designer.cs">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesForm.Designer.cs">
+      <DependentUpon>ReportesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiciosForm.Designer.cs">
+      <DependentUpon>ServiciosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiciosFormulario.Designer.cs">
+      <DependentUpon>ServiciosFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="TerapeutaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerapeutaForm.Designer.cs">
+      <DependentUpon>TerapeutaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TerapeutaFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerapeutaFormulario.Designer.cs">
+      <DependentUpon>TerapeutaFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosForm.Designer.cs">
+      <DependentUpon>UsuariosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosFormulario.Designer.cs">
+      <DependentUpon>UsuariosFormulario.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BusquedaPacienteForm.resx">
+      <DependentUpon>BusquedaPacienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CitasForm.resx">
+      <DependentUpon>CitasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CitasFormulario.resx">
+      <DependentUpon>CitasFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalidadesForm.resx">
+      <DependentUpon>ModalidadesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalidadesFormulario.resx">
+      <DependentUpon>ModalidadesFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacientesBusquedaForm.resx">
+      <DependentUpon>PacientesBusquedaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacientesForm.resx">
+      <DependentUpon>PacientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacientesFormulario.resx">
+      <DependentUpon>PacientesFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalForm.resx">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiciosForm.resx">
+      <DependentUpon>ServiciosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiciosFormulario.resx">
+      <DependentUpon>ServiciosFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerapeutaForm.resx">
+      <DependentUpon>TerapeutaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerapeutaFormulario.resx">
+      <DependentUpon>TerapeutaFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosForm.resx">
+      <DependentUpon>UsuariosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosFormulario.resx">
+      <DependentUpon>UsuariosFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\aceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angelpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelarcita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cita2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_20131027_0001 - copia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_20131027_0001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kids.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo - copia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maletin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paciente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paciente2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\programar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reloj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terapeuta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controlador\Controlador.csproj">
+      <Project>{0f51857c-e7fd-45ce-b3bb-d26002a7e8b0}</Project>
+      <Name>Controlador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{7a66e1dc-08fe-470c-89e4-e1da78cf72a2}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="angelico.ico" />
+    <None Include="Resources\lineavert.png" />
+    <None Include="Resources\angelico.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

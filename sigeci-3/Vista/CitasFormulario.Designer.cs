@@ -55,13 +55,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.navFecha = new DevComponents.DotNetBar.Controls.PageNavigator();
             this.dateFechaCita = new System.Windows.Forms.DateTimePicker();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
@@ -79,6 +72,13 @@
             this.txtAdelanto = new System.Windows.Forms.TextBox();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.txtCosto = new System.Windows.Forms.TextBox();
+            this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -416,49 +416,6 @@
             this.dgvCitas.Size = new System.Drawing.Size(629, 166);
             this.dgvCitas.TabIndex = 18;
             // 
-            // horaCita
-            // 
-            this.horaCita.HeaderText = "Hora";
-            this.horaCita.Name = "horaCita";
-            this.horaCita.ReadOnly = true;
-            this.horaCita.Width = 50;
-            // 
-            // lunes
-            // 
-            this.lunes.HeaderText = "Lun";
-            this.lunes.Name = "lunes";
-            this.lunes.ReadOnly = true;
-            // 
-            // martes
-            // 
-            this.martes.HeaderText = "Mar";
-            this.martes.Name = "martes";
-            this.martes.ReadOnly = true;
-            // 
-            // miercoles
-            // 
-            this.miercoles.HeaderText = "Mie";
-            this.miercoles.Name = "miercoles";
-            this.miercoles.ReadOnly = true;
-            // 
-            // jueves
-            // 
-            this.jueves.HeaderText = "Jue";
-            this.jueves.Name = "jueves";
-            this.jueves.ReadOnly = true;
-            // 
-            // viernes
-            // 
-            this.viernes.HeaderText = "Vie";
-            this.viernes.Name = "viernes";
-            this.viernes.ReadOnly = true;
-            // 
-            // sabado
-            // 
-            this.sabado.HeaderText = "Sab";
-            this.sabado.Name = "sabado";
-            this.sabado.ReadOnly = true;
-            // 
             // navFecha
             // 
             // 
@@ -661,6 +618,49 @@
             this.txtCosto.Size = new System.Drawing.Size(86, 20);
             this.txtCosto.TabIndex = 13;
             // 
+            // horaCita
+            // 
+            this.horaCita.HeaderText = "Hora";
+            this.horaCita.Name = "horaCita";
+            this.horaCita.ReadOnly = true;
+            this.horaCita.Width = 50;
+            // 
+            // lunes
+            // 
+            this.lunes.HeaderText = "Lunes";
+            this.lunes.Name = "lunes";
+            this.lunes.ReadOnly = true;
+            // 
+            // martes
+            // 
+            this.martes.HeaderText = "Martes";
+            this.martes.Name = "martes";
+            this.martes.ReadOnly = true;
+            // 
+            // miercoles
+            // 
+            this.miercoles.HeaderText = "Miércoles";
+            this.miercoles.Name = "miercoles";
+            this.miercoles.ReadOnly = true;
+            // 
+            // jueves
+            // 
+            this.jueves.HeaderText = "Jueves";
+            this.jueves.Name = "jueves";
+            this.jueves.ReadOnly = true;
+            // 
+            // viernes
+            // 
+            this.viernes.HeaderText = "Viernes";
+            this.viernes.Name = "viernes";
+            this.viernes.ReadOnly = true;
+            // 
+            // sabado
+            // 
+            this.sabado.HeaderText = "Sábado";
+            this.sabado.Name = "sabado";
+            this.sabado.ReadOnly = true;
+            // 
             // CitasFornulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -734,6 +734,7 @@
         private System.Windows.Forms.TextBox txtSaldoRestante;
         private DevComponents.DotNetBar.LabelX labelX15;
         private System.Windows.Forms.TextBox txtAdelanto;
+        private DevComponents.DotNetBar.ButtonX btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn horaCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn lunes;
         private System.Windows.Forms.DataGridViewTextBoxColumn martes;
@@ -741,6 +742,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jueves;
         private System.Windows.Forms.DataGridViewTextBoxColumn viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn sabado;
-        private DevComponents.DotNetBar.ButtonX btnBuscar;
     }
 }

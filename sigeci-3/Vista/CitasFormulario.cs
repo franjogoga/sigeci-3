@@ -207,24 +207,77 @@ namespace Vista
                 citasViernes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaViernes);
                 citasSabado = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaSabado);
 
-                dgvCitas.Columns[1].HeaderText = "Lun "+fechaLunes.ToShortDateString();
-                dgvCitas.Columns[2].HeaderText = "Mar "+fechaMartes.ToShortDateString();
-                dgvCitas.Columns[3].HeaderText = "Mie "+fechaMiercoles.ToShortDateString();
-                dgvCitas.Columns[4].HeaderText = "Jue "+fechaJueves.ToShortDateString();
-                dgvCitas.Columns[5].HeaderText = "Vie "+fechaViernes.ToShortDateString();
-                dgvCitas.Columns[6].HeaderText = "Sab "+fechaSabado.ToShortDateString();
+                dgvCitas.Columns[1].HeaderText = "Lunes "+fechaLunes.ToShortDateString();
+                dgvCitas.Columns[2].HeaderText = "Martes "+fechaMartes.ToShortDateString();
+                dgvCitas.Columns[3].HeaderText = "Miércoles "+fechaMiercoles.ToShortDateString();
+                dgvCitas.Columns[4].HeaderText = "Jueves "+fechaJueves.ToShortDateString();
+                dgvCitas.Columns[5].HeaderText = "Viernes "+fechaViernes.ToShortDateString();
+                dgvCitas.Columns[6].HeaderText = "Sábado "+fechaSabado.ToShortDateString();
 
-                if ((comboTurno.SelectedItem as Turno).idTurno == 0)
+                DateTime horaSemana;
+                if ((comboServicios.SelectedItem as Servicio).intervaloHora == 30)
                 {
-                    horaInicio = Convert.ToDateTime("08:00");
-                    horaFin = Convert.ToDateTime("14:00");
+                    if ((comboTurno.SelectedItem as Turno).idTurno == 0)
+                    {
+                        horaSemana = Convert.ToDateTime("08:00");
+                        horaInicio = Convert.ToDateTime("08:00");
+                        horaFin = Convert.ToDateTime("14:00");
+                    }
+                    else
+                    {
+                        horaSemana = Convert.ToDateTime("14:00");
+                        horaInicio = Convert.ToDateTime("14:00");
+                        horaFin = Convert.ToDateTime("20:00");
+                    }
                 }
-                else
+                else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 40)
                 {
-                    horaInicio = Convert.ToDateTime("14:00");
-                    horaFin = Convert.ToDateTime("20:00");
-                }
+                    if ((comboTurno.SelectedItem as Turno).idTurno == 0)
+                    {
+                        horaSemana = Convert.ToDateTime("08:00");
+                        horaInicio = Convert.ToDateTime("08:00");
+                        horaFin = Convert.ToDateTime("14:00");
+                    }
+                    else
+                    {
+                        horaSemana = Convert.ToDateTime("14:00");
+                        horaInicio = Convert.ToDateTime("14:00");
+                        horaFin = Convert.ToDateTime("20:00");
+                    }
 
+                }
+                else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 60)
+                {
+                    if ((comboTurno.SelectedItem as Turno).idTurno == 0)
+                    {
+                        horaSemana = Convert.ToDateTime("08:00");
+                        horaInicio = Convert.ToDateTime("08:00");
+                        horaFin = Convert.ToDateTime("14:00");
+                    }
+                    else
+                    {
+                        horaSemana = Convert.ToDateTime("14:00");
+                        horaInicio = Convert.ToDateTime("14:00");
+                        horaFin = Convert.ToDateTime("20:00");
+                    }
+                }
+                else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 80)
+                {
+                    if ((comboTurno.SelectedItem as Turno).idTurno == 0)
+                    {
+                        horaSemana = Convert.ToDateTime("08:00");
+                        horaInicio = Convert.ToDateTime("08:00");
+                        horaFin = Convert.ToDateTime("14:40");
+                    }
+                    else
+                    {
+                        horaSemana = Convert.ToDateTime("14:40");
+                        horaInicio = Convert.ToDateTime("14:40");
+                        horaFin = Convert.ToDateTime("20:00");
+                    }
+                }                
+                
+                
 
 
             }

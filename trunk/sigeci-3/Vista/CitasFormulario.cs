@@ -24,8 +24,11 @@ namespace Vista
         private List<Servicio> servicios;
         private List<Turno> turnos;
         private List<Modalidad> modalidades;
+        private List<Semana> semanas = new List<Semana>();
         private Paciente paciente;
         private DateTime fechaLunes, fechaMartes, fechaMiercoles, fechaJueves, fechaViernes, fechaSabado;
+        private DateTime horaInicio;
+        private DateTime horaFin;
 
         public CitasFornulario()
         {
@@ -211,6 +214,16 @@ namespace Vista
                 dgvCitas.Columns[5].HeaderText = "Vie "+fechaViernes.ToShortDateString();
                 dgvCitas.Columns[6].HeaderText = "Sab "+fechaSabado.ToShortDateString();
 
+                if ((comboTurno.SelectedItem as Turno).idTurno == 0)
+                {
+                    horaInicio = Convert.ToDateTime("08:00");
+                    horaFin = Convert.ToDateTime("14:00");
+                }
+                else
+                {
+                    horaInicio = Convert.ToDateTime("14:00");
+                    horaFin = Convert.ToDateTime("20:00");
+                }
 
 
 

@@ -229,6 +229,21 @@ namespace Vista
                         horaInicio = Convert.ToDateTime("14:00");
                         horaFin = Convert.ToDateTime("20:00");
                     }
+
+                    Semana s0 = new Semana();
+                    s0.hora = horaInicio;
+                    semanas.Add(s0);
+                    int i = 1;
+                    while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
+                    {
+                        Semana s = new Semana();
+                        horaSemana = horaSemana.AddMinutes(30);
+                        s.hora = horaSemana;
+                        semanas.Add(s);
+                        i++;
+                    }
+
+
                 }
                 else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 40)
                 {
@@ -243,6 +258,19 @@ namespace Vista
                         horaSemana = Convert.ToDateTime("14:00");
                         horaInicio = Convert.ToDateTime("14:00");
                         horaFin = Convert.ToDateTime("20:00");
+                    }
+
+                    Semana s0 = new Semana();
+                    s0.hora = horaInicio;
+                    semanas.Add(s0);
+                    int i = 1;
+                    while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
+                    {
+                        Semana s = new Semana();
+                        horaSemana = horaSemana.AddMinutes(40);
+                        s.hora = horaSemana;
+                        semanas.Add(s);
+                        i++;
                     }
 
                 }
@@ -260,6 +288,19 @@ namespace Vista
                         horaInicio = Convert.ToDateTime("14:00");
                         horaFin = Convert.ToDateTime("20:00");
                     }
+
+                    Semana s0 = new Semana();
+                    s0.hora = horaInicio;
+                    semanas.Add(s0);
+                    int i = 1;
+                    while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
+                    {
+                        Semana s = new Semana();
+                        horaSemana = horaSemana.AddMinutes(60);
+                        s.hora = horaSemana;
+                        semanas.Add(s);
+                        i++;
+                    }
                 }
                 else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 80)
                 {
@@ -274,6 +315,19 @@ namespace Vista
                         horaSemana = Convert.ToDateTime("14:40");
                         horaInicio = Convert.ToDateTime("14:40");
                         horaFin = Convert.ToDateTime("20:00");
+                    }
+
+                    Semana s0 = new Semana();
+                    s0.hora = horaInicio;
+                    semanas.Add(s0);
+                    int i = 1;
+                    while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
+                    {
+                        Semana s = new Semana();
+                        horaSemana = horaSemana.AddMinutes(80);
+                        s.hora = horaSemana;
+                        semanas.Add(s);
+                        i++;
                     }
                 }                
                 

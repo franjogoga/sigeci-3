@@ -42,6 +42,10 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
+            this.btnConfirmar = new DevComponents.DotNetBar.ButtonX();
+            this.btnReservar = new DevComponents.DotNetBar.ButtonX();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,10 +54,6 @@
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
-            this.btnConfirmar = new DevComponents.DotNetBar.ButtonX();
-            this.btnReservar = new DevComponents.DotNetBar.ButtonX();
-            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
@@ -235,63 +235,6 @@
             this.dgvCitas.Size = new System.Drawing.Size(647, 160);
             this.dgvCitas.TabIndex = 2;
             // 
-            // idCita
-            // 
-            this.idCita.HeaderText = "N° Cita";
-            this.idCita.Name = "idCita";
-            this.idCita.ReadOnly = true;
-            this.idCita.Width = 63;
-            // 
-            // fechaCita
-            // 
-            this.fechaCita.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fechaCita.HeaderText = "Fecha";
-            this.fechaCita.Name = "fechaCita";
-            this.fechaCita.ReadOnly = true;
-            // 
-            // horaCita
-            // 
-            this.horaCita.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.horaCita.HeaderText = "Hora";
-            this.horaCita.Name = "horaCita";
-            this.horaCita.ReadOnly = true;
-            // 
-            // servicio
-            // 
-            this.servicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.servicio.HeaderText = "Servicio";
-            this.servicio.Name = "servicio";
-            this.servicio.ReadOnly = true;
-            this.servicio.ToolTipText = "Ser";
-            // 
-            // paciente
-            // 
-            this.paciente.HeaderText = "Paciente";
-            this.paciente.Name = "paciente";
-            this.paciente.ReadOnly = true;
-            this.paciente.Width = 170;
-            // 
-            // costo
-            // 
-            this.costo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.costo.HeaderText = "Costo Final";
-            this.costo.Name = "costo";
-            this.costo.ReadOnly = true;
-            // 
-            // pagado
-            // 
-            this.pagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pagado.HeaderText = "Pagado";
-            this.pagado.Name = "pagado";
-            this.pagado.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -335,6 +278,63 @@
             // styleManager1
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
+            // 
+            // idCita
+            // 
+            this.idCita.HeaderText = "N° Cita";
+            this.idCita.Name = "idCita";
+            this.idCita.ReadOnly = true;
+            this.idCita.Width = 50;
+            // 
+            // fechaCita
+            // 
+            this.fechaCita.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fechaCita.HeaderText = "Fecha";
+            this.fechaCita.Name = "fechaCita";
+            this.fechaCita.ReadOnly = true;
+            // 
+            // horaCita
+            // 
+            this.horaCita.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.horaCita.HeaderText = "Hora";
+            this.horaCita.Name = "horaCita";
+            this.horaCita.ReadOnly = true;
+            // 
+            // servicio
+            // 
+            this.servicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.servicio.HeaderText = "Servicio";
+            this.servicio.Name = "servicio";
+            this.servicio.ReadOnly = true;
+            this.servicio.ToolTipText = "Ser";
+            // 
+            // paciente
+            // 
+            this.paciente.HeaderText = "Paciente";
+            this.paciente.Name = "paciente";
+            this.paciente.ReadOnly = true;
+            this.paciente.Width = 150;
+            // 
+            // costo
+            // 
+            this.costo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.costo.HeaderText = "Costo Final";
+            this.costo.Name = "costo";
+            this.costo.ReadOnly = true;
+            // 
+            // pagado
+            // 
+            this.pagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pagado.HeaderText = "Pagado";
+            this.pagado.Name = "pagado";
+            this.pagado.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             // 
             // CitasForm
             // 

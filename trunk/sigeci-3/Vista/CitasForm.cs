@@ -58,7 +58,7 @@ namespace Vista
                 {
                     suma += p.monto;
                 }
-                fila = new string[] { "" + cita.idCita, "" + cita.fechaCita.Day + "/" + cita.fechaCita.Month + "/" + cita.fechaCita.Year, "" + cita.horaCita.Hour + ":" + cita.horaCita.Minute, cita.servicio.nombreServicio, cita.paciente.persona.nombres + " " + cita.paciente.persona.apellidoPaterno + " " + cita.paciente.persona.apellidoMaterno, "" + cita.costo, "" + suma, cita.estado };
+                fila = new string[] { "" + cita.idCita, "" + cita.fechaCita.ToShortDateString(), "" + cita.horaCita.ToShortTimeString(), cita.servicio.nombreServicio, cita.paciente.persona.nombres + " " + cita.paciente.persona.apellidoPaterno + " " + cita.paciente.persona.apellidoMaterno, "" + cita.costo, "" + suma, cita.estado };
                 dgvCitas.Rows.Add(fila);
             }
         }

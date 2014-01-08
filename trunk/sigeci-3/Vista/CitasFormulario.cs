@@ -140,69 +140,84 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Monday"))
+            if (!dateFechaCita.Value.DayOfWeek.ToString().Equals("Sunday"))
             {
-                fechaLunes = dateFechaCita.Value;
-                fechaMartes = dateFechaCita.Value.AddDays(1);
-                fechaMiercoles = dateFechaCita.Value.AddDays(2);
-                fechaJueves = dateFechaCita.Value.AddDays(3);
-                fechaViernes = dateFechaCita.Value.AddDays(4);
-                fechaSabado = dateFechaCita.Value.AddDays(5);
-            }
-            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Tuesday"))
-            {
-                fechaLunes = dateFechaCita.Value.AddDays(-1);
-                fechaMartes = dateFechaCita.Value;
-                fechaMiercoles = dateFechaCita.Value.AddDays(1);
-                fechaJueves = dateFechaCita.Value.AddDays(2);
-                fechaViernes = dateFechaCita.Value.AddDays(3);
-                fechaSabado = dateFechaCita.Value.AddDays(4);
-            }
-            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Wednesday"))
-            {
-                fechaLunes = dateFechaCita.Value.AddDays(-2);
-                fechaMartes = dateFechaCita.Value.AddDays(-1);
-                fechaMiercoles = dateFechaCita.Value;
-                fechaJueves = dateFechaCita.Value.AddDays(1);
-                fechaViernes = dateFechaCita.Value.AddDays(2);
-                fechaSabado = dateFechaCita.Value.AddDays(3);
-            }
-            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Thursday"))
-            {
-                fechaLunes = dateFechaCita.Value.AddDays(-3);
-                fechaMartes = dateFechaCita.Value.AddDays(-2);
-                fechaMiercoles = dateFechaCita.Value.AddDays(-1);
-                fechaJueves = dateFechaCita.Value;
-                fechaViernes = dateFechaCita.Value.AddDays(1);
-                fechaSabado = dateFechaCita.Value.AddDays(2);
-            }
-            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Friday"))
-            {
-                fechaLunes = dateFechaCita.Value.AddDays(-4);
-                fechaMartes = dateFechaCita.Value.AddDays(-3);
-                fechaMiercoles = dateFechaCita.Value.AddDays(-2);
-                fechaJueves = dateFechaCita.Value.AddDays(-1);
-                fechaViernes = dateFechaCita.Value;
-                fechaSabado = dateFechaCita.Value.AddDays(1);
-            }
-            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Saturday"))
-            {
-                fechaLunes = dateFechaCita.Value.AddDays(-5);
-                fechaMartes = dateFechaCita.Value.AddDays(-4);
-                fechaMiercoles = dateFechaCita.Value.AddDays(-3);
-                fechaJueves = dateFechaCita.Value.AddDays(-2);
-                fechaViernes = dateFechaCita.Value.AddDays(-1);
-                fechaSabado = dateFechaCita.Value;
-            }
+                if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Monday"))
+                {
+                    fechaLunes = dateFechaCita.Value;
+                    fechaMartes = dateFechaCita.Value.AddDays(1);
+                    fechaMiercoles = dateFechaCita.Value.AddDays(2);
+                    fechaJueves = dateFechaCita.Value.AddDays(3);
+                    fechaViernes = dateFechaCita.Value.AddDays(4);
+                    fechaSabado = dateFechaCita.Value.AddDays(5);
+                }
+                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Tuesday"))
+                {
+                    fechaLunes = dateFechaCita.Value.AddDays(-1);
+                    fechaMartes = dateFechaCita.Value;
+                    fechaMiercoles = dateFechaCita.Value.AddDays(1);
+                    fechaJueves = dateFechaCita.Value.AddDays(2);
+                    fechaViernes = dateFechaCita.Value.AddDays(3);
+                    fechaSabado = dateFechaCita.Value.AddDays(4);
+                }
+                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Wednesday"))
+                {
+                    fechaLunes = dateFechaCita.Value.AddDays(-2);
+                    fechaMartes = dateFechaCita.Value.AddDays(-1);
+                    fechaMiercoles = dateFechaCita.Value;
+                    fechaJueves = dateFechaCita.Value.AddDays(1);
+                    fechaViernes = dateFechaCita.Value.AddDays(2);
+                    fechaSabado = dateFechaCita.Value.AddDays(3);
+                }
+                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Thursday"))
+                {
+                    fechaLunes = dateFechaCita.Value.AddDays(-3);
+                    fechaMartes = dateFechaCita.Value.AddDays(-2);
+                    fechaMiercoles = dateFechaCita.Value.AddDays(-1);
+                    fechaJueves = dateFechaCita.Value;
+                    fechaViernes = dateFechaCita.Value.AddDays(1);
+                    fechaSabado = dateFechaCita.Value.AddDays(2);
+                }
+                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Friday"))
+                {
+                    fechaLunes = dateFechaCita.Value.AddDays(-4);
+                    fechaMartes = dateFechaCita.Value.AddDays(-3);
+                    fechaMiercoles = dateFechaCita.Value.AddDays(-2);
+                    fechaJueves = dateFechaCita.Value.AddDays(-1);
+                    fechaViernes = dateFechaCita.Value;
+                    fechaSabado = dateFechaCita.Value.AddDays(1);
+                }
+                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Saturday"))
+                {
+                    fechaLunes = dateFechaCita.Value.AddDays(-5);
+                    fechaMartes = dateFechaCita.Value.AddDays(-4);
+                    fechaMiercoles = dateFechaCita.Value.AddDays(-3);
+                    fechaJueves = dateFechaCita.Value.AddDays(-2);
+                    fechaViernes = dateFechaCita.Value.AddDays(-1);
+                    fechaSabado = dateFechaCita.Value;
+                }
 
-            citasLunes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaLunes);
-            citasMartes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMartes);
-            citasMiercoles = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMiercoles);
-            citasJueves = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaJueves);
-            citasViernes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaViernes);
-            citasSabado = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaSabado);
+                citasLunes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaLunes);
+                citasMartes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMartes);
+                citasMiercoles = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMiercoles);
+                citasJueves = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaJueves);
+                citasViernes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaViernes);
+                citasSabado = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaSabado);
+
+                dgvCitas.Columns[1].HeaderText = "Lun "+fechaLunes.ToShortDateString();
+                dgvCitas.Columns[2].HeaderText = "Mar "+fechaMartes.ToShortDateString();
+                dgvCitas.Columns[3].HeaderText = "Mie "+fechaMiercoles.ToShortDateString();
+                dgvCitas.Columns[4].HeaderText = "Jue "+fechaJueves.ToShortDateString();
+                dgvCitas.Columns[5].HeaderText = "Vie "+fechaViernes.ToShortDateString();
+                dgvCitas.Columns[6].HeaderText = "Sab "+fechaSabado.ToShortDateString();
 
 
+
+            }
+            else
+            {
+                MessageBox.Show("No hay citas Domingos");                
+            }
         }
 
         private void navFecha_NavigateToday(object sender, EventArgs e)

@@ -503,4 +503,51 @@ namespace Modelo
             set { _nombreTurno = value; }
         }
     }
+
+    public class Semana
+    {
+        private DateTime _hora;
+        private Cita _citaLunes;
+        private Cita _citaMartes;
+        private Cita _citaMiercoles;
+        private Cita _citaJueves;
+        private Cita _citaViernes;
+        private Cita _citaSabado;
+
+        public DateTime hora
+        {
+            get { return _hora; }
+            set { _hora = value; }
+        }
+        public Cita citaLunes
+        {
+            get { return _citaLunes; }
+            set { _citaLunes = value; }
+        }
+        public Cita citaMartes
+        {
+            get { return _citaMartes; }
+            set { _citaMartes = value; }
+        }
+        public Cita citaMiercoles
+        {
+            get { return _citaMiercoles; }
+            set { _citaMiercoles = value; }
+        }
+        public Cita citaJueves
+        {
+            get { return _citaJueves; }
+            set { _citaJueves = value; }
+        }
+        public Cita citaViernes
+        {
+            get { return _citaViernes; }
+            set { _citaViernes = value; }
+        }
+        public Cita citaSabado
+        {
+            get { return _citaSabado; }
+            set { _citaSabado = value; }
+        }
+    }
 }

@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.txtNumeroHistoria);
             this.groupBox1.Location = new System.Drawing.Point(19, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(653, 148);
+            this.groupBox1.Size = new System.Drawing.Size(750, 148);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Paciente";
@@ -115,7 +115,7 @@
             // 
             this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(327, 65);
+            this.labelX4.Location = new System.Drawing.Point(397, 65);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(107, 23);
             this.labelX4.TabIndex = 12;
@@ -128,7 +128,7 @@
             // 
             this.labelX10.BackgroundStyle.Class = "";
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(327, 104);
+            this.labelX10.Location = new System.Drawing.Point(397, 104);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(107, 23);
             this.labelX10.TabIndex = 12;
@@ -141,7 +141,7 @@
             // 
             this.labelX5.BackgroundStyle.Class = "";
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(12, 105);
+            this.labelX5.Location = new System.Drawing.Point(44, 105);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(107, 23);
             this.labelX5.TabIndex = 12;
@@ -154,7 +154,7 @@
             // 
             this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(12, 65);
+            this.labelX3.Location = new System.Drawing.Point(44, 65);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(107, 23);
             this.labelX3.TabIndex = 12;
@@ -162,7 +162,7 @@
             // 
             // txtApellidoMaterno
             // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(440, 68);
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(510, 68);
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.ReadOnly = true;
             this.txtApellidoMaterno.Size = new System.Drawing.Size(189, 20);
@@ -170,7 +170,7 @@
             // 
             // txtEvaluacion
             // 
-            this.txtEvaluacion.Location = new System.Drawing.Point(440, 107);
+            this.txtEvaluacion.Location = new System.Drawing.Point(510, 107);
             this.txtEvaluacion.Name = "txtEvaluacion";
             this.txtEvaluacion.ReadOnly = true;
             this.txtEvaluacion.Size = new System.Drawing.Size(189, 20);
@@ -178,7 +178,7 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(125, 108);
+            this.txtDNI.Location = new System.Drawing.Point(157, 108);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.ReadOnly = true;
             this.txtDNI.Size = new System.Drawing.Size(182, 20);
@@ -186,7 +186,7 @@
             // 
             // txtApellidoPaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(125, 68);
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(157, 68);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.ReadOnly = true;
             this.txtApellidoPaterno.Size = new System.Drawing.Size(182, 20);
@@ -199,7 +199,7 @@
             // 
             this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(327, 29);
+            this.labelX2.Location = new System.Drawing.Point(397, 29);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(107, 23);
             this.labelX2.TabIndex = 10;
@@ -207,7 +207,7 @@
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(440, 32);
+            this.txtNombres.Location = new System.Drawing.Point(510, 32);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.ReadOnly = true;
             this.txtNombres.Size = new System.Drawing.Size(189, 20);
@@ -219,7 +219,7 @@
             this.btnBuscarPaciente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnBuscarPaciente.Image = global::Vista.Properties.Resources.buscar;
             this.btnBuscarPaciente.ImageFixedSize = new System.Drawing.Size(17, 17);
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(278, 29);
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(310, 29);
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
             this.btnBuscarPaciente.Size = new System.Drawing.Size(29, 20);
             this.btnBuscarPaciente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -233,7 +233,7 @@
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(12, 26);
+            this.labelX1.Location = new System.Drawing.Point(44, 26);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(107, 23);
             this.labelX1.TabIndex = 7;
@@ -241,7 +241,7 @@
             // 
             // txtNumeroHistoria
             // 
-            this.txtNumeroHistoria.Location = new System.Drawing.Point(125, 29);
+            this.txtNumeroHistoria.Location = new System.Drawing.Point(157, 29);
             this.txtNumeroHistoria.Name = "txtNumeroHistoria";
             this.txtNumeroHistoria.ReadOnly = true;
             this.txtNumeroHistoria.Size = new System.Drawing.Size(147, 20);
@@ -259,7 +259,7 @@
             this.groupBox2.Controls.Add(this.labelX6);
             this.groupBox2.Location = new System.Drawing.Point(19, 166);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(653, 110);
+            this.groupBox2.Size = new System.Drawing.Size(750, 110);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Servicio";
@@ -271,7 +271,7 @@
             this.comboModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboModalidad.FormattingEnabled = true;
             this.comboModalidad.ItemHeight = 14;
-            this.comboModalidad.Location = new System.Drawing.Point(438, 73);
+            this.comboModalidad.Location = new System.Drawing.Point(508, 76);
             this.comboModalidad.Name = "comboModalidad";
             this.comboModalidad.Size = new System.Drawing.Size(191, 20);
             this.comboModalidad.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -284,7 +284,7 @@
             this.comboTerapeuta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTerapeuta.FormattingEnabled = true;
             this.comboTerapeuta.ItemHeight = 14;
-            this.comboTerapeuta.Location = new System.Drawing.Point(122, 73);
+            this.comboTerapeuta.Location = new System.Drawing.Point(157, 76);
             this.comboTerapeuta.Name = "comboTerapeuta";
             this.comboTerapeuta.Size = new System.Drawing.Size(182, 20);
             this.comboTerapeuta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -297,7 +297,7 @@
             this.comboTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTurno.FormattingEnabled = true;
             this.comboTurno.ItemHeight = 14;
-            this.comboTurno.Location = new System.Drawing.Point(438, 27);
+            this.comboTurno.Location = new System.Drawing.Point(508, 30);
             this.comboTurno.Name = "comboTurno";
             this.comboTurno.Size = new System.Drawing.Size(191, 20);
             this.comboTurno.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -310,7 +310,7 @@
             this.comboServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboServicios.FormattingEnabled = true;
             this.comboServicios.ItemHeight = 14;
-            this.comboServicios.Location = new System.Drawing.Point(124, 27);
+            this.comboServicios.Location = new System.Drawing.Point(157, 30);
             this.comboServicios.Name = "comboServicios";
             this.comboServicios.Size = new System.Drawing.Size(182, 20);
             this.comboServicios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -324,7 +324,7 @@
             // 
             this.labelX11.BackgroundStyle.Class = "";
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(325, 70);
+            this.labelX11.Location = new System.Drawing.Point(395, 73);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(107, 23);
             this.labelX11.TabIndex = 14;
@@ -337,7 +337,7 @@
             // 
             this.labelX7.BackgroundStyle.Class = "";
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(325, 27);
+            this.labelX7.Location = new System.Drawing.Point(395, 30);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(107, 23);
             this.labelX7.TabIndex = 14;
@@ -350,7 +350,7 @@
             // 
             this.labelX8.BackgroundStyle.Class = "";
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.Location = new System.Drawing.Point(11, 70);
+            this.labelX8.Location = new System.Drawing.Point(44, 73);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(107, 23);
             this.labelX8.TabIndex = 14;
@@ -363,7 +363,7 @@
             // 
             this.labelX6.BackgroundStyle.Class = "";
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(11, 27);
+            this.labelX6.Location = new System.Drawing.Point(44, 30);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(107, 23);
             this.labelX6.TabIndex = 14;
@@ -378,7 +378,7 @@
             this.groupBox3.Controls.Add(this.labelX9);
             this.groupBox3.Location = new System.Drawing.Point(19, 282);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(653, 235);
+            this.groupBox3.Size = new System.Drawing.Size(752, 235);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cita";
@@ -389,7 +389,7 @@
             this.btnBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnBuscar.Image = global::Vista.Properties.Resources.buscar;
             this.btnBuscar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnBuscar.Location = new System.Drawing.Point(440, 22);
+            this.btnBuscar.Location = new System.Drawing.Point(508, 22);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(123, 32);
             this.btnBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -413,7 +413,7 @@
             this.dgvCitas.Location = new System.Drawing.Point(11, 60);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
-            this.dgvCitas.Size = new System.Drawing.Size(629, 166);
+            this.dgvCitas.Size = new System.Drawing.Size(730, 166);
             this.dgvCitas.TabIndex = 18;
             // 
             // navFecha
@@ -423,7 +423,7 @@
             // 
             this.navFecha.BackgroundStyle.Class = "";
             this.navFecha.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.navFecha.Location = new System.Drawing.Point(310, 27);
+            this.navFecha.Location = new System.Drawing.Point(343, 27);
             this.navFecha.Name = "navFecha";
             this.navFecha.NextPageTooltip = "Día Siguiente";
             this.navFecha.PreviousPageTooltip = "Día Anterior";
@@ -439,7 +439,7 @@
             // 
             this.dateFechaCita.Checked = false;
             this.dateFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaCita.Location = new System.Drawing.Point(124, 27);
+            this.dateFechaCita.Location = new System.Drawing.Point(157, 27);
             this.dateFechaCita.Name = "dateFechaCita";
             this.dateFechaCita.Size = new System.Drawing.Size(180, 20);
             this.dateFechaCita.TabIndex = 16;
@@ -451,9 +451,9 @@
             // 
             this.labelX9.BackgroundStyle.Class = "";
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(8, 24);
+            this.labelX9.Location = new System.Drawing.Point(44, 27);
             this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(107, 23);
+            this.labelX9.Size = new System.Drawing.Size(75, 23);
             this.labelX9.TabIndex = 14;
             this.labelX9.Text = "Fecha :";
             // 
@@ -463,7 +463,7 @@
             this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancelar.Image = global::Vista.Properties.Resources.borrar;
             this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnCancelar.Location = new System.Drawing.Point(351, 641);
+            this.btnCancelar.Location = new System.Drawing.Point(414, 639);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 32);
             this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -477,7 +477,7 @@
             this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAceptar.Image = global::Vista.Properties.Resources.aceptar;
             this.btnAceptar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnAceptar.Location = new System.Drawing.Point(200, 641);
+            this.btnAceptar.Location = new System.Drawing.Point(263, 639);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(123, 32);
             this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -503,7 +503,7 @@
             this.groupBox4.Controls.Add(this.txtCosto);
             this.groupBox4.Location = new System.Drawing.Point(19, 523);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(650, 105);
+            this.groupBox4.Size = new System.Drawing.Size(750, 105);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pago";
@@ -515,7 +515,7 @@
             // 
             this.labelX14.BackgroundStyle.Class = "";
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(422, 27);
+            this.labelX14.Location = new System.Drawing.Point(519, 27);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(87, 23);
             this.labelX14.TabIndex = 16;
@@ -523,7 +523,7 @@
             // 
             // txtCostoFinal
             // 
-            this.txtCostoFinal.Location = new System.Drawing.Point(518, 30);
+            this.txtCostoFinal.Location = new System.Drawing.Point(615, 30);
             this.txtCostoFinal.Name = "txtCostoFinal";
             this.txtCostoFinal.ReadOnly = true;
             this.txtCostoFinal.Size = new System.Drawing.Size(86, 20);
@@ -538,7 +538,7 @@
             // 
             this.labelX16.BackgroundStyle.Class = "";
             this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Location = new System.Drawing.Point(196, 65);
+            this.labelX16.Location = new System.Drawing.Point(253, 69);
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(111, 23);
             this.labelX16.TabIndex = 16;
@@ -551,7 +551,7 @@
             // 
             this.labelX13.BackgroundStyle.Class = "";
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(195, 26);
+            this.labelX13.Location = new System.Drawing.Point(252, 30);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(87, 23);
             this.labelX13.TabIndex = 16;
@@ -559,7 +559,7 @@
             // 
             // txtSaldoRestante
             // 
-            this.txtSaldoRestante.Location = new System.Drawing.Point(313, 69);
+            this.txtSaldoRestante.Location = new System.Drawing.Point(370, 73);
             this.txtSaldoRestante.Name = "txtSaldoRestante";
             this.txtSaldoRestante.ReadOnly = true;
             this.txtSaldoRestante.Size = new System.Drawing.Size(86, 20);
@@ -568,7 +568,7 @@
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(313, 27);
+            this.txtDescuento.Location = new System.Drawing.Point(370, 31);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(86, 20);
             this.txtDescuento.TabIndex = 15;
@@ -582,7 +582,7 @@
             // 
             this.labelX15.BackgroundStyle.Class = "";
             this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(12, 66);
+            this.labelX15.Location = new System.Drawing.Point(35, 66);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(71, 23);
             this.labelX15.TabIndex = 14;
@@ -590,7 +590,7 @@
             // 
             // txtAdelanto
             // 
-            this.txtAdelanto.Location = new System.Drawing.Point(89, 68);
+            this.txtAdelanto.Location = new System.Drawing.Point(112, 68);
             this.txtAdelanto.Name = "txtAdelanto";
             this.txtAdelanto.Size = new System.Drawing.Size(86, 20);
             this.txtAdelanto.TabIndex = 13;
@@ -604,7 +604,7 @@
             // 
             this.labelX12.BackgroundStyle.Class = "";
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(10, 26);
+            this.labelX12.Location = new System.Drawing.Point(33, 26);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(61, 23);
             this.labelX12.TabIndex = 14;
@@ -612,7 +612,7 @@
             // 
             // txtCosto
             // 
-            this.txtCosto.Location = new System.Drawing.Point(89, 28);
+            this.txtCosto.Location = new System.Drawing.Point(112, 28);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.ReadOnly = true;
             this.txtCosto.Size = new System.Drawing.Size(86, 20);
@@ -623,40 +623,46 @@
             this.horaCita.HeaderText = "Hora";
             this.horaCita.Name = "horaCita";
             this.horaCita.ReadOnly = true;
-            this.horaCita.Width = 50;
+            this.horaCita.Width = 70;
             // 
             // lunes
             // 
+            this.lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.lunes.HeaderText = "Lunes";
             this.lunes.Name = "lunes";
             this.lunes.ReadOnly = true;
             // 
             // martes
             // 
+            this.martes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.martes.HeaderText = "Martes";
             this.martes.Name = "martes";
             this.martes.ReadOnly = true;
             // 
             // miercoles
             // 
+            this.miercoles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.miercoles.HeaderText = "Miércoles";
             this.miercoles.Name = "miercoles";
             this.miercoles.ReadOnly = true;
             // 
             // jueves
             // 
+            this.jueves.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.jueves.HeaderText = "Jueves";
             this.jueves.Name = "jueves";
             this.jueves.ReadOnly = true;
             // 
             // viernes
             // 
+            this.viernes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.viernes.HeaderText = "Viernes";
             this.viernes.Name = "viernes";
             this.viernes.ReadOnly = true;
             // 
             // sabado
             // 
+            this.sabado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sabado.HeaderText = "Sábado";
             this.sabado.Name = "sabado";
             this.sabado.ReadOnly = true;
@@ -666,7 +672,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(688, 683);
+            this.ClientSize = new System.Drawing.Size(781, 683);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);

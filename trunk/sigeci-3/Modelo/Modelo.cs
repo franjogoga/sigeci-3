@@ -504,6 +504,23 @@ namespace Modelo
         }
     }
 
+    public class TerapeutaCombo
+    {
+        private int _idTerapeuta;
+        private string _nombreCompleto;
+
+        public int idTerapeuta
+        {
+            get { return _idTerapeuta; }
+            set { _idTerapeuta = value; }
+        }
+        public string nombreCompleto
+        {
+            get { return _nombreCompleto; }
+            set { _nombreCompleto = value; }
+        }
+    }
+
     public class Semana
     {
         private DateTime _hora;

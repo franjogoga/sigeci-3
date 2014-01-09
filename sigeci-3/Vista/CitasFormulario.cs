@@ -216,160 +216,24 @@ namespace Vista
                 dgvCitas.Columns[6].HeaderText = "Sábado "+fechaSabado.ToShortDateString();
                 
                 Terapeuta terapeutaSeleccionado = controladorTerapeuta.getTerapeuta((comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta);
-
                 DateTime horaSemana;
+
                 if ((comboServicios.SelectedItem as Servicio).intervaloHora == 30)
                 {
-
-
-                    if ((comboTurno.SelectedItem as Turno).idTurno == 0)
-                    {
-                        horaSemana = Convert.ToDateTime("08:00");
-                        horaInicio = Convert.ToDateTime("08:00");
-                        horaFin = Convert.ToDateTime("14:00");
-                    }
-                    else
-                    {
-                        horaSemana = Convert.ToDateTime("14:00");
-                        horaInicio = Convert.ToDateTime("14:00");
-                        horaFin = Convert.ToDateTime("20:00");
-                    }
-                    
-                    int i = 0;
-                    while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
-                    {
-                        Semana s = new Semana();
-                        s.hora = horaSemana;
-                        horaSemana = horaSemana.AddMinutes(30);
-                        Cita citaLun = ponerCita(terapeutaSeleccionado.horarioTerapeuta[0], citasLunes, s.hora);
-                        Cita citaMar = ponerCita(terapeutaSeleccionado.horarioTerapeuta[1], citasMartes, s.hora);
-                        Cita citaMie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[2], citasMiercoles, s.hora);
-                        Cita citaJue = ponerCita(terapeutaSeleccionado.horarioTerapeuta[3], citasJueves, s.hora);
-                        Cita citaVie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[4], citasViernes, s.hora);
-                        Cita citaSab = ponerCita(terapeutaSeleccionado.horarioTerapeuta[5], citasSabado, s.hora);
-                        s.citaLunes = citaLun;
-                        s.citaMartes = citaMar;
-                        s.citaMiercoles = citaMie;
-                        s.citaJueves = citaJue;
-                        s.citaViernes = citaVie;
-                        s.citaSabado = citaSab;
-                        semanas.Add(s);
-                        i++;
-                    }
+                    llenarSemana(30, "08:00", "14:00", "20:00", terapeutaSeleccionado);
                 }
                 else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 40)
                 {
-                    if ((comboTurno.SelectedItem as Turno).idTurno == 0)
-                    {
-                        horaSemana = Convert.ToDateTime("08:00");
-                        horaInicio = Convert.ToDateTime("08:00");
-                        horaFin = Convert.ToDateTime("14:00");
-                    }
-                    else
-                    {
-                        horaSemana = Convert.ToDateTime("14:00");
-                        horaInicio = Convert.ToDateTime("14:00");
-                        horaFin = Convert.ToDateTime("20:00");
-                    }
-
-                    int i = 0;
-                    while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
-                    {
-                        Semana s = new Semana();
-                        s.hora = horaSemana;
-                        horaSemana = horaSemana.AddMinutes(40);
-                        Cita citaLun = ponerCita(terapeutaSeleccionado.horarioTerapeuta[0], citasLunes, s.hora);
-                        Cita citaMar = ponerCita(terapeutaSeleccionado.horarioTerapeuta[1], citasMartes, s.hora);
-                        Cita citaMie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[2], citasMiercoles, s.hora);
-                        Cita citaJue = ponerCita(terapeutaSeleccionado.horarioTerapeuta[3], citasJueves, s.hora);
-                        Cita citaVie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[4], citasViernes, s.hora);
-                        Cita citaSab = ponerCita(terapeutaSeleccionado.horarioTerapeuta[5], citasSabado, s.hora);
-                        s.citaLunes = citaLun;
-                        s.citaMartes = citaMar;
-                        s.citaMiercoles = citaMie;
-                        s.citaJueves = citaJue;
-                        s.citaViernes = citaVie;
-                        s.citaSabado = citaSab;
-                        semanas.Add(s);
-                        i++;
-                    }
-
+                    llenarSemana(40, "08:00", "14:00", "20:00", terapeutaSeleccionado);                    
                 }
                 else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 60)
                 {
-                    if ((comboTurno.SelectedItem as Turno).idTurno == 0)
-                    {
-                        horaSemana = Convert.ToDateTime("08:00");
-                        horaInicio = Convert.ToDateTime("08:00");
-                        horaFin = Convert.ToDateTime("14:00");
-                    }
-                    else
-                    {
-                        horaSemana = Convert.ToDateTime("14:00");
-                        horaInicio = Convert.ToDateTime("14:00");
-                        horaFin = Convert.ToDateTime("20:00");
-                    }
-
-                    int i = 0;
-                    while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
-                    {
-                        Semana s = new Semana();
-                        s.hora = horaSemana;
-                        horaSemana = horaSemana.AddMinutes(60);
-                        Cita citaLun = ponerCita(terapeutaSeleccionado.horarioTerapeuta[0], citasLunes, s.hora);
-                        Cita citaMar = ponerCita(terapeutaSeleccionado.horarioTerapeuta[1], citasMartes, s.hora);
-                        Cita citaMie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[2], citasMiercoles, s.hora);
-                        Cita citaJue = ponerCita(terapeutaSeleccionado.horarioTerapeuta[3], citasJueves, s.hora);
-                        Cita citaVie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[4], citasViernes, s.hora);
-                        Cita citaSab = ponerCita(terapeutaSeleccionado.horarioTerapeuta[5], citasSabado, s.hora);
-                        s.citaLunes = citaLun;
-                        s.citaMartes = citaMar;
-                        s.citaMiercoles = citaMie;
-                        s.citaJueves = citaJue;
-                        s.citaViernes = citaVie;
-                        s.citaSabado = citaSab;
-                        semanas.Add(s);
-                        i++;
-                    }
+                    llenarSemana(60, "08:00", "14:00", "20:00", terapeutaSeleccionado);
                 }
                 else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 80)
                 {
-                    if ((comboTurno.SelectedItem as Turno).idTurno == 0)
-                    {
-                        horaSemana = Convert.ToDateTime("08:00");
-                        horaInicio = Convert.ToDateTime("08:00");
-                        horaFin = Convert.ToDateTime("14:40");
-                    }
-                    else
-                    {
-                        horaSemana = Convert.ToDateTime("14:40");
-                        horaInicio = Convert.ToDateTime("14:40");
-                        horaFin = Convert.ToDateTime("20:00");
-                    }
-
-                    int i = 0;
-                    while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
-                    {
-                        Semana s = new Semana();
-                        s.hora = horaSemana;
-                        horaSemana = horaSemana.AddMinutes(80);
-                        Cita citaLun = ponerCita(terapeutaSeleccionado.horarioTerapeuta[0], citasLunes, s.hora);
-                        Cita citaMar = ponerCita(terapeutaSeleccionado.horarioTerapeuta[1], citasMartes, s.hora);
-                        Cita citaMie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[2], citasMiercoles, s.hora);
-                        Cita citaJue = ponerCita(terapeutaSeleccionado.horarioTerapeuta[3], citasJueves, s.hora);
-                        Cita citaVie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[4], citasViernes, s.hora);
-                        Cita citaSab = ponerCita(terapeutaSeleccionado.horarioTerapeuta[5], citasSabado, s.hora);
-                        s.citaLunes = citaLun;
-                        s.citaMartes = citaMar;
-                        s.citaMiercoles = citaMie;
-                        s.citaJueves = citaJue;
-                        s.citaViernes = citaVie;
-                        s.citaSabado = citaSab;
-                        semanas.Add(s);
-                        i++;
-                    }
+                    llenarSemana(80, "08:00", "14:40", "20:00", terapeutaSeleccionado);                    
                 }
-
                 llenarCitas();                
             }
             else
@@ -437,7 +301,50 @@ namespace Vista
             }        
         }
 
+        private void llenarSemana(int intervaloHora, string strhora1, string strhora2, string strhora3, Terapeuta terapeutaSeleccionado)
+        {
+            DateTime horaSemana;
+            if ((comboTurno.SelectedItem as Turno).idTurno == 0)
+            {
+                horaSemana = Convert.ToDateTime(strhora1);
+                horaInicio = Convert.ToDateTime(strhora1);
+                horaFin = Convert.ToDateTime(strhora2);
+            }
+            else
+            {
+                horaSemana = Convert.ToDateTime(strhora2);
+                horaInicio = Convert.ToDateTime(strhora2);
+                horaFin = Convert.ToDateTime(strhora3);
+            }
+
+            int i = 0;
+            while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
+            {
+                Semana s = new Semana();
+                s.hora = horaSemana;
+                horaSemana = horaSemana.AddMinutes(intervaloHora);
+                Cita citaLun = ponerCita(terapeutaSeleccionado.horarioTerapeuta[0], citasLunes, s.hora);
+                Cita citaMar = ponerCita(terapeutaSeleccionado.horarioTerapeuta[1], citasMartes, s.hora);
+                Cita citaMie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[2], citasMiercoles, s.hora);
+                Cita citaJue = ponerCita(terapeutaSeleccionado.horarioTerapeuta[3], citasJueves, s.hora);
+                Cita citaVie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[4], citasViernes, s.hora);
+                Cita citaSab = ponerCita(terapeutaSeleccionado.horarioTerapeuta[5], citasSabado, s.hora);
+                s.citaLunes = citaLun;
+                s.citaMartes = citaMar;
+                s.citaMiercoles = citaMie;
+                s.citaJueves = citaJue;
+                s.citaViernes = citaVie;
+                s.citaSabado = citaSab;
+                semanas.Add(s);
+                i++;
+            }
+        }
+
+
+
+
 
     }
+
 }
 

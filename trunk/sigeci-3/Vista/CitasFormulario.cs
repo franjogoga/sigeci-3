@@ -148,48 +148,23 @@ namespace Vista
                 semanas.Clear();
                 if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Monday"))
                 {
-                    fechaLunes = dateFechaCita.Value;
-                    fechaMartes = dateFechaCita.Value.AddDays(1);
-                    fechaMiercoles = dateFechaCita.Value.AddDays(2);
-                    fechaJueves = dateFechaCita.Value.AddDays(3);
-                    fechaViernes = dateFechaCita.Value.AddDays(4);
-                    fechaSabado = dateFechaCita.Value.AddDays(5);
+                    poneFechas(0, 1, 2, 3, 4, 5);                   
                 }
                 else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Tuesday"))
                 {
-                    fechaLunes = dateFechaCita.Value.AddDays(-1);
-                    fechaMartes = dateFechaCita.Value;
-                    fechaMiercoles = dateFechaCita.Value.AddDays(1);
-                    fechaJueves = dateFechaCita.Value.AddDays(2);
-                    fechaViernes = dateFechaCita.Value.AddDays(3);
-                    fechaSabado = dateFechaCita.Value.AddDays(4);
+                    poneFechas(-1, 0, 1, 2, 3, 4);                
                 }
                 else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Wednesday"))
                 {
-                    fechaLunes = dateFechaCita.Value.AddDays(-2);
-                    fechaMartes = dateFechaCita.Value.AddDays(-1);
-                    fechaMiercoles = dateFechaCita.Value;
-                    fechaJueves = dateFechaCita.Value.AddDays(1);
-                    fechaViernes = dateFechaCita.Value.AddDays(2);
-                    fechaSabado = dateFechaCita.Value.AddDays(3);
+                    poneFechas(-2, -1, 0, 1, 2, 3);                    
                 }
                 else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Thursday"))
                 {
-                    fechaLunes = dateFechaCita.Value.AddDays(-3);
-                    fechaMartes = dateFechaCita.Value.AddDays(-2);
-                    fechaMiercoles = dateFechaCita.Value.AddDays(-1);
-                    fechaJueves = dateFechaCita.Value;
-                    fechaViernes = dateFechaCita.Value.AddDays(1);
-                    fechaSabado = dateFechaCita.Value.AddDays(2);
+                    poneFechas(-3, -2, -1, 0, 1, 2);                    
                 }
                 else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Friday"))
                 {
-                    fechaLunes = dateFechaCita.Value.AddDays(-4);
-                    fechaMartes = dateFechaCita.Value.AddDays(-3);
-                    fechaMiercoles = dateFechaCita.Value.AddDays(-2);
-                    fechaJueves = dateFechaCita.Value.AddDays(-1);
-                    fechaViernes = dateFechaCita.Value;
-                    fechaSabado = dateFechaCita.Value.AddDays(1);
+                    poneFechas(-4, -3, -2, -1, 0, 1);                    
                 }
                 else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Saturday"))
                 {
@@ -198,7 +173,7 @@ namespace Vista
                     fechaMiercoles = dateFechaCita.Value.AddDays(-3);
                     fechaJueves = dateFechaCita.Value.AddDays(-2);
                     fechaViernes = dateFechaCita.Value.AddDays(-1);
-                    fechaSabado = dateFechaCita.Value;
+                    fechaSabado = dateFechaCita.Value.AddDays(0);
                 }
 
                 citasLunes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaLunes);
@@ -215,8 +190,7 @@ namespace Vista
                 dgvCitas.Columns[5].HeaderText = "Viernes "+fechaViernes.ToShortDateString();
                 dgvCitas.Columns[6].HeaderText = "Sábado "+fechaSabado.ToShortDateString();
                 
-                Terapeuta terapeutaSeleccionado = controladorTerapeuta.getTerapeuta((comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta);
-                DateTime horaSemana;
+                Terapeuta terapeutaSeleccionado = controladorTerapeuta.getTerapeuta((comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta);                
 
                 if ((comboServicios.SelectedItem as Servicio).intervaloHora == 30)
                 {
@@ -340,7 +314,10 @@ namespace Vista
             }
         }
 
+        private void poneFechas(int diasLunes, int diasMartes, int diasMiercoles, int diasJueves, int diasViernes, int diasSabado)
+        {
 
+        }
 
 
 

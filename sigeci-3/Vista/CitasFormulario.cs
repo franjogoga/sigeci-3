@@ -145,6 +145,7 @@ namespace Vista
         {
             if (!dateFechaCita.Value.DayOfWeek.ToString().Equals("Sunday"))
             {
+                semanas.Clear();
                 if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Monday"))
                 {
                     fechaLunes = dateFechaCita.Value;
@@ -229,21 +230,28 @@ namespace Vista
                         horaInicio = Convert.ToDateTime("14:00");
                         horaFin = Convert.ToDateTime("20:00");
                     }
-
-                    Semana s0 = new Semana();
-                    s0.hora = horaInicio;
-                    semanas.Add(s0);
-                    int i = 1;
+                    
+                    int i = 0;
                     while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
                     {
                         Semana s = new Semana();
-                        horaSemana = horaSemana.AddMinutes(30);
                         s.hora = horaSemana;
+                        horaSemana = horaSemana.AddMinutes(30);
+                        Cita citaLun = ponerCita((comboTerapeuta.SelectedItem as Terapeuta).horarioTerapeuta[0], citasLunes, s.hora);
+                        Cita citaMar = ponerCita((comboTerapeuta.SelectedItem as Terapeuta).horarioTerapeuta[1], citasMartes, s.hora);
+                        Cita citaMie = ponerCita((comboTerapeuta.SelectedItem as Terapeuta).horarioTerapeuta[2], citasMiercoles, s.hora);
+                        Cita citaJue = ponerCita((comboTerapeuta.SelectedItem as Terapeuta).horarioTerapeuta[3], citasJueves, s.hora);
+                        Cita citaVie = ponerCita((comboTerapeuta.SelectedItem as Terapeuta).horarioTerapeuta[4], citasViernes, s.hora);
+                        Cita citaSab = ponerCita((comboTerapeuta.SelectedItem as Terapeuta).horarioTerapeuta[5], citasSabado, s.hora);
+                        s.citaLunes = citaLun;
+                        s.citaMartes = citaMar;
+                        s.citaMiercoles = citaMie;
+                        s.citaJueves = citaJue;
+                        s.citaViernes = citaVie;
+                        s.citaSabado = citaSab;
                         semanas.Add(s);
                         i++;
                     }
-
-
                 }
                 else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 40)
                 {
@@ -260,15 +268,12 @@ namespace Vista
                         horaFin = Convert.ToDateTime("20:00");
                     }
 
-                    Semana s0 = new Semana();
-                    s0.hora = horaInicio;
-                    semanas.Add(s0);
-                    int i = 1;
+                    int i = 0;
                     while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
                     {
                         Semana s = new Semana();
-                        horaSemana = horaSemana.AddMinutes(40);
                         s.hora = horaSemana;
+                        horaSemana = horaSemana.AddMinutes(40);
                         semanas.Add(s);
                         i++;
                     }
@@ -289,15 +294,12 @@ namespace Vista
                         horaFin = Convert.ToDateTime("20:00");
                     }
 
-                    Semana s0 = new Semana();
-                    s0.hora = horaInicio;
-                    semanas.Add(s0);
-                    int i = 1;
+                    int i = 0;
                     while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
                     {
                         Semana s = new Semana();
-                        horaSemana = horaSemana.AddMinutes(60);
                         s.hora = horaSemana;
+                        horaSemana = horaSemana.AddMinutes(60);
                         semanas.Add(s);
                         i++;
                     }
@@ -317,22 +319,19 @@ namespace Vista
                         horaFin = Convert.ToDateTime("20:00");
                     }
 
-                    Semana s0 = new Semana();
-                    s0.hora = horaInicio;
-                    semanas.Add(s0);
-                    int i = 1;
+                    int i = 0;
                     while (TimeSpan.Compare(horaSemana.TimeOfDay, horaFin.TimeOfDay) < 0)
                     {
                         Semana s = new Semana();
-                        horaSemana = horaSemana.AddMinutes(80);
                         s.hora = horaSemana;
+                        horaSemana = horaSemana.AddMinutes(80);
                         semanas.Add(s);
                         i++;
                     }
-                }                
-                
-                
+                }
 
+
+                string hola;
 
             }
             else
@@ -356,7 +355,42 @@ namespace Vista
             dateFechaCita.Text = "" + dateFechaCita.Value.AddDays(-7);
         }
 
+        private Cita ponerCita(HorarioTerapeuta horarioTerapeutaDia, List<Cita> citasDia, DateTime horaDia)
+        {
+            Cita c = new Cita();
+            if (TimeSpan.Compare(horarioTerapeutaDia.horaInicio.TimeOfDay, horaDia.TimeOfDay) <= 0 && TimeSpan.Compare(horarioTerapeutaDia.horaFin.TimeOfDay, horaDia.TimeOfDay) >= 0)
+            {
+                c = encuentraHoraEnCita(citasDia, horaDia);
+                if (c == null)
+                {
 
+                }
+                else
+                {
+
+                }
+                
+            }
+            else
+            {
+                c.estado = "No Disponible";
+            }
+            return c;
+        }
+
+        private Cita encuentraHoraEnCita(List<Cita> citasDia, DateTime horaDia)
+        {
+            Cita c = null;
+            foreach (Cita ci in citasDia)
+            {
+                if (TimeSpan.Compare(ci.horaCita.TimeOfDay, horaDia.TimeOfDay) == 0)
+                {
+
+                }
+            }
+            return c;
+        }
+        
     }
 }
 

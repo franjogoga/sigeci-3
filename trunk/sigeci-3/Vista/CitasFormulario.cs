@@ -220,6 +220,8 @@ namespace Vista
                 DateTime horaSemana;
                 if ((comboServicios.SelectedItem as Servicio).intervaloHora == 30)
                 {
+
+
                     if ((comboTurno.SelectedItem as Turno).idTurno == 0)
                     {
                         horaSemana = Convert.ToDateTime("08:00");
@@ -368,9 +370,7 @@ namespace Vista
                     }
                 }
 
-                llenarCitas();
-                
-
+                llenarCitas();                
             }
             else
             {

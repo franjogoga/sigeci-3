@@ -168,12 +168,7 @@ namespace Vista
                 }
                 else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Saturday"))
                 {
-                    fechaLunes = dateFechaCita.Value.AddDays(-5);
-                    fechaMartes = dateFechaCita.Value.AddDays(-4);
-                    fechaMiercoles = dateFechaCita.Value.AddDays(-3);
-                    fechaJueves = dateFechaCita.Value.AddDays(-2);
-                    fechaViernes = dateFechaCita.Value.AddDays(-1);
-                    fechaSabado = dateFechaCita.Value.AddDays(0);
+                    poneFechas(-5, -4, -3, -2, -1, 0);                    
                 }
 
                 citasLunes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaLunes);
@@ -316,7 +311,12 @@ namespace Vista
 
         private void poneFechas(int diasLunes, int diasMartes, int diasMiercoles, int diasJueves, int diasViernes, int diasSabado)
         {
-
+            fechaLunes = dateFechaCita.Value.AddDays(diasLunes);
+            fechaMartes = dateFechaCita.Value.AddDays(diasMartes);
+            fechaMiercoles = dateFechaCita.Value.AddDays(diasMiercoles);
+            fechaJueves = dateFechaCita.Value.AddDays(diasJueves);
+            fechaViernes = dateFechaCita.Value.AddDays(diasViernes);
+            fechaSabado = dateFechaCita.Value.AddDays(diasSabado);
         }
 
 

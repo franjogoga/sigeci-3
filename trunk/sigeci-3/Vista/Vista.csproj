@@ -211,6 +211,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCita.rdlc" />
     <EmbeddedResource Include="ServiciosForm.resx">
       <DependentUpon>ServiciosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\Modelo.Cita.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

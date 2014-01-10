@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.CitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
@@ -79,12 +80,17 @@
             this.txtAdelanto = new System.Windows.Forms.TextBox();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.txtCosto = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.CitaBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // CitaBindingSource
+            // 
+            this.CitaBindingSource.DataSource = typeof(Modelo.Cita);
             // 
             // groupBox1
             // 
@@ -686,6 +692,8 @@
             this.Name = "CitasFornulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas";
+            this.Load += new System.EventHandler(this.CitasFornulario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CitaBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -749,5 +757,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jueves;
         private System.Windows.Forms.DataGridViewTextBoxColumn viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn sabado;
+        private System.Windows.Forms.BindingSource CitaBindingSource;
     }
 }

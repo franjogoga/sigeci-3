@@ -1580,13 +1580,92 @@ namespace Controlador
 
         public bool verificaCrucesHorarioPaciente(Paciente paciente, DateTime horaCita, DateTime fechaCita)
         {
-            return false;
+            int numFilas = 0;                        
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("select * from cita " + "where paciente_persona_idPersona=@idPaciente and horaCita=@horaCita and fechaCita=@fechaCita");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@idPaciente",paciente.persona.idPersona),
+                new OleDbParameter("@horaCita",horaCita.TimeOfDay),
+                new OleDbParameter("@fechaCita",fechaCita.Date),                
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas > 0;            
         }
 
         public bool procesarCita(Cita cita, Pago pago, out int idCita)
         {
-            idCita = 0;
-            return false;
+            int idC = 0, numFilas = 0;
+            bool resultadoPago=false;
+            OleDbDataReader r = null;
+            ControladorPago controladorPago = ControladorPago.Instancia();
+            citas.Clear();
+
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("insert into cita(paciente_persona_idPersona,fechaCita,horaCita,servicio_idServicio,modalidad_idModalidad,estado,fechaRegistro,costo,descuento,estadoEvaluacion,terapeuta_persona_idPersona) " +
+                                                        "values(@idPaciente,@fechaCita,@horaCita,@idServicio,@idModalidad,@estado,@fechaRegistro,@costo,@descuento,@estadoEvaluacion,@idPersona)");
+
+            OleDbCommand comando2 = new OleDbCommand("SELECT TOP 1 * FROM cita order by idCita DESC");            
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@idPaciente",cita.paciente.persona.idPersona),
+                new OleDbParameter("@fechaCita",cita.fechaCita),
+                new OleDbParameter("@horaCita",cita.horaCita),
+                new OleDbParameter("@idServicio",cita.servicio.idServicio),
+                new OleDbParameter("@idModalidad",cita.modalidad.idModalidad),
+                new OleDbParameter("@estado",cita.estado),
+                new OleDbParameter("@fechaRegistro",cita.fechaRegistro),
+                new OleDbParameter("@costo",cita.costo),
+                new OleDbParameter("@descuento",cita.descuento),
+                new OleDbParameter("@estadoEvaluacion",cita.estadoEvaluacion),
+                new OleDbParameter("@idPersona",cita.terapeuta.persona.idPersona),
+            });
+
+            comando.Connection = conexion;
+            comando2.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+                r = comando2.ExecuteReader();
+
+                while (r.Read())
+                {
+                    idC = r.GetInt32(0);
+                }                
+                resultadoPago = controladorPago.procesarPago(pago, idC);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            idCita = idC;
+            return numFilas == 1 && resultadoPago;
         }
     }
 
@@ -1651,6 +1730,13 @@ namespace Controlador
             return pagos;
         }
 
+        public bool procesarPago(Pago pago, int idCita)
+        {
+
+
+
+            return true;
+        }
     }
 
 

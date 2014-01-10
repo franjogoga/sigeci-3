@@ -1132,6 +1132,50 @@ namespace Controlador
             return servicios;
         }
 
+        public Servicio getServicio(int idServicio)
+        {
+            Servicio servicio = null;
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("select * from servicio where idServicio=@idServicio and estado='activo' order by idServicio ASC");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@idServicio",idServicio),                
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    servicio = new Servicio();
+                    servicio.idServicio = r.GetInt32(0);
+                    servicio.nombreServicio = r.GetString(1);
+                    servicio.intervaloHora = r.GetInt32(2);
+                    servicio.costo = r.GetFloat(3);
+                    servicio.maximoPacientes = r.GetInt32(4);
+                    servicio.estado = r.GetString(5);
+
+                    servicios.Add(servicio);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return servicio;
+        }
+
         public bool agregarServicio(Servicio servicio)
         {
             int numFilas = 0;
@@ -1577,14 +1621,38 @@ namespace Controlador
             return citas;
         }
 
-
-        public bool verificaCrucesHorarioPaciente(Paciente paciente, DateTime horaCita, DateTime fechaCita, int intervaloHora)
+        private bool seCruza(Cita c, DateTime horaCita, int intervaloHora)
         {
             bool resultado = false;
-            int numFilas = 0;           
-            OleDbDataReader r = null; 
+            double dif = Math.Abs(c.horaCita.TimeOfDay.TotalMinutes-horaCita.TimeOfDay.TotalMinutes);
+            if (TimeSpan.Compare(horaCita.TimeOfDay, c.horaCita.TimeOfDay) < 0)
+            {
+                if (dif < intervaloHora)
+                {
+                    resultado = true;
+                }
+            }
+            if (TimeSpan.Compare(horaCita.TimeOfDay, c.horaCita.TimeOfDay) == 0)
+            {
+                resultado = true;
+            }
+            if (TimeSpan.Compare(horaCita.TimeOfDay, c.horaCita.TimeOfDay) > 0)
+            {
+                if (dif < c.servicio.intervaloHora)
+                {
+                    resultado = true;
+                }
+            }
+            return resultado;
+        }
+
+        public bool tieneCrucesHorarioPaciente(Paciente paciente, DateTime horaCita, DateTime fechaCita, int intervaloHora)
+        {
+            bool resultado = false;            
+            OleDbDataReader r = null;
+            ControladorServicio controladorServicio = ControladorServicio.Instancia();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
-            OleDbCommand comando = new OleDbCommand("select * from cita " + "where paciente_persona_idPersona=@idPaciente and fechaCita=@fechaCita order by idCita asc");
+            OleDbCommand comando = new OleDbCommand("select * from cita " + "where paciente_persona_idPersona=@idPaciente and fechaCita=@fechaCita and not estado='Cancelado' order by idCita asc");
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
@@ -1601,19 +1669,15 @@ namespace Controlador
 
                 while (r.Read())
                 {
-                    Cita c = new Cita();
-                    c.idCita = r.GetInt32(0);
-                    c.fechaCita = r.GetDateTime(2);
+                    Cita c = new Cita();                    
                     c.horaCita = r.GetDateTime(3);
-                    Servicio s = new Servicio();
-                    s.idServicio = r.GetInt32(12);
-                    s.nombreServicio = r.GetString(13);
-                    s.intervaloHora = r.GetInt32(14);
+                    Servicio s = controladorServicio.getServicio(r.GetInt32(4));                    
                     c.servicio = s;
-
-
+                    if (seCruza(c, horaCita, intervaloHora))
+                    {
+                        resultado = true;
+                    }
                 }
-
             }
             catch (Exception e)
             {
@@ -1623,7 +1687,7 @@ namespace Controlador
             {
                 conexion.Close();
             }
-            return numFilas > 0;            
+            return resultado;            
         }
 
         public bool reservarCita(Cita cita, Pago pago, out int idCita)

@@ -29,10 +29,12 @@ namespace Vista
         private DateTime fechaLunes, fechaMartes, fechaMiercoles, fechaJueves, fechaViernes, fechaSabado;
         private DateTime horaInicio;
         private DateTime horaFin;
+        private CitasForm padre;
 
-        public CitasFornulario()
+        public CitasFornulario(CitasForm citasForm)
         {
             InitializeComponent();
+            this.padre = citasForm;
             llenarServicios();
             llenarTurnos();
         }
@@ -179,6 +181,7 @@ namespace Vista
                         {
                             MessageBox.Show("Cita N° "+idCita+"\n"+c.fechaCita + "  "+c.horaCita+"\n"+"Servicio : "+c.servicio.nombreServicio+"\n"+"Paciente : "+c.paciente.persona.nombres + " "+c.paciente.persona.apellidoPaterno + " "+c.paciente.persona.apellidoMaterno);
                             this.Dispose();
+                            padre.llenarCitas("","","",c.servicio.idServicio.ToString(),c.fechaCita);
                         }
                         else
                         {

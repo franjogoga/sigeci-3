@@ -34,7 +34,7 @@ namespace Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            CitasFornulario citasFormulario = new CitasFornulario();
+            CitasFornulario citasFormulario = new CitasFornulario(this);
             citasFormulario.ShowDialog();
         }
 

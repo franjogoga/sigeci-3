@@ -55,6 +55,13 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.navFecha = new DevComponents.DotNetBar.Controls.PageNavigator();
             this.dateFechaCita = new System.Windows.Forms.DateTimePicker();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
@@ -72,13 +79,6 @@
             this.txtAdelanto = new System.Windows.Forms.TextBox();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.txtCosto = new System.Windows.Forms.TextBox();
-            this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -415,6 +415,56 @@
             this.dgvCitas.ReadOnly = true;
             this.dgvCitas.Size = new System.Drawing.Size(730, 166);
             this.dgvCitas.TabIndex = 18;
+            this.dgvCitas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCitas_MouseDoubleClick);
+            // 
+            // horaCita
+            // 
+            this.horaCita.HeaderText = "Hora";
+            this.horaCita.Name = "horaCita";
+            this.horaCita.ReadOnly = true;
+            this.horaCita.Width = 70;
+            // 
+            // lunes
+            // 
+            this.lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lunes.HeaderText = "Lunes";
+            this.lunes.Name = "lunes";
+            this.lunes.ReadOnly = true;
+            // 
+            // martes
+            // 
+            this.martes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.martes.HeaderText = "Martes";
+            this.martes.Name = "martes";
+            this.martes.ReadOnly = true;
+            // 
+            // miercoles
+            // 
+            this.miercoles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.miercoles.HeaderText = "Miércoles";
+            this.miercoles.Name = "miercoles";
+            this.miercoles.ReadOnly = true;
+            // 
+            // jueves
+            // 
+            this.jueves.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.jueves.HeaderText = "Jueves";
+            this.jueves.Name = "jueves";
+            this.jueves.ReadOnly = true;
+            // 
+            // viernes
+            // 
+            this.viernes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.viernes.HeaderText = "Viernes";
+            this.viernes.Name = "viernes";
+            this.viernes.ReadOnly = true;
+            // 
+            // sabado
+            // 
+            this.sabado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sabado.HeaderText = "Sábado";
+            this.sabado.Name = "sabado";
+            this.sabado.ReadOnly = true;
             // 
             // navFecha
             // 
@@ -617,55 +667,6 @@
             this.txtCosto.ReadOnly = true;
             this.txtCosto.Size = new System.Drawing.Size(86, 20);
             this.txtCosto.TabIndex = 13;
-            // 
-            // horaCita
-            // 
-            this.horaCita.HeaderText = "Hora";
-            this.horaCita.Name = "horaCita";
-            this.horaCita.ReadOnly = true;
-            this.horaCita.Width = 70;
-            // 
-            // lunes
-            // 
-            this.lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lunes.HeaderText = "Lunes";
-            this.lunes.Name = "lunes";
-            this.lunes.ReadOnly = true;
-            // 
-            // martes
-            // 
-            this.martes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.martes.HeaderText = "Martes";
-            this.martes.Name = "martes";
-            this.martes.ReadOnly = true;
-            // 
-            // miercoles
-            // 
-            this.miercoles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.miercoles.HeaderText = "Miércoles";
-            this.miercoles.Name = "miercoles";
-            this.miercoles.ReadOnly = true;
-            // 
-            // jueves
-            // 
-            this.jueves.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.jueves.HeaderText = "Jueves";
-            this.jueves.Name = "jueves";
-            this.jueves.ReadOnly = true;
-            // 
-            // viernes
-            // 
-            this.viernes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.viernes.HeaderText = "Viernes";
-            this.viernes.Name = "viernes";
-            this.viernes.ReadOnly = true;
-            // 
-            // sabado
-            // 
-            this.sabado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sabado.HeaderText = "Sábado";
-            this.sabado.Name = "sabado";
-            this.sabado.ReadOnly = true;
             // 
             // CitasFornulario
             // 

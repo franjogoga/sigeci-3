@@ -123,7 +123,83 @@ namespace Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Cita c = new Cita();
+                int fila = dgvCitas.CurrentCell.RowIndex;
+                int columna = dgvCitas.CurrentCell.ColumnIndex;
+                if (columna != 0 && dgvCitas.CurrentCell.Value.ToString().Equals("Libre"))
+                {
+                    c.paciente = paciente;                    
+                    switch (columna)
+                    {
+                        case 1: 
+                            c.horaCita = semanas[fila].citaLunes.horaCita;
+                            c.fechaCita = semanas[fila].citaLunes.fechaCita;
+                            break;
+                        case 2: 
+                            c.horaCita = semanas[fila].citaMartes.horaCita;
+                            c.fechaCita = semanas[fila].citaMartes.fechaCita;
+                            break;
+                        case 3: 
+                            c.horaCita = semanas[fila].citaMiercoles.horaCita;
+                            c.fechaCita = semanas[fila].citaMiercoles.fechaCita; 
+                            break;
+                        case 4: 
+                            c.horaCita = semanas[fila].citaJueves.horaCita;
+                            c.fechaCita = semanas[fila].citaJueves.fechaCita;
+                            break;
+                        case 5: 
+                            c.horaCita = semanas[fila].citaViernes.horaCita;
+                            c.fechaCita = semanas[fila].citaJueves.fechaCita;
+                            break;
+                        case 6: 
+                            c.horaCita = semanas[fila].citaSabado.horaCita;
+                            c.fechaCita = semanas[fila].citaJueves.fechaCita;
+                            break;
+                    }
+                    c.servicio.idServicio = (comboServicios.SelectedItem as Servicio).idServicio;
+                    c.modalidad.idModalidad = (comboModalidad.SelectedItem as Modalidad).idModalidad;
+                    c.estado = "Reservado";
+                    c.fechaRegistro = DateTime.Now;
+                    c.costo = int.Parse(txtCostoFinal.Text);
+                    c.descuento = int.Parse(txtDescuento.Text);
+                    c.estadoEvaluacion = "-";
+                    c.terapeuta.persona.idPersona = (comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta;
 
+                    Pago pago = new Pago();
+                    pago.fecha = DateTime.Now;
+                    pago.monto = float.Parse(txtAdelanto.Text);
+                    pago.estado = "Reservado";
+
+                    int idCita = 0;
+                    if (controladorCita.verificaCrucesHorarioPaciente(paciente, c.horaCita, c.fechaCita))
+                    {
+                        if (controladorCita.procesarCita(c, pago, out idCita))
+                        {
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ha ocurrido un error");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El paciente tiene cita el mismo horario");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un horario libre");
+                }                                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("Faltan datos");
+            }
+            
         }
 
         private void txtDescuento_TextChanged(object sender, EventArgs e)
@@ -143,71 +219,79 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (!dateFechaCita.Value.DayOfWeek.ToString().Equals("Sunday"))
+            try
             {
-                semanas.Clear();
-                if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Monday"))
+                if (!dateFechaCita.Value.DayOfWeek.ToString().Equals("Sunday"))
                 {
-                    poneFechas(0, 1, 2, 3, 4, 5);                   
-                }
-                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Tuesday"))
-                {
-                    poneFechas(-1, 0, 1, 2, 3, 4);                
-                }
-                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Wednesday"))
-                {
-                    poneFechas(-2, -1, 0, 1, 2, 3);                    
-                }
-                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Thursday"))
-                {
-                    poneFechas(-3, -2, -1, 0, 1, 2);                    
-                }
-                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Friday"))
-                {
-                    poneFechas(-4, -3, -2, -1, 0, 1);                    
-                }
-                else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Saturday"))
-                {
-                    poneFechas(-5, -4, -3, -2, -1, 0);                    
-                }
+                    semanas.Clear();
+                    if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Monday"))
+                    {
+                        poneFechas(0, 1, 2, 3, 4, 5);
+                    }
+                    else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Tuesday"))
+                    {
+                        poneFechas(-1, 0, 1, 2, 3, 4);
+                    }
+                    else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Wednesday"))
+                    {
+                        poneFechas(-2, -1, 0, 1, 2, 3);
+                    }
+                    else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Thursday"))
+                    {
+                        poneFechas(-3, -2, -1, 0, 1, 2);
+                    }
+                    else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Friday"))
+                    {
+                        poneFechas(-4, -3, -2, -1, 0, 1);
+                    }
+                    else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Saturday"))
+                    {
+                        poneFechas(-5, -4, -3, -2, -1, 0);
+                    }
 
-                citasLunes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaLunes);
-                citasMartes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMartes);
-                citasMiercoles = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMiercoles);
-                citasJueves = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaJueves);
-                citasViernes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaViernes);
-                citasSabado = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaSabado);
+                    citasLunes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaLunes);
+                    citasMartes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMartes);
+                    citasMiercoles = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMiercoles);
+                    citasJueves = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaJueves);
+                    citasViernes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaViernes);
+                    citasSabado = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaSabado);
 
-                dgvCitas.Columns[1].HeaderText = "Lunes "+fechaLunes.ToShortDateString();
-                dgvCitas.Columns[2].HeaderText = "Martes "+fechaMartes.ToShortDateString();
-                dgvCitas.Columns[3].HeaderText = "Miércoles "+fechaMiercoles.ToShortDateString();
-                dgvCitas.Columns[4].HeaderText = "Jueves "+fechaJueves.ToShortDateString();
-                dgvCitas.Columns[5].HeaderText = "Viernes "+fechaViernes.ToShortDateString();
-                dgvCitas.Columns[6].HeaderText = "Sábado "+fechaSabado.ToShortDateString();
-                
-                Terapeuta terapeutaSeleccionado = controladorTerapeuta.getTerapeuta((comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta);                
+                    dgvCitas.Columns[1].HeaderText = "Lunes " + fechaLunes.ToShortDateString();
+                    dgvCitas.Columns[2].HeaderText = "Martes " + fechaMartes.ToShortDateString();
+                    dgvCitas.Columns[3].HeaderText = "Miércoles " + fechaMiercoles.ToShortDateString();
+                    dgvCitas.Columns[4].HeaderText = "Jueves " + fechaJueves.ToShortDateString();
+                    dgvCitas.Columns[5].HeaderText = "Viernes " + fechaViernes.ToShortDateString();
+                    dgvCitas.Columns[6].HeaderText = "Sábado " + fechaSabado.ToShortDateString();
 
-                if ((comboServicios.SelectedItem as Servicio).intervaloHora == 30)
-                {
-                    llenarSemana(30, "08:00", "14:00", "20:00", terapeutaSeleccionado);
+                    Terapeuta terapeutaSeleccionado = controladorTerapeuta.getTerapeuta((comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta);
+
+                    if ((comboServicios.SelectedItem as Servicio).intervaloHora == 30)
+                    {
+                        llenarSemana(30, "08:00", "14:00", "20:00", terapeutaSeleccionado);
+                    }
+                    else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 40)
+                    {
+                        llenarSemana(40, "08:00", "14:00", "20:00", terapeutaSeleccionado);
+                    }
+                    else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 60)
+                    {
+                        llenarSemana(60, "08:00", "14:00", "20:00", terapeutaSeleccionado);
+                    }
+                    else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 80)
+                    {
+                        llenarSemana(80, "08:00", "14:40", "20:00", terapeutaSeleccionado);
+                    }
+                    llenarCitas();
                 }
-                else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 40)
+                else
                 {
-                    llenarSemana(40, "08:00", "14:00", "20:00", terapeutaSeleccionado);                    
+                    MessageBox.Show("No hay citas Domingos");
                 }
-                else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 60)
-                {
-                    llenarSemana(60, "08:00", "14:00", "20:00", terapeutaSeleccionado);
-                }
-                else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 80)
-                {
-                    llenarSemana(80, "08:00", "14:40", "20:00", terapeutaSeleccionado);                    
-                }
-                llenarCitas();                
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("No hay citas Domingos");                
+                Console.WriteLine(ex);
+                MessageBox.Show("Seleccione una terapeuta");
             }
         }
 
@@ -226,7 +310,7 @@ namespace Vista
             dateFechaCita.Text = "" + dateFechaCita.Value.AddDays(-7);
         }
 
-        private Cita ponerCita(HorarioTerapeuta horarioTerapeutaDia, List<Cita> citasDia, DateTime horaDia)
+        private Cita ponerCita(HorarioTerapeuta horarioTerapeutaDia, List<Cita> citasDia, DateTime horaDia, DateTime fechaDia)
         {
             Cita c = new Cita();
             if (TimeSpan.Compare(horarioTerapeutaDia.horaInicio.TimeOfDay, horaDia.TimeOfDay) <= 0 && TimeSpan.Compare(horarioTerapeutaDia.horaFin.TimeOfDay, horaDia.TimeOfDay) >= 0)
@@ -235,6 +319,8 @@ namespace Vista
                 if (c == null)
                 {
                     c = new Cita();
+                    c.horaCita = horaDia;
+                    c.fechaCita = fechaDia;
                     c.estado = "Libre";
                 }                                
             }
@@ -292,12 +378,12 @@ namespace Vista
                 Semana s = new Semana();
                 s.hora = horaSemana;
                 horaSemana = horaSemana.AddMinutes(intervaloHora);
-                Cita citaLun = ponerCita(terapeutaSeleccionado.horarioTerapeuta[0], citasLunes, s.hora);
-                Cita citaMar = ponerCita(terapeutaSeleccionado.horarioTerapeuta[1], citasMartes, s.hora);
-                Cita citaMie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[2], citasMiercoles, s.hora);
-                Cita citaJue = ponerCita(terapeutaSeleccionado.horarioTerapeuta[3], citasJueves, s.hora);
-                Cita citaVie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[4], citasViernes, s.hora);
-                Cita citaSab = ponerCita(terapeutaSeleccionado.horarioTerapeuta[5], citasSabado, s.hora);
+                Cita citaLun = ponerCita(terapeutaSeleccionado.horarioTerapeuta[0], citasLunes, s.hora, fechaLunes);
+                Cita citaMar = ponerCita(terapeutaSeleccionado.horarioTerapeuta[1], citasMartes, s.hora, fechaMartes);
+                Cita citaMie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[2], citasMiercoles, s.hora, fechaMiercoles);
+                Cita citaJue = ponerCita(terapeutaSeleccionado.horarioTerapeuta[3], citasJueves, s.hora, fechaJueves);
+                Cita citaVie = ponerCita(terapeutaSeleccionado.horarioTerapeuta[4], citasViernes, s.hora, fechaViernes);
+                Cita citaSab = ponerCita(terapeutaSeleccionado.horarioTerapeuta[5], citasSabado, s.hora, fechaSabado);
                 s.citaLunes = citaLun;
                 s.citaMartes = citaMar;
                 s.citaMiercoles = citaMie;
@@ -317,6 +403,36 @@ namespace Vista
             fechaJueves = dateFechaCita.Value.AddDays(diasJueves);
             fechaViernes = dateFechaCita.Value.AddDays(diasViernes);
             fechaSabado = dateFechaCita.Value.AddDays(diasSabado);
+        }
+
+        private void dgvCitas_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                int fila = dgvCitas.CurrentCell.RowIndex;
+                int columna = dgvCitas.CurrentCell.ColumnIndex;
+                if (columna != 0)
+                {
+                    if (dgvCitas.CurrentCell.Value.ToString().Equals("Reservado") || dgvCitas.CurrentCell.Value.ToString().Equals("Confirmado"))
+                    {
+                        Cita c = null;
+                        switch (columna)
+                        {                            
+                            case 1: c = semanas[fila].citaLunes; break;
+                            case 2: c = semanas[fila].citaMartes; break;
+                            case 3: c = semanas[fila].citaMiercoles; break;
+                            case 4: c = semanas[fila].citaJueves; break;
+                            case 5: c = semanas[fila].citaViernes; break;
+                            case 6: c = semanas[fila].citaSabado; break;
+                        }
+                        MessageBox.Show(c.fechaCita.ToShortDateString() + "   "+c.horaCita.ToShortTimeString()+ "\n"+ c.estado + "\n"+c.paciente.persona.nombres + " "+c.paciente.persona.apellidoPaterno + " "+c.paciente.persona.apellidoMaterno);
+                    }
+                }                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
 

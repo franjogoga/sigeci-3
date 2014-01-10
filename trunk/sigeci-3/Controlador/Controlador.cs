@@ -1576,6 +1576,18 @@ namespace Controlador
             }
             return citas;
         }
+
+
+        public bool verificaCrucesHorarioPaciente(Paciente paciente, DateTime horaCita, DateTime fechaCita)
+        {
+            return false;
+        }
+
+        public bool procesarCita(Cita cita, Pago pago, out int idCita)
+        {
+            idCita = 0;
+            return false;
+        }
     }
 
     public class ControladorPago

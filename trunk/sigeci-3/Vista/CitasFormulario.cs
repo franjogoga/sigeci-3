@@ -196,7 +196,7 @@ namespace Vista
                     pago.estado = "Reservado";
 
                     int idCita = 0;
-                    if (!controladorCita.verificaCrucesHorarioPaciente(paciente, c.horaCita, c.fechaCita, s.intervaloHora))
+                    if (!controladorCita.tieneCrucesHorarioPaciente(paciente, c.horaCita, c.fechaCita, s.intervaloHora))
                     {
                         if (controladorCita.reservarCita(c, pago, out idCita))
                         {
@@ -211,7 +211,7 @@ namespace Vista
                     }
                     else
                     {
-                        MessageBox.Show("El paciente tiene cita el mismo horario");
+                        MessageBox.Show("El paciente tiene cita en el mismo horario");
                     }
                 }
                 else

@@ -90,6 +90,60 @@ namespace Vista
             }
         }
 
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea confirmar esta cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                try
+                {
+                    Cita cita = buscarCita(int.Parse(dgvCitas.CurrentRow.Cells[0].Value.ToString()));
+                    Pago pago = new Pago();
+                    pago.idCita = cita.idCita;
+                    pago.fecha = DateTime.Now;
+                    pago.monto = int.Parse(dgvCitas.CurrentRow.Cells[5].Value.ToString()) - int.Parse(dgvCitas.CurrentRow.Cells[6].Value.ToString());
+                    pago.estado = "Confirmado";
+                    if (controladorCita.confirmarCita(cita, pago))
+                    {
+                        MessageBox.Show("Cita confirmada");
+                        dgvCitas.Rows.Clear();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("No ha seleccionado una cita");
+                }
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea cancelar esta cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                try
+                {
+                    Cita cita = buscarCita(int.Parse(dgvCitas.CurrentRow.Cells[0].Value.ToString()));
+                    Pago pago = new Pago();
+                    pago.idCita = cita.idCita;
+                    pago.fecha = DateTime.Now;
+                    pago.monto = (-1)*int.Parse(dgvCitas.CurrentRow.Cells[6].Value.ToString());
+                    pago.estado = "Cancelado";
+                    if (controladorCita.cancelarCita(cita, pago))
+                    {
+                        MessageBox.Show("Cita cancelada");
+                        dgvCitas.Rows.Clear();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("No ha seleccionado una cita");
+                }
+            }
+        }
+
 
 
     }

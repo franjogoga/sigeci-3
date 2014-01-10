@@ -173,11 +173,12 @@ namespace Vista
                     pago.estado = "Reservado";
 
                     int idCita = 0;
-                    if (controladorCita.verificaCrucesHorarioPaciente(paciente, c.horaCita, c.fechaCita))
+                    if (!controladorCita.verificaCrucesHorarioPaciente(paciente, c.horaCita, c.fechaCita))
                     {
                         if (controladorCita.procesarCita(c, pago, out idCita))
                         {
-                            
+                            MessageBox.Show("Cita N° "+idCita+"\n"+c.fechaCita + "  "+c.horaCita+"\n"+"Servicio : "+c.servicio.nombreServicio+"\n"+"Paciente : "+c.paciente.persona.nombres + " "+c.paciente.persona.apellidoPaterno + " "+c.paciente.persona.apellidoMaterno);
+                            this.Dispose();
                         }
                         else
                         {
@@ -438,7 +439,7 @@ namespace Vista
         private void CitasFornulario_Load(object sender, EventArgs e)
         {
 
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
         }
 
 

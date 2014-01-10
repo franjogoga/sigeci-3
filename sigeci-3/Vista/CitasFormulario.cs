@@ -435,6 +435,12 @@ namespace Vista
             }
         }
 
+        private void CitasFornulario_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
+
 
 
     }

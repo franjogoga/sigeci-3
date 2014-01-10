@@ -223,8 +223,7 @@ namespace Vista
             {
                 Console.WriteLine(ex);
                 MessageBox.Show("Faltan datos");
-            }
-            
+            }            
         }
 
         private void txtDescuento_TextChanged(object sender, EventArgs e)

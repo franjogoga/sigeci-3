@@ -1732,10 +1732,37 @@ namespace Controlador
 
         public bool procesarPago(Pago pago, int idCita)
         {
+            int numFilas = 0;
+            pagos.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
+            OleDbCommand comando = new OleDbCommand("insert into pago(cita_idCita,monto,fecha,estado) " +
+                                                        "values(@idCita,@monto,@fecha,@estado)");
 
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@idCita",idCita),
+                new OleDbParameter("@monto",pago.monto),
+                new OleDbParameter("@fecha",pago.fecha),
+                new OleDbParameter("@estado",pago.estado),                
+            });
 
-            return true;
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas == 1;            
         }
     }
 

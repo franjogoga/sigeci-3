@@ -86,6 +86,20 @@ namespace Vista
             this.Dispose();
         }
 
+        private Servicio buscarServicio(int id)
+        {
+            Servicio servicio = null;
+            foreach (Servicio s in servicios)
+            {
+                if (id == s.idServicio)
+                {
+                    servicio = s;
+                    break;
+                }
+            }
+            return servicio;
+        }
+
         private void llenarTerapeutas(int idServicio)
         {
             terapeutas = controladorTerapeuta.getListaTerapeutasxServicio(idServicio);
@@ -153,21 +167,28 @@ namespace Vista
                             break;
                         case 5: 
                             c.horaCita = semanas[fila].citaViernes.horaCita;
-                            c.fechaCita = semanas[fila].citaJueves.fechaCita;
+                            c.fechaCita = semanas[fila].citaViernes.fechaCita;
                             break;
                         case 6: 
                             c.horaCita = semanas[fila].citaSabado.horaCita;
-                            c.fechaCita = semanas[fila].citaJueves.fechaCita;
+                            c.fechaCita = semanas[fila].citaSabado.fechaCita;
                             break;
                     }
-                    c.servicio.idServicio = (comboServicios.SelectedItem as Servicio).idServicio;
-                    c.modalidad.idModalidad = (comboModalidad.SelectedItem as Modalidad).idModalidad;
+                    Servicio s = buscarServicio((comboServicios.SelectedItem as Servicio).idServicio);
+                    c.servicio = s;
+                    Modalidad m = new Modalidad();
+                    m.idModalidad = (comboModalidad.SelectedItem as Modalidad).idModalidad;
+                    c.modalidad = m;
                     c.estado = "Reservado";
                     c.fechaRegistro = DateTime.Now;
                     c.costo = int.Parse(txtCostoFinal.Text);
                     c.descuento = int.Parse(txtDescuento.Text);
                     c.estadoEvaluacion = "-";
-                    c.terapeuta.persona.idPersona = (comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta;
+                    Terapeuta t = new Terapeuta();
+                    Persona p = new Persona();
+                    p.idPersona = (comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta;
+                    t.persona = p;
+                    c.terapeuta = t;
 
                     Pago pago = new Pago();
                     pago.fecha = DateTime.Now;
@@ -175,9 +196,9 @@ namespace Vista
                     pago.estado = "Reservado";
 
                     int idCita = 0;
-                    if (!controladorCita.verificaCrucesHorarioPaciente(paciente, c.horaCita, c.fechaCita))
+                    if (!controladorCita.verificaCrucesHorarioPaciente(paciente, c.horaCita, c.fechaCita, s.intervaloHora))
                     {
-                        if (controladorCita.procesarCita(c, pago, out idCita))
+                        if (controladorCita.reservarCita(c, pago, out idCita))
                         {
                             MessageBox.Show("Cita N° "+idCita+"\n"+c.fechaCita + "  "+c.horaCita+"\n"+"Servicio : "+c.servicio.nombreServicio+"\n"+"Paciente : "+c.paciente.persona.nombres + " "+c.paciente.persona.apellidoPaterno + " "+c.paciente.persona.apellidoMaterno);
                             this.Dispose();

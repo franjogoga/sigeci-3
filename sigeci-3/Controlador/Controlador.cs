@@ -1578,17 +1578,17 @@ namespace Controlador
         }
 
 
-        public bool verificaCrucesHorarioPaciente(Paciente paciente, DateTime horaCita, DateTime fechaCita)
+        public bool verificaCrucesHorarioPaciente(Paciente paciente, DateTime horaCita, DateTime fechaCita, int intervaloHora)
         {
-            int numFilas = 0;                        
+            bool resultado = false;
+            int numFilas = 0;           
+            OleDbDataReader r = null; 
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
-
-            OleDbCommand comando = new OleDbCommand("select * from cita " + "where paciente_persona_idPersona=@idPaciente and horaCita=@horaCita and fechaCita=@fechaCita");
+            OleDbCommand comando = new OleDbCommand("select * from cita " + "where paciente_persona_idPersona=@idPaciente and fechaCita=@fechaCita order by idCita asc");
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
-                new OleDbParameter("@idPaciente",paciente.persona.idPersona),
-                new OleDbParameter("@horaCita",horaCita.TimeOfDay),
+                new OleDbParameter("@idPaciente",paciente.persona.idPersona),                
                 new OleDbParameter("@fechaCita",fechaCita.Date),                
             });
 
@@ -1597,7 +1597,23 @@ namespace Controlador
             try
             {
                 conexion.Open();
-                numFilas = comando.ExecuteNonQuery();
+                r = comando.ExecuteReader();
+
+                while (r.Read())
+                {
+                    Cita c = new Cita();
+                    c.idCita = r.GetInt32(0);
+                    c.fechaCita = r.GetDateTime(2);
+                    c.horaCita = r.GetDateTime(3);
+                    Servicio s = new Servicio();
+                    s.idServicio = r.GetInt32(12);
+                    s.nombreServicio = r.GetString(13);
+                    s.intervaloHora = r.GetInt32(14);
+                    c.servicio = s;
+
+
+                }
+
             }
             catch (Exception e)
             {
@@ -1610,7 +1626,7 @@ namespace Controlador
             return numFilas > 0;            
         }
 
-        public bool procesarCita(Cita cita, Pago pago, out int idCita)
+        public bool reservarCita(Cita cita, Pago pago, out int idCita)
         {
             int idC = 0, numFilas = 0;
             bool resultadoPago=false;
@@ -1666,6 +1682,76 @@ namespace Controlador
             }
             idCita = idC;
             return numFilas == 1 && resultadoPago;
+        }
+
+        public bool confirmarCita(Cita cita, Pago pago)
+        {
+            int numFilas = 0;
+            bool resultadoPago = false;
+            ControladorPago controladorPago = ControladorPago.Instancia();
+            citas.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update cita set estado=@estado " +
+                                                    "where idCita=@idCita");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@estado","Confirmado"),
+                new OleDbParameter("@idServicio",cita.idCita),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+                resultadoPago = controladorPago.procesarPago(pago, cita.idCita);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas == 1 && resultadoPago;            
+        }
+
+        public bool cancelarCita(Cita cita, Pago pago)
+        {
+            int numFilas = 0;
+            bool resultadoPago = false;
+            ControladorPago controladorPago = ControladorPago.Instancia();
+            citas.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update cita set estado=@estado " +
+                                                    "where idCita=@idCita");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@estado","Cancelado"),
+                new OleDbParameter("@idServicio",cita.idCita),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+                resultadoPago = controladorPago.procesarPago(pago, cita.idCita);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas == 1 && resultadoPago;     
         }
     }
 

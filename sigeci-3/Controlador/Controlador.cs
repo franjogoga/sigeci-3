@@ -1708,12 +1708,12 @@ namespace Controlador
             comando.Parameters.AddRange(new OleDbParameter[]
             {
                 new OleDbParameter("@idPaciente",cita.paciente.persona.idPersona),
-                new OleDbParameter("@fechaCita",cita.fechaCita),
-                new OleDbParameter("@horaCita",cita.horaCita),
+                new OleDbParameter("@fechaCita",cita.fechaCita.Date),
+                new OleDbParameter("@horaCita",cita.horaCita.TimeOfDay),
                 new OleDbParameter("@idServicio",cita.servicio.idServicio),
                 new OleDbParameter("@idModalidad",cita.modalidad.idModalidad),
                 new OleDbParameter("@estado",cita.estado),
-                new OleDbParameter("@fechaRegistro",cita.fechaRegistro),
+                new OleDbParameter("@fechaRegistro",cita.fechaRegistro.Date),
                 new OleDbParameter("@costo",cita.costo),
                 new OleDbParameter("@descuento",cita.descuento),
                 new OleDbParameter("@estadoEvaluacion",cita.estadoEvaluacion),
@@ -1761,7 +1761,7 @@ namespace Controlador
             comando.Parameters.AddRange(new OleDbParameter[]
             {
                 new OleDbParameter("@estado","Confirmado"),
-                new OleDbParameter("@idServicio",cita.idCita),
+                new OleDbParameter("@idCita",cita.idCita),
             });
 
             comando.Connection = conexion;
@@ -1796,7 +1796,7 @@ namespace Controlador
             comando.Parameters.AddRange(new OleDbParameter[]
             {
                 new OleDbParameter("@estado","Cancelado"),
-                new OleDbParameter("@idServicio",cita.idCita),
+                new OleDbParameter("@idCita",cita.idCita),
             });
 
             comando.Connection = conexion;
@@ -1839,7 +1839,7 @@ namespace Controlador
 
         public List<Pago> getListaPagosxCita(int idCita)
         {
-            pagos.Clear();
+            List<Pago> ps = new List<Pago>();
             OleDbDataReader r = null;
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
@@ -1865,7 +1865,7 @@ namespace Controlador
                     pago.fecha = r.GetDateTime(3);
                     pago.estado = r.GetString(4);
 
-                    pagos.Add(pago);
+                    ps.Add(pago);
                 }
             }
             catch (Exception e)
@@ -1877,13 +1877,12 @@ namespace Controlador
                 r.Close();
                 conexion.Close();
             }
-            return pagos;
+            return ps;
         }
 
         public bool procesarPago(Pago pago, int idCita)
         {
-            int numFilas = 0;
-            pagos.Clear();
+            int numFilas = 0;            
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
             OleDbCommand comando = new OleDbCommand("insert into pago(cita_idCita,monto,fecha,estado) " +
@@ -1893,7 +1892,7 @@ namespace Controlador
             {
                 new OleDbParameter("@idCita",idCita),
                 new OleDbParameter("@monto",pago.monto),
-                new OleDbParameter("@fecha",pago.fecha),
+                new OleDbParameter("@fecha",pago.fecha.Date),
                 new OleDbParameter("@estado",pago.estado),                
             });
 

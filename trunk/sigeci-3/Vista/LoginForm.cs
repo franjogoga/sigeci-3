@@ -20,6 +20,7 @@ namespace Vista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+
             PrincipalForm principalForm = new PrincipalForm();
             principalForm.Show();
             this.Hide();

@@ -482,7 +482,6 @@ namespace Vista
         {
             //this.reportViewer1.RefreshReport();
         }
-
     }
 }
 

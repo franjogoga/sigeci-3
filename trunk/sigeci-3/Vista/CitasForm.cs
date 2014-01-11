@@ -25,6 +25,7 @@ namespace Vista
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             llenarServicios();
+            //cancelar las citas que se pasaron los dos dias antes de confirmar
         }
 
         private void CitasForm_FormClosing(object sender, FormClosingEventArgs e)

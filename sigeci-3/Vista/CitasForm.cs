@@ -124,7 +124,7 @@ namespace Vista
                         if (controladorCita.confirmarCita(cita, pago))
                         {
                             MessageBox.Show("Cita confirmada");
-                            llenarCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), Convert.ToDateTime(dgvCitas.CurrentRow.Cells[1].Value.ToString()));
+                            llenarCitas("", "", "", cita.servicio.idServicio.ToString(), Convert.ToDateTime(dgvCitas.CurrentRow.Cells[1].Value.ToString()));
                         }
                     }
                     else
@@ -158,7 +158,7 @@ namespace Vista
                         if (controladorCita.cancelarCita(cita, pago))
                         {
                             MessageBox.Show("Cita cancelada");
-                            llenarCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), Convert.ToDateTime(dgvCitas.CurrentRow.Cells[1].Value.ToString()));
+                            llenarCitas("", "", "", cita.servicio.idServicio.ToString(), Convert.ToDateTime(dgvCitas.CurrentRow.Cells[1].Value.ToString()));
                         }
                     }
                     else

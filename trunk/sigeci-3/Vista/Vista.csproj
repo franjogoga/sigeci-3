@@ -268,22 +268,10 @@
     <None Include="Resources\editar2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\IMG_20131027_0001 - copia.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\IMG_20131027_0001.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\kids.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo - copia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\maletin.png" />

@@ -377,7 +377,30 @@ namespace Vista
             {
                 fila = new string[] { ""+s.hora.ToShortTimeString(), s.citaLunes.estado, s.citaMartes.estado, s.citaMiercoles.estado, s.citaJueves.estado, s.citaViernes.estado, s.citaSabado.estado};
                 dgvCitas.Rows.Add(fila);
-            }        
+            }
+
+            foreach (DataGridViewRow row in dgvCitas.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value.ToString().Equals("Libre") || cell.Value.ToString().Equals("Cancelado"))
+                    {                        
+                    }
+                    if (cell.Value.ToString().Equals("No Disponible"))
+                    {
+                        cell.Style.BackColor = Color.Tomato;
+                    }
+                    if (cell.Value.ToString().Equals("Confirmado"))
+                    {
+                        cell.Style.BackColor = Color.MediumSpringGreen;
+                    }
+                    if (cell.Value.ToString().Equals("Reservado"))
+                    {
+                        cell.Style.BackColor = Color.Yellow;
+                    }
+
+                }                
+            }
         }
 
         private void llenarSemana(int intervaloHora, string strhora1, string strhora2, string strhora3, Terapeuta terapeutaSeleccionado)

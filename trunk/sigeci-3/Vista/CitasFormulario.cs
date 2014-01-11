@@ -200,7 +200,7 @@ namespace Vista
                     {
                         if (controladorCita.reservarCita(c, pago, out idCita))
                         {
-                            MessageBox.Show("Cita N° "+idCita+"\n"+c.fechaCita + "  "+c.horaCita+"\n"+"Servicio : "+c.servicio.nombreServicio+"\n"+"Paciente : "+c.paciente.persona.nombres + " "+c.paciente.persona.apellidoPaterno + " "+c.paciente.persona.apellidoMaterno);
+                            MessageBox.Show("Cita N° " + idCita + "\n" + c.fechaCita.ToShortDateString() + "  " + c.horaCita.ToShortTimeString() + "\n" + "Servicio : " + c.servicio.nombreServicio + "\n" + "Terapeuta : " + (comboTerapeuta.SelectedItem as TerapeutaCombo).nombreCompleto + "\n" + "Paciente : " + c.paciente.persona.nombres + " " + c.paciente.persona.apellidoPaterno + " " + c.paciente.persona.apellidoMaterno);
                             this.Dispose();
                             padre.llenarCitas("","","",c.servicio.idServicio.ToString(),c.fechaCita);
                         }

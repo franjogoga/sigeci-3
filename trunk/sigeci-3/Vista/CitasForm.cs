@@ -97,16 +97,23 @@ namespace Vista
             {
                 try
                 {
-                    Cita cita = buscarCita(int.Parse(dgvCitas.CurrentRow.Cells[0].Value.ToString()));
-                    Pago pago = new Pago();
-                    pago.idCita = cita.idCita;
-                    pago.fecha = DateTime.Now;
-                    pago.monto = int.Parse(dgvCitas.CurrentRow.Cells[5].Value.ToString()) - int.Parse(dgvCitas.CurrentRow.Cells[6].Value.ToString());
-                    pago.estado = "Confirmado";
-                    if (controladorCita.confirmarCita(cita, pago))
+                    if (dgvCitas.CurrentRow.Cells[7].Value.ToString().Equals("Reservado"))
                     {
-                        MessageBox.Show("Cita confirmada");
-                        dgvCitas.Rows.Clear();
+                        Cita cita = buscarCita(int.Parse(dgvCitas.CurrentRow.Cells[0].Value.ToString()));
+                        Pago pago = new Pago();
+                        pago.idCita = cita.idCita;
+                        pago.fecha = DateTime.Now;
+                        pago.monto = int.Parse(dgvCitas.CurrentRow.Cells[5].Value.ToString()) - int.Parse(dgvCitas.CurrentRow.Cells[6].Value.ToString());
+                        pago.estado = "Confirmado";
+                        if (controladorCita.confirmarCita(cita, pago))
+                        {
+                            MessageBox.Show("Cita confirmada");
+                            llenarCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), Convert.ToDateTime(dgvCitas.CurrentRow.Cells[1].Value.ToString()));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecciona una cita reservada para confirmar");
                     }
                 }
                 catch (Exception ex)
@@ -124,16 +131,23 @@ namespace Vista
             {
                 try
                 {
-                    Cita cita = buscarCita(int.Parse(dgvCitas.CurrentRow.Cells[0].Value.ToString()));
-                    Pago pago = new Pago();
-                    pago.idCita = cita.idCita;
-                    pago.fecha = DateTime.Now;
-                    pago.monto = (-1)*int.Parse(dgvCitas.CurrentRow.Cells[6].Value.ToString());
-                    pago.estado = "Cancelado";
-                    if (controladorCita.cancelarCita(cita, pago))
+                    if (!dgvCitas.CurrentRow.Cells[7].Value.ToString().Equals("Cancelado"))
                     {
-                        MessageBox.Show("Cita cancelada");
-                        dgvCitas.Rows.Clear();
+                        Cita cita = buscarCita(int.Parse(dgvCitas.CurrentRow.Cells[0].Value.ToString()));
+                        Pago pago = new Pago();
+                        pago.idCita = cita.idCita;
+                        pago.fecha = DateTime.Now;
+                        pago.monto = (-1) * int.Parse(dgvCitas.CurrentRow.Cells[6].Value.ToString());
+                        pago.estado = "Cancelado";
+                        if (controladorCita.cancelarCita(cita, pago))
+                        {
+                            MessageBox.Show("Cita cancelada");
+                            llenarCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), Convert.ToDateTime(dgvCitas.CurrentRow.Cells[1].Value.ToString()));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione una cita reservada o confirmada");
                     }
                 }
                 catch (Exception ex)

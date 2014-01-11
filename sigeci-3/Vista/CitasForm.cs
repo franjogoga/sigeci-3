@@ -60,6 +60,21 @@ namespace Vista
                 }
                 fila = new string[] { "" + cita.idCita, "" + cita.fechaCita.ToShortDateString(), "" + cita.horaCita.ToShortTimeString(), cita.servicio.nombreServicio, cita.paciente.persona.nombres + " " + cita.paciente.persona.apellidoPaterno + " " + cita.paciente.persona.apellidoMaterno, "" + cita.costo, "" + suma, cita.estado, cita.terapeuta.persona.nombres + " "+cita.terapeuta.persona.apellidoPaterno + " "+cita.terapeuta.persona.apellidoMaterno };
                 dgvCitas.Rows.Add(fila);
+                foreach (DataGridViewRow row in dgvCitas.Rows)
+                {
+                    if (row.Cells[7].Value.ToString().Equals("Reservado"))
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+                    if (row.Cells[7].Value.ToString().Equals("Confirmado"))
+                    {
+                        row.DefaultCellStyle.BackColor = Color.MediumSpringGreen;
+                    }
+                    if (row.Cells[7].Value.ToString().Equals("Cancelado"))
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Tomato;
+                    }
+                }
             }
         }
 

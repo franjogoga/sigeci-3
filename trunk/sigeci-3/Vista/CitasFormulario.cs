@@ -382,10 +382,7 @@ namespace Vista
             foreach (DataGridViewRow row in dgvCitas.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if (cell.Value.ToString().Equals("Libre") || cell.Value.ToString().Equals("Cancelado"))
-                    {                        
-                    }
+                {                    
                     if (cell.Value.ToString().Equals("No Disponible"))
                     {
                         cell.Style.BackColor = Color.Tomato;
@@ -398,7 +395,6 @@ namespace Vista
                     {
                         cell.Style.BackColor = Color.Yellow;
                     }
-
                 }                
             }
         }
@@ -484,13 +480,9 @@ namespace Vista
 
         private void CitasFornulario_Load(object sender, EventArgs e)
         {
-
             //this.reportViewer1.RefreshReport();
         }
 
-
-
     }
-
 }
 

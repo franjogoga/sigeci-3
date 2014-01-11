@@ -1545,7 +1545,7 @@ namespace Controlador
                 idServicio = int.Parse(strIdServicio);
             }
 
-            OleDbCommand comando = new OleDbCommand("SELECT * from cita, servicio, modalidad, persona where servicio.idServicio = cita.servicio_idServicio and modalidad.idModalidad = cita.modalidad_idModalidad and cita.paciente_persona_idPersona = persona.idPersona and persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and cita.fechaCita = @fechaCita " + cit + servi + " order by cita.idCita asc");
+            OleDbCommand comando = new OleDbCommand("SELECT * from cita, servicio, modalidad, persona where servicio.idServicio = cita.servicio_idServicio and modalidad.idModalidad = cita.modalidad_idModalidad and cita.paciente_persona_idPersona = persona.idPersona and persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and cita.fechaCita = @fechaCita " + cit + servi + " and not cita.estado='Cancelado' order by cita.idCita asc");
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {

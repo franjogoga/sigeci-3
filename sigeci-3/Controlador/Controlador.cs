@@ -1530,7 +1530,7 @@ namespace Controlador
             ControladorPaciente controladorPaciente = ControladorPaciente.Instancia();
             ControladorTerapeuta controladorTerapeuta = ControladorTerapeuta.Instancia();
             ControladorPago controladorPago = ControladorPago.Instancia();
-            citas.Clear();
+            List<Cita> cs = new List<Cita>();            
             OleDbDataReader r = null;
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
@@ -1606,7 +1606,7 @@ namespace Controlador
                     pagos = controladorPago.getListaPagosxCita(cita.idCita);
                     cita.pagos = pagos;
 
-                    citas.Add(cita);
+                    cs.Add(cita);
                 }
             }
             catch (Exception e)
@@ -1618,7 +1618,7 @@ namespace Controlador
                 r.Close();
                 conexion.Close();
             }
-            return citas;
+            return cs;
         }
 
         private bool seCruza(Cita c, DateTime horaCita, int intervaloHora)

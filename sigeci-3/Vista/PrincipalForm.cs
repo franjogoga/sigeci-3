@@ -21,7 +21,11 @@ namespace Vista
 
         private void PrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //DialogResult resultado = MessageBox.Show("¿Está seguro que desea salir?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //if (resultado == DialogResult.Yes)
+            //{
+                Application.Exit();
+            //}
         }
 
         private void btnCitas_Click(object sender, EventArgs e)

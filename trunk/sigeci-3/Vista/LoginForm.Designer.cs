@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnIngresar = new DevComponents.DotNetBar.ButtonX();
             this.btnSalir = new DevComponents.DotNetBar.ButtonX();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,11 +112,23 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(190, 29);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(164, 13);
+            this.lblError.TabIndex = 10;
+            this.lblError.Text = "Usuario o Contraseña incorrectos";
+            this.lblError.Visible = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 211);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtPassword);
@@ -144,5 +157,6 @@
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.ButtonX btnIngresar;
         private DevComponents.DotNetBar.ButtonX btnSalir;
+        private System.Windows.Forms.Label lblError;
     }
 }

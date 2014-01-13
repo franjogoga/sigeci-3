@@ -306,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="angelico.ico" />
+    <None Include="Resources\logo angelitos de jesus1.jpg" />
     <None Include="Resources\lineavert.png" />
     <None Include="Resources\angelico.ico" />
   </ItemGroup>

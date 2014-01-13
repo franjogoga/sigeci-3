@@ -11,13 +11,13 @@ namespace Controlador
 {
     public class ControladorUsuario
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;Jet OLEDB:Database Password=adminterapia;";
         private List<Usuario> usuarios;
         static ControladorUsuario controladorUsuario = null;
 
         private ControladorUsuario()
         {
-            usuarios = new List<Usuario>();
+            usuarios = new List<Usuario>(); //usuario: admin contraseña:adminterapia
         }
 
         static public ControladorUsuario Instancia()
@@ -216,11 +216,37 @@ namespace Controlador
             }
             return numFilas == 1;
         }
+
+        public bool logea(string username, string password)
+        {            
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("SELECT * from usuario where username=@usuario and pass=@contrasena ");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@username",username),
+                new OleDbParameter("@nombres",password),                                
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return r.HasRows;
+        }
     }
 
     public class ControladorPaciente
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;Jet OLEDB:Database Password=adminterapia;";
         private List<Paciente> pacientes;
         static ControladorPaciente controladorPaciente = null;
 
@@ -619,7 +645,7 @@ namespace Controlador
 
     public class ControladorTerapeuta
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;Jet OLEDB:Database Password=adminterapia;";
         private List<Terapeuta> terapeutas;
         static ControladorTerapeuta controladorTerapeuta = null;
 
@@ -1032,7 +1058,7 @@ namespace Controlador
 
     public class ControladorServicio
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;Jet OLEDB:Database Password=adminterapia;";
         private List<Servicio> servicios;
         static ControladorServicio controladorServicio = null;
 
@@ -1284,7 +1310,7 @@ namespace Controlador
 
     public class ControladorHorarioTerapeuta
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;Jet OLEDB:Database Password=adminterapia;";
         private List<HorarioTerapeuta> horarioTerapeutas;
         static ControladorHorarioTerapeuta controladorHorarioTerapeuta = null;
 
@@ -1346,7 +1372,7 @@ namespace Controlador
 
     public class ControladorModalidad
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;Jet OLEDB:Database Password=adminterapia;";
         private List<Modalidad> modalidades;
         static ControladorModalidad controladorModalidad = null;
 
@@ -1507,7 +1533,7 @@ namespace Controlador
 
     public class ControladorCita
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;Jet OLEDB:Database Password=adminterapia;";
         private List<Cita> citas;
         static ControladorCita controladorCita = null;
 
@@ -1821,7 +1847,7 @@ namespace Controlador
 
     public class ControladorPago
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;Jet OLEDB:Database Password=adminterapia;";
         private List<Pago> pagos;
         static ControladorPago controladorPago = null;
 

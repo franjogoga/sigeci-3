@@ -21,10 +21,24 @@ namespace Vista
 
         private void PrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult resultado = MessageBox.Show("¿Está seguro que desea salir?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resultado == DialogResult.Yes)
+                {
+                    e.Cancel = false;
+                    Application.Exit();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+
             //DialogResult resultado = MessageBox.Show("¿Está seguro que desea salir?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             //if (resultado == DialogResult.Yes)
             //{
-                Application.Exit();
+                //Application.Exit();
             //}
         }
 
@@ -63,6 +77,7 @@ namespace Vista
             ReportesForm reportesForm = new ReportesForm();
             reportesForm.ShowDialog();            
         }
+       
 
     }
 }

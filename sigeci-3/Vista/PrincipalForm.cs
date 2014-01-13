@@ -33,13 +33,7 @@ namespace Vista
                 {
                     e.Cancel = true;
                 }
-            }
-
-            //DialogResult resultado = MessageBox.Show("¿Está seguro que desea salir?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            //if (resultado == DialogResult.Yes)
-            //{
-                //Application.Exit();
-            //}
+            }          
         }
 
         private void btnCitas_Click(object sender, EventArgs e)

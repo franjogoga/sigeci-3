@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using Controlador;
 
 namespace Vista
 {
     public partial class LoginForm : Office2007Form
     {
+        ControladorUsuario controladorUsuario = ControladorUsuario.Instancia();
+
         public LoginForm()
         {
             InitializeComponent();
@@ -20,10 +23,16 @@ namespace Vista
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-
-            PrincipalForm principalForm = new PrincipalForm();
-            principalForm.Show();
-            this.Hide();
+            if (controladorUsuario.logea(txtUsername.Text, txtPassword.Text))
+            {
+                PrincipalForm principalForm = new PrincipalForm();
+                principalForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                lblError.Visible = true;
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

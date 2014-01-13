@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btnReportes = new DevComponents.DotNetBar.ButtonX();
             this.btnUsuarios = new DevComponents.DotNetBar.ButtonX();
             this.btnTerapeutas = new DevComponents.DotNetBar.ButtonX();
@@ -44,19 +43,6 @@
             // styleManager1
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(384, 29);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(165, 23);
-            this.labelX1.TabIndex = 6;
-            this.labelX1.Text = "Angelitos de Jesus";
             // 
             // btnReportes
             // 
@@ -161,7 +147,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(714, 401);
             this.Controls.Add(this.btnReportes);
-            this.Controls.Add(this.labelX1);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnTerapeutas);
             this.Controls.Add(this.btnServicios);
@@ -189,7 +174,6 @@
         private DevComponents.DotNetBar.ButtonX btnPacientes;
         private DevComponents.DotNetBar.ButtonX btnServicios;
         private DevComponents.DotNetBar.ButtonX btnTerapeutas;
-        private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ButtonX btnReportes;
         private DevComponents.DotNetBar.ButtonX btnUsuarios;
     }

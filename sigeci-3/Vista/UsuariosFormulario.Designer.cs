@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbUsuario = new System.Windows.Forms.GroupBox();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.txtDNI = new System.Windows.Forms.TextBox();
@@ -43,7 +44,9 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // gbUsuario
@@ -113,7 +116,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(107, 23);
             this.labelX3.TabIndex = 7;
-            this.labelX3.Text = "Apellido Paterno :";
+            this.labelX3.Text = "Apellido Paterno (*) :";
             // 
             // labelX6
             // 
@@ -126,7 +129,7 @@
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(107, 23);
             this.labelX6.TabIndex = 6;
-            this.labelX6.Text = "Contraseña :";
+            this.labelX6.Text = "Contraseña (*) :";
             // 
             // labelX2
             // 
@@ -139,7 +142,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(107, 23);
             this.labelX2.TabIndex = 6;
-            this.labelX2.Text = "Nombres :";
+            this.labelX2.Text = "Nombres (*) :";
             // 
             // labelX1
             // 
@@ -152,7 +155,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(107, 23);
             this.labelX1.TabIndex = 5;
-            this.labelX1.Text = "Usuario :";
+            this.labelX1.Text = "Usuario (*) :";
             // 
             // txtApellidoMaterno
             // 
@@ -223,6 +226,10 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // UsuariosFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +246,7 @@
             this.Text = "Usuarios";
             this.gbUsuario.ResumeLayout(false);
             this.gbUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,5 +268,6 @@
         private System.Windows.Forms.TextBox txtDNI;
         private DevComponents.DotNetBar.LabelX labelX6;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

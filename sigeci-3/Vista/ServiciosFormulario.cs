@@ -57,41 +57,62 @@ namespace Vista
             txtMaximoPacientes.Text = "" + servicio.maximoPacientes;
         }
 
+        private bool validarCampoNoVacio(TextBox txtBox)
+        {
+            errorProvider.Clear();
+            bool error = false;
+            if (txtBox.TextLength == 0)
+            {
+                error = true;
+                errorProvider.SetError(txtBox, "Llenar Dato");
+            }
+            return error;
+        }
+
+        private bool validarDatos()
+        {
+            return validarCampoNoVacio(txtNombreServicio) || validarCampoNoVacio(txtIntervaloHora) || validarCampoNoVacio(txtCosto) || validarCampoNoVacio(txtMaximoPacientes);
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (modo == 0)
+            bool error = validarDatos();
+            if (!error)
             {
-                Servicio servicio = new Servicio();
-                servicio.nombreServicio = txtNombreServicio.Text;
-                servicio.intervaloHora = int.Parse(txtIntervaloHora.Text);
-                servicio.costo = float.Parse(txtCosto.Text);
-                servicio.maximoPacientes = int.Parse(txtMaximoPacientes.Text);
-                servicio.estado = "activo";
-
-                if (controladorServicio.agregarServicio(servicio))
+                if (modo == 0)
                 {
-                    MessageBox.Show("Servicio Agregado");
-                    this.Dispose();
-                    padre.llenarServicios("");
+                    Servicio servicio = new Servicio();
+                    servicio.nombreServicio = txtNombreServicio.Text;
+                    servicio.intervaloHora = int.Parse(txtIntervaloHora.Text);
+                    servicio.costo = float.Parse(txtCosto.Text);
+                    servicio.maximoPacientes = int.Parse(txtMaximoPacientes.Text);
+                    servicio.estado = "activo";
+
+                    if (controladorServicio.agregarServicio(servicio))
+                    {
+                        MessageBox.Show("Servicio Agregado");
+                        this.Dispose();
+                        padre.llenarServicios("");
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
                 else
-                    MessageBox.Show("Ha ocurrido un error");
-            }
-            else
-            {
-                servicio.nombreServicio = txtNombreServicio.Text;
-                servicio.intervaloHora = int.Parse(txtIntervaloHora.Text);
-                servicio.costo = float.Parse(txtCosto.Text);
-                servicio.maximoPacientes = int.Parse(txtMaximoPacientes.Text);
-
-                if (controladorServicio.modificarServicio(servicio))
                 {
-                    MessageBox.Show("Servicio Modificado");
-                    this.Dispose();
-                    padre.llenarServicios("");
+                    servicio.nombreServicio = txtNombreServicio.Text;
+                    servicio.intervaloHora = int.Parse(txtIntervaloHora.Text);
+                    servicio.costo = float.Parse(txtCosto.Text);
+                    servicio.maximoPacientes = int.Parse(txtMaximoPacientes.Text);
+
+                    if (controladorServicio.modificarServicio(servicio))
+                    {
+                        MessageBox.Show("Servicio Modificado");
+                        this.Dispose();
+                        padre.llenarServicios("");
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
-                else
-                    MessageBox.Show("Ha ocurrido un error");
             }
         }
 

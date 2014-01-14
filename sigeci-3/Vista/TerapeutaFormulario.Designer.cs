@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
@@ -71,10 +72,12 @@
             this.dateLunesInicio = new System.Windows.Forms.DateTimePicker();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -106,6 +109,7 @@
             this.dateFechaNacimiento.Name = "dateFechaNacimiento";
             this.dateFechaNacimiento.Size = new System.Drawing.Size(179, 20);
             this.dateFechaNacimiento.TabIndex = 4;
+            this.dateFechaNacimiento.Value = new System.DateTime(2000, 1, 1, 15, 6, 0, 0);
             // 
             // labelX4
             // 
@@ -131,7 +135,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(141, 23);
             this.labelX3.TabIndex = 7;
-            this.labelX3.Text = "Apellido Paterno :";
+            this.labelX3.Text = "Apellido Paterno (*) :";
             // 
             // labelX2
             // 
@@ -144,7 +148,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(141, 23);
             this.labelX2.TabIndex = 6;
-            this.labelX2.Text = "Nombres :";
+            this.labelX2.Text = "Nombres (*) :";
             // 
             // labelX6
             // 
@@ -603,6 +607,10 @@
             this.labelX7.TabIndex = 5;
             this.labelX7.Text = "Lunes :";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // TerapeutaFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -625,6 +633,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -674,5 +683,6 @@
         private System.Windows.Forms.DateTimePicker dateViernesInicio;
         private DevComponents.DotNetBar.LabelX labelX16;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

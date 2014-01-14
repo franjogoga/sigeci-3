@@ -46,47 +46,68 @@ namespace Vista
             this.Dispose();
         }
 
+        private bool validarCampoNoVacio(TextBox txtBox)
+        {
+            errorProvider.Clear();
+            bool error = false;
+            if (txtBox.TextLength == 0)
+            {
+                error = true;
+                errorProvider.SetError(txtBox, "Llenar Dato");
+            }
+            return error;
+        }
+
+        private bool validarDatos()
+        {
+            return validarCampoNoVacio(txtUsername) || validarCampoNoVacio(txtPassword) || validarCampoNoVacio(txtNombres) || validarCampoNoVacio(txtApellidoPaterno);
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (modo == 0)
+            bool error = validarDatos();
+            if (!error)
             {
-                Usuario usuario = new Usuario();
-                Persona persona = new Persona();
-                persona.nombres = txtNombres.Text;
-                persona.apellidoPaterno = txtApellidoPaterno.Text;
-                persona.apellidoMaterno = txtApellidoMaterno.Text;
-                persona.dni = int.Parse(txtDNI.Text);
-                persona.estado = "activo";
-                usuario.persona = persona;
-                usuario.username = txtUsername.Text;
-                usuario.password = txtPassword.Text;
-
-                if (controladorUsuario.agregarUsuario(usuario))
+                if (modo == 0)
                 {
-                    MessageBox.Show("Usuario Agregado");
-                    this.Dispose();
-                    padre.llenarUsuarios("", "", "", "");
+                    Usuario usuario = new Usuario();
+                    Persona persona = new Persona();
+                    persona.nombres = txtNombres.Text;
+                    persona.apellidoPaterno = txtApellidoPaterno.Text;
+                    persona.apellidoMaterno = txtApellidoMaterno.Text;
+                    persona.dni = int.Parse(txtDNI.Text);
+                    persona.estado = "activo";
+                    usuario.persona = persona;
+                    usuario.username = txtUsername.Text;
+                    usuario.password = txtPassword.Text;
+
+                    if (controladorUsuario.agregarUsuario(usuario))
+                    {
+                        MessageBox.Show("Usuario Agregado");
+                        this.Dispose();
+                        padre.llenarUsuarios("", "", "", "");
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
                 else
-                    MessageBox.Show("Ha ocurrido un error");
-            }
-            else
-            {
-                usuario.username = txtUsername.Text;
-                usuario.password = txtPassword.Text;
-                usuario.persona.nombres = txtNombres.Text;
-                usuario.persona.apellidoPaterno = txtApellidoPaterno.Text;
-                usuario.persona.apellidoMaterno = txtApellidoMaterno.Text;
-                usuario.persona.dni = int.Parse(txtDNI.Text);
-
-                if (controladorUsuario.modificarUsuario(usuario))
                 {
-                    MessageBox.Show("Usuario Modificado");
-                    this.Dispose();
-                    padre.llenarUsuarios("", "", "", "");
+                    usuario.username = txtUsername.Text;
+                    usuario.password = txtPassword.Text;
+                    usuario.persona.nombres = txtNombres.Text;
+                    usuario.persona.apellidoPaterno = txtApellidoPaterno.Text;
+                    usuario.persona.apellidoMaterno = txtApellidoMaterno.Text;
+                    usuario.persona.dni = int.Parse(txtDNI.Text);
+
+                    if (controladorUsuario.modificarUsuario(usuario))
+                    {
+                        MessageBox.Show("Usuario Modificado");
+                        this.Dispose();
+                        padre.llenarUsuarios("", "", "", "");
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
-                else
-                    MessageBox.Show("Ha ocurrido un error");
             }
         }
 

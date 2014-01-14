@@ -142,142 +142,163 @@ namespace Vista
             dateSabadoFin.Enabled = false;
         }
 
+        private bool validarCampoNoVacio(TextBox txtBox)
+        {
+            errorProvider.Clear();
+            bool error = false;
+            if (txtBox.TextLength == 0)
+            {
+                error = true;
+                errorProvider.SetError(txtBox, "Llenar Dato");
+            }
+            return error;
+        }
+
+        private bool validarDatos()
+        {
+            return validarCampoNoVacio(txtNombres) || validarCampoNoVacio(txtApellidoPaterno);
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (modo == 0)
+            bool error = validarDatos();
+            if (!error)
             {
-                Terapeuta terapeuta = new Terapeuta();
-                Persona persona = new Persona();
-                persona.nombres = txtNombres.Text;
-                persona.apellidoPaterno = txtApellidoPaterno.Text;
-                persona.apellidoMaterno = txtApellidoMaterno.Text;
-                persona.dni = int.Parse(txtDNI.Text);
-                persona.estado = "activo";
-                terapeuta.persona = persona;
-                terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
-                terapeuta.telefono = txtTelefono.Text;
-                List<Servicio> serviciosxtera = new List<Servicio>();
-                List<HorarioTerapeuta> horarioTerapeuta = new List<HorarioTerapeuta>();
-
-                foreach (Servicio s in servicios)
+                if (modo == 0)
                 {
-                    foreach (object valor in checkListServicios.CheckedItems)
+                    Terapeuta terapeuta = new Terapeuta();
+                    Persona persona = new Persona();
+                    persona.nombres = txtNombres.Text;
+                    persona.apellidoPaterno = txtApellidoPaterno.Text;
+                    persona.apellidoMaterno = txtApellidoMaterno.Text;
+                    persona.dni = int.Parse(txtDNI.Text);
+                    persona.estado = "activo";
+                    terapeuta.persona = persona;
+                    terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
+                    terapeuta.telefono = txtTelefono.Text;
+                    List<Servicio> serviciosxtera = new List<Servicio>();
+                    List<HorarioTerapeuta> horarioTerapeuta = new List<HorarioTerapeuta>();
+
+                    foreach (Servicio s in servicios)
                     {
-                        if (s.nombreServicio.Equals(valor.ToString()))
+                        foreach (object valor in checkListServicios.CheckedItems)
                         {
-                            serviciosxtera.Add(s);
+                            if (s.nombreServicio.Equals(valor.ToString()))
+                            {
+                                serviciosxtera.Add(s);
+                            }
                         }
                     }
-                }
-                terapeuta.servicios = serviciosxtera;
+                    terapeuta.servicios = serviciosxtera;
 
-                HorarioTerapeuta horarioLunes = new HorarioTerapeuta();
-                HorarioTerapeuta horarioMartes = new HorarioTerapeuta();
-                HorarioTerapeuta horarioMiercoles = new HorarioTerapeuta();
-                HorarioTerapeuta horarioJueves = new HorarioTerapeuta();
-                HorarioTerapeuta horarioViernes = new HorarioTerapeuta();
-                HorarioTerapeuta horarioSabado = new HorarioTerapeuta();
-                horarioLunes.dia = "Lunes";
-                horarioMartes.dia = "Martes";
-                horarioMiercoles.dia = "Miércoles";
-                horarioJueves.dia = "Jueves";
-                horarioViernes.dia = "Viernes";
-                horarioSabado.dia = "Sábado";
-                horarioLunes.horaInicio = Convert.ToDateTime(dateLunesInicio.Text);
-                horarioMartes.horaInicio = Convert.ToDateTime(dateMartesInicio.Text);
-                horarioMiercoles.horaInicio = Convert.ToDateTime(dateMiercolesInicio.Text);
-                horarioJueves.horaInicio = Convert.ToDateTime(dateJuevesInicio.Text);
-                horarioViernes.horaInicio = Convert.ToDateTime(dateViernesInicio.Text);
-                horarioSabado.horaInicio = Convert.ToDateTime(dateSabadoInicio.Text);
-                horarioLunes.horaFin = Convert.ToDateTime(dateLunesFin.Text);
-                horarioMartes.horaFin = Convert.ToDateTime(dateMartesFin.Text);
-                horarioMiercoles.horaFin = Convert.ToDateTime(dateMiercolesFin.Text);
-                horarioJueves.horaFin = Convert.ToDateTime(dateJuevesFin.Text);
-                horarioViernes.horaFin = Convert.ToDateTime(dateViernesFin.Text);
-                horarioSabado.horaFin = Convert.ToDateTime(dateSabadoFin.Text);
+                    HorarioTerapeuta horarioLunes = new HorarioTerapeuta();
+                    HorarioTerapeuta horarioMartes = new HorarioTerapeuta();
+                    HorarioTerapeuta horarioMiercoles = new HorarioTerapeuta();
+                    HorarioTerapeuta horarioJueves = new HorarioTerapeuta();
+                    HorarioTerapeuta horarioViernes = new HorarioTerapeuta();
+                    HorarioTerapeuta horarioSabado = new HorarioTerapeuta();
+                    horarioLunes.dia = "Lunes";
+                    horarioMartes.dia = "Martes";
+                    horarioMiercoles.dia = "Miércoles";
+                    horarioJueves.dia = "Jueves";
+                    horarioViernes.dia = "Viernes";
+                    horarioSabado.dia = "Sábado";
+                    horarioLunes.horaInicio = Convert.ToDateTime(dateLunesInicio.Text);
+                    horarioMartes.horaInicio = Convert.ToDateTime(dateMartesInicio.Text);
+                    horarioMiercoles.horaInicio = Convert.ToDateTime(dateMiercolesInicio.Text);
+                    horarioJueves.horaInicio = Convert.ToDateTime(dateJuevesInicio.Text);
+                    horarioViernes.horaInicio = Convert.ToDateTime(dateViernesInicio.Text);
+                    horarioSabado.horaInicio = Convert.ToDateTime(dateSabadoInicio.Text);
+                    horarioLunes.horaFin = Convert.ToDateTime(dateLunesFin.Text);
+                    horarioMartes.horaFin = Convert.ToDateTime(dateMartesFin.Text);
+                    horarioMiercoles.horaFin = Convert.ToDateTime(dateMiercolesFin.Text);
+                    horarioJueves.horaFin = Convert.ToDateTime(dateJuevesFin.Text);
+                    horarioViernes.horaFin = Convert.ToDateTime(dateViernesFin.Text);
+                    horarioSabado.horaFin = Convert.ToDateTime(dateSabadoFin.Text);
 
-                horarioTerapeuta.Add(horarioLunes);
-                horarioTerapeuta.Add(horarioMartes);
-                horarioTerapeuta.Add(horarioMiercoles);
-                horarioTerapeuta.Add(horarioJueves);
-                horarioTerapeuta.Add(horarioViernes);
-                horarioTerapeuta.Add(horarioSabado);
+                    horarioTerapeuta.Add(horarioLunes);
+                    horarioTerapeuta.Add(horarioMartes);
+                    horarioTerapeuta.Add(horarioMiercoles);
+                    horarioTerapeuta.Add(horarioJueves);
+                    horarioTerapeuta.Add(horarioViernes);
+                    horarioTerapeuta.Add(horarioSabado);
 
-                terapeuta.horarioTerapeuta = horarioTerapeuta;
+                    terapeuta.horarioTerapeuta = horarioTerapeuta;
 
-                if (controladorTerapeuta.agregarTerapeuta(terapeuta))
-                {
-                    MessageBox.Show("Terapeuta Agregado");
-                    this.Dispose();
-                    padre.llenarTerapeutas("", "", "", "");
+                    if (controladorTerapeuta.agregarTerapeuta(terapeuta))
+                    {
+                        MessageBox.Show("Terapeuta Agregado");
+                        this.Dispose();
+                        padre.llenarTerapeutas("", "", "", "");
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
                 else
-                    MessageBox.Show("Ha ocurrido un error");
-            }
-            else
-            {
-                terapeuta.persona.nombres = txtNombres.Text;
-                terapeuta.persona.apellidoPaterno = txtApellidoPaterno.Text;
-                terapeuta.persona.apellidoMaterno = txtApellidoMaterno.Text;
-                terapeuta.persona.dni = int.Parse(txtDNI.Text);
-                terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
-                terapeuta.telefono = txtTelefono.Text;
-                List<Servicio> serviciosxtera = new List<Servicio>();
-
-                foreach (Servicio s in servicios)
                 {
-                    foreach (object valor in checkListServicios.CheckedItems)
+                    terapeuta.persona.nombres = txtNombres.Text;
+                    terapeuta.persona.apellidoPaterno = txtApellidoPaterno.Text;
+                    terapeuta.persona.apellidoMaterno = txtApellidoMaterno.Text;
+                    terapeuta.persona.dni = int.Parse(txtDNI.Text);
+                    terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
+                    terapeuta.telefono = txtTelefono.Text;
+                    List<Servicio> serviciosxtera = new List<Servicio>();
+
+                    foreach (Servicio s in servicios)
                     {
-                        if (s.nombreServicio.Equals(valor.ToString()))
+                        foreach (object valor in checkListServicios.CheckedItems)
                         {
-                            serviciosxtera.Add(s);
+                            if (s.nombreServicio.Equals(valor.ToString()))
+                            {
+                                serviciosxtera.Add(s);
+                            }
                         }
                     }
-                }
-                terapeuta.servicios = serviciosxtera;
+                    terapeuta.servicios = serviciosxtera;
 
-                foreach (HorarioTerapeuta horarioTerapeuta in terapeuta.horarioTerapeuta)
-                {
-                    if (horarioTerapeuta.dia.Equals("Lunes"))
+                    foreach (HorarioTerapeuta horarioTerapeuta in terapeuta.horarioTerapeuta)
                     {
-                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateLunesInicio.Text);
-                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateLunesFin.Text);
+                        if (horarioTerapeuta.dia.Equals("Lunes"))
+                        {
+                            horarioTerapeuta.horaInicio = Convert.ToDateTime(dateLunesInicio.Text);
+                            horarioTerapeuta.horaFin = Convert.ToDateTime(dateLunesFin.Text);
+                        }
+                        if (horarioTerapeuta.dia.Equals("Martes"))
+                        {
+                            horarioTerapeuta.horaInicio = Convert.ToDateTime(dateMartesInicio.Text);
+                            horarioTerapeuta.horaFin = Convert.ToDateTime(dateMartesFin.Text);
+                        }
+                        if (horarioTerapeuta.dia.Equals("Miércoles"))
+                        {
+                            horarioTerapeuta.horaInicio = Convert.ToDateTime(dateMiercolesInicio.Text);
+                            horarioTerapeuta.horaFin = Convert.ToDateTime(dateMiercolesFin.Text);
+                        }
+                        if (horarioTerapeuta.dia.Equals("Jueves"))
+                        {
+                            horarioTerapeuta.horaInicio = Convert.ToDateTime(dateJuevesInicio.Text);
+                            horarioTerapeuta.horaFin = Convert.ToDateTime(dateJuevesFin.Text);
+                        }
+                        if (horarioTerapeuta.dia.Equals("Viernes"))
+                        {
+                            horarioTerapeuta.horaInicio = Convert.ToDateTime(dateViernesInicio.Text);
+                            horarioTerapeuta.horaFin = Convert.ToDateTime(dateViernesFin.Text);
+                        }
+                        if (horarioTerapeuta.dia.Equals("Sábado"))
+                        {
+                            horarioTerapeuta.horaInicio = Convert.ToDateTime(dateSabadoInicio.Text);
+                            horarioTerapeuta.horaFin = Convert.ToDateTime(dateSabadoFin.Text);
+                        }
                     }
-                    if (horarioTerapeuta.dia.Equals("Martes"))
-                    {
-                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateMartesInicio.Text);
-                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateMartesFin.Text);
-                    }
-                    if (horarioTerapeuta.dia.Equals("Miércoles"))
-                    {
-                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateMiercolesInicio.Text);
-                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateMiercolesFin.Text);
-                    }
-                    if (horarioTerapeuta.dia.Equals("Jueves"))
-                    {
-                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateJuevesInicio.Text);
-                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateJuevesFin.Text);
-                    }
-                    if (horarioTerapeuta.dia.Equals("Viernes"))
-                    {
-                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateViernesInicio.Text);
-                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateViernesFin.Text);
-                    }
-                    if (horarioTerapeuta.dia.Equals("Sábado"))
-                    {
-                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateSabadoInicio.Text);
-                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateSabadoFin.Text);
-                    }
-                }
 
-                if (controladorTerapeuta.modificarTerapeuta(terapeuta))
-                {
-                    MessageBox.Show("Terapeuta Modificado");
-                    this.Dispose();
-                    padre.llenarTerapeutas("", "", "", "");
+                    if (controladorTerapeuta.modificarTerapeuta(terapeuta))
+                    {
+                        MessageBox.Show("Terapeuta Modificado");
+                        this.Dispose();
+                        padre.llenarTerapeutas("", "", "", "");
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
-                else
-                    MessageBox.Show("Ha ocurrido un error");
             }
         }
 

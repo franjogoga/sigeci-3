@@ -41,7 +41,9 @@
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // gbUsuario
@@ -73,7 +75,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(151, 23);
             this.labelX3.TabIndex = 7;
-            this.labelX3.Text = "Máximo de Pacientes :";
+            this.labelX3.Text = "Máximo de Pacientes (*) :";
             // 
             // labelX6
             // 
@@ -86,7 +88,7 @@
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(151, 23);
             this.labelX6.TabIndex = 6;
-            this.labelX6.Text = "Intervalo de Hora :";
+            this.labelX6.Text = "Intervalo de Hora (*) :";
             // 
             // labelX2
             // 
@@ -99,7 +101,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(151, 23);
             this.labelX2.TabIndex = 6;
-            this.labelX2.Text = "Costo :";
+            this.labelX2.Text = "Costo (*) :";
             // 
             // labelX1
             // 
@@ -112,7 +114,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(151, 23);
             this.labelX1.TabIndex = 5;
-            this.labelX1.Text = "Nombre del Servicio :";
+            this.labelX1.Text = "Nombre del Servicio (*) :";
             // 
             // txtIntervaloHora
             // 
@@ -178,6 +180,10 @@
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // ServiciosFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +201,7 @@
             this.Text = "Servicios";
             this.gbUsuario.ResumeLayout(false);
             this.gbUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,5 +220,6 @@
         private DevComponents.DotNetBar.ButtonX btnCancelar;
         private DevComponents.DotNetBar.ButtonX btnAceptar;
         private DevComponents.DotNetBar.StyleManager styleManager1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -47,86 +47,107 @@ namespace Vista
             this.Dispose();
         }
 
+        private bool validarCampoNoVacio(TextBox txtBox)
+        {
+            errorProvider.Clear();
+            bool error = false;
+            if (txtBox.TextLength == 0)
+            {
+                error = true;
+                errorProvider.SetError(txtBox, "Llenar Dato");
+            }
+            return error;
+        }
+
+        private bool validarDatos()
+        {
+            return validarCampoNoVacio(txtNombres) || validarCampoNoVacio(txtApellidoPaterno);
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (modo == 0)
+            bool error = validarDatos();
+            if (!error)
             {
-                Persona persona = new Persona();
-                persona.nombres = txtNombres.Text;
-                persona.apellidoPaterno = txtApellidoPaterno.Text;
-                persona.apellidoMaterno = txtApellidoMaterno.Text;
-                persona.dni = int.Parse(txtDNI.Text);
-                persona.estado = "activo";
-                Paciente paciente = new Paciente();
-                paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
-                paciente.lugarNacimiento = txtLugarNacimiento.Text;
-                paciente.domicilio = txtDomicilio.Text;
-                paciente.distrito = txtDistrito.Text;
-                paciente.telefonoCasa = txtTelefonoCasa.Text;
-                paciente.correo = txtCorreo.Text;
-                paciente.comoEntero = txtComoEntero.Text;
-                MenorEdad menorEdad = new MenorEdad();
-                menorEdad.nombrePadre = txtNombrePadre.Text;
-                menorEdad.nombreMadre = txtNombreMadre.Text;
-                menorEdad.celularPadre = txtCelularPadre.Text;
-                menorEdad.celularMadre = txtCelularMadre.Text;
-                menorEdad.nombreColegio = txtNombreColegio.Text;
-                menorEdad.ubicacionColegio = txtUbicacionColegio.Text;
-                if (rbSi.Checked) menorEdad.escolaridad = "si"; else menorEdad.escolaridad = "no";
-                MayorEdad mayorEdad = new MayorEdad();
-                mayorEdad.celular = txtCelular.Text;
-                mayorEdad.gradoInstruccion = txtGradoInstruccion.Text;
-                mayorEdad.ocupacion = txtOcupacion.Text;
-                mayorEdad.lugarLaboral = txtLugarLaboral.Text;
-                paciente.persona = persona;
-                paciente.menorEdad = menorEdad;
-                paciente.mayorEdad = mayorEdad;
-
-                if (controladorPaciente.agregarPaciente(paciente))
+                if (modo == 0)
                 {
-                    MessageBox.Show("Paciente Agregado");
-                    this.Dispose();
-                    padre.llenarPacientes("", "", "", "", "");
+                    Persona persona = new Persona();
+                    persona.nombres = txtNombres.Text;
+                    persona.apellidoPaterno = txtApellidoPaterno.Text;
+                    persona.apellidoMaterno = txtApellidoMaterno.Text;
+                    persona.dni = int.Parse(txtDNI.Text);
+                    persona.estado = "activo";
+                    Paciente paciente = new Paciente();
+                    paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
+                    paciente.lugarNacimiento = txtLugarNacimiento.Text;
+                    paciente.domicilio = txtDomicilio.Text;
+                    paciente.distrito = txtDistrito.Text;
+                    paciente.telefonoCasa = txtTelefonoCasa.Text;
+                    paciente.correo = txtCorreo.Text;
+                    paciente.comoEntero = txtComoEntero.Text;
+                    MenorEdad menorEdad = new MenorEdad();
+                    menorEdad.nombrePadre = txtNombrePadre.Text;
+                    menorEdad.nombreMadre = txtNombreMadre.Text;
+                    menorEdad.celularPadre = txtCelularPadre.Text;
+                    menorEdad.celularMadre = txtCelularMadre.Text;
+                    menorEdad.nombreColegio = txtNombreColegio.Text;
+                    menorEdad.ubicacionColegio = txtUbicacionColegio.Text;
+                    if (rbSi.Checked) menorEdad.escolaridad = "si"; else menorEdad.escolaridad = "no";
+                    MayorEdad mayorEdad = new MayorEdad();
+                    mayorEdad.celular = txtCelular.Text;
+                    mayorEdad.gradoInstruccion = txtGradoInstruccion.Text;
+                    mayorEdad.ocupacion = txtOcupacion.Text;
+                    mayorEdad.lugarLaboral = txtLugarLaboral.Text;
+                    paciente.persona = persona;
+                    paciente.menorEdad = menorEdad;
+                    paciente.mayorEdad = mayorEdad;
+
+                    if (controladorPaciente.agregarPaciente(paciente))
+                    {
+                        MessageBox.Show("Paciente Agregado");
+                        this.Dispose();
+                        padre.llenarPacientes("", "", "", "", "");
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
                 else
-                    MessageBox.Show("Ha ocurrido un error");
-            }
-            else
-            {
-                paciente.persona.nombres = txtNombres.Text;
-                paciente.persona.apellidoPaterno = txtApellidoPaterno.Text;
-                paciente.persona.apellidoMaterno = txtApellidoMaterno.Text;
-                paciente.persona.dni = int.Parse(txtDNI.Text);
-                paciente.lugarNacimiento = txtLugarNacimiento.Text;
-                paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
-                paciente.domicilio = txtDomicilio.Text;
-                paciente.distrito = txtDistrito.Text;
-                paciente.telefonoCasa = txtTelefonoCasa.Text;
-                paciente.correo = txtCorreo.Text;
-                paciente.comoEntero = txtComoEntero.Text;
-                paciente.menorEdad.nombrePadre = txtNombrePadre.Text;
-                paciente.menorEdad.nombreMadre = txtNombreMadre.Text;
-                paciente.menorEdad.celularPadre = txtCelularPadre.Text;
-                paciente.menorEdad.celularMadre = txtCelularMadre.Text;
-                if (rbSi.Checked)
-                    paciente.menorEdad.escolaridad = "si";
-                else
-                    paciente.menorEdad.escolaridad = "no";
-                paciente.menorEdad.nombreColegio = txtNombreColegio.Text;
-                paciente.menorEdad.ubicacionColegio = txtUbicacionColegio.Text;
-                paciente.mayorEdad.celular = txtCelular.Text;
-                paciente.mayorEdad.ocupacion = txtOcupacion.Text;
-                paciente.mayorEdad.gradoInstruccion = txtGradoInstruccion.Text;
-                paciente.mayorEdad.lugarLaboral = txtLugarLaboral.Text;
-
-                if (controladorPaciente.modificarPaciente(paciente))
                 {
-                    MessageBox.Show("Paciente Modificado");
-                    this.Dispose();
-                    padre.llenarPacientes("", "", "", "", "");
+                    paciente.persona.nombres = txtNombres.Text;
+                    paciente.persona.apellidoPaterno = txtApellidoPaterno.Text;
+                    paciente.persona.apellidoMaterno = txtApellidoMaterno.Text;
+                    paciente.persona.dni = int.Parse(txtDNI.Text);
+                    paciente.lugarNacimiento = txtLugarNacimiento.Text;
+                    paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
+                    paciente.domicilio = txtDomicilio.Text;
+                    paciente.distrito = txtDistrito.Text;
+                    paciente.telefonoCasa = txtTelefonoCasa.Text;
+                    paciente.correo = txtCorreo.Text;
+                    paciente.comoEntero = txtComoEntero.Text;
+                    paciente.menorEdad.nombrePadre = txtNombrePadre.Text;
+                    paciente.menorEdad.nombreMadre = txtNombreMadre.Text;
+                    paciente.menorEdad.celularPadre = txtCelularPadre.Text;
+                    paciente.menorEdad.celularMadre = txtCelularMadre.Text;
+                    if (rbSi.Checked)
+                        paciente.menorEdad.escolaridad = "si";
+                    else
+                        paciente.menorEdad.escolaridad = "no";
+                    paciente.menorEdad.nombreColegio = txtNombreColegio.Text;
+                    paciente.menorEdad.ubicacionColegio = txtUbicacionColegio.Text;
+                    paciente.mayorEdad.celular = txtCelular.Text;
+                    paciente.mayorEdad.ocupacion = txtOcupacion.Text;
+                    paciente.mayorEdad.gradoInstruccion = txtGradoInstruccion.Text;
+                    paciente.mayorEdad.lugarLaboral = txtLugarLaboral.Text;
+
+                    if (controladorPaciente.modificarPaciente(paciente))
+                    {
+                        MessageBox.Show("Paciente Modificado");
+                        this.Dispose();
+                        padre.llenarPacientes("", "", "", "", "");
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
-                else
-                    MessageBox.Show("Ha ocurrido un error");
             }
         }
 

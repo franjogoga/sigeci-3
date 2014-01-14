@@ -89,6 +89,7 @@
             this.txtNombrePadre = new System.Windows.Forms.TextBox();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
@@ -97,6 +98,7 @@
             this.groupBox3.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -144,9 +146,9 @@
             this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
-            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Location = new System.Drawing.Point(3, 3);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
@@ -212,6 +214,7 @@
             this.dateFechaNacimiento.Name = "dateFechaNacimiento";
             this.dateFechaNacimiento.Size = new System.Drawing.Size(180, 20);
             this.dateFechaNacimiento.TabIndex = 10;
+            this.dateFechaNacimiento.Value = new System.DateTime(2000, 1, 1, 14, 55, 0, 0);
             // 
             // labelX8
             // 
@@ -379,9 +382,9 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Location = new System.Drawing.Point(12, 72);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(96, 23);
+            this.labelX3.Size = new System.Drawing.Size(108, 23);
             this.labelX3.TabIndex = 7;
-            this.labelX3.Text = "Apellido Paterno :";
+            this.labelX3.Text = "Apellido Paterno (*) :";
             // 
             // labelX2
             // 
@@ -394,7 +397,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(104, 23);
             this.labelX2.TabIndex = 7;
-            this.labelX2.Text = "Nombres :";
+            this.labelX2.Text = "Nombres (*) :";
             // 
             // txtDomicilio
             // 
@@ -452,6 +455,7 @@
             // 
             this.txtNumeroHistoria.Location = new System.Drawing.Point(139, 32);
             this.txtNumeroHistoria.Name = "txtNumeroHistoria";
+            this.txtNumeroHistoria.ReadOnly = true;
             this.txtNumeroHistoria.Size = new System.Drawing.Size(160, 20);
             this.txtNumeroHistoria.TabIndex = 6;
             this.txtNumeroHistoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroHistoria_KeyPress);
@@ -467,9 +471,9 @@
             // 
             this.superTabControlPanel3.Controls.Add(this.groupBox3);
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 332);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 357);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.superTabItem3;
             // 
@@ -586,9 +590,9 @@
             // 
             this.superTabControlPanel2.Controls.Add(this.groupBox2);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(687, 332);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(687, 357);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
@@ -789,6 +793,10 @@
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // PacientesFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -814,6 +822,7 @@
             this.superTabControlPanel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -880,5 +889,6 @@
         private System.Windows.Forms.TextBox txtComoEntero;
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

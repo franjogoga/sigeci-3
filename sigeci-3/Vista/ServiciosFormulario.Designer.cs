@@ -120,6 +120,7 @@
             this.txtIntervaloHora.Name = "txtIntervaloHora";
             this.txtIntervaloHora.Size = new System.Drawing.Size(182, 20);
             this.txtIntervaloHora.TabIndex = 1;
+            this.txtIntervaloHora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIntervaloHora_KeyPress);
             // 
             // txtMaximoPacientes
             // 
@@ -127,6 +128,7 @@
             this.txtMaximoPacientes.Name = "txtMaximoPacientes";
             this.txtMaximoPacientes.Size = new System.Drawing.Size(182, 20);
             this.txtMaximoPacientes.TabIndex = 2;
+            this.txtMaximoPacientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaximoPacientes_KeyPress);
             // 
             // txtCosto
             // 
@@ -134,6 +136,7 @@
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(182, 20);
             this.txtCosto.TabIndex = 1;
+            this.txtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCosto_KeyPress);
             // 
             // txtNombreServicio
             // 

@@ -145,8 +145,8 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.Controls.Add(this.superTabControlPanel1);
-            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Location = new System.Drawing.Point(3, 3);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
@@ -411,6 +411,7 @@
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(159, 20);
             this.txtDNI.TabIndex = 6;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // txtApellidoPaterno
             // 
@@ -445,6 +446,7 @@
             this.txtNumeroHistoria.Name = "txtNumeroHistoria";
             this.txtNumeroHistoria.Size = new System.Drawing.Size(160, 20);
             this.txtNumeroHistoria.TabIndex = 6;
+            this.txtNumeroHistoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroHistoria_KeyPress);
             // 
             // superTabItem1
             // 
@@ -457,9 +459,9 @@
             // 
             this.superTabControlPanel2.Controls.Add(this.groupBox2);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 25);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(687, 357);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(687, 332);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
@@ -654,9 +656,9 @@
             // 
             this.superTabControlPanel3.Controls.Add(this.groupBox3);
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 357);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 332);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.superTabItem3;
             // 

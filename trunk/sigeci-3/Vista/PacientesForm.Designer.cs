@@ -223,6 +223,7 @@
             this.txtHistoriaClinica.Name = "txtHistoriaClinica";
             this.txtHistoriaClinica.Size = new System.Drawing.Size(147, 20);
             this.txtHistoriaClinica.TabIndex = 2;
+            this.txtHistoriaClinica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHistoriaClinica_KeyPress);
             // 
             // txtApellidoPaterno
             // 
@@ -244,6 +245,7 @@
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(147, 20);
             this.txtDNI.TabIndex = 0;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // btnEliminar
             // 

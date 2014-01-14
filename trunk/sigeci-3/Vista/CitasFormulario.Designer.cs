@@ -624,6 +624,7 @@
             this.txtDescuento.TabIndex = 15;
             this.txtDescuento.Text = "0";
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
+            this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
             // 
             // labelX15
             // 
@@ -646,6 +647,7 @@
             this.txtAdelanto.TabIndex = 13;
             this.txtAdelanto.Text = "0";
             this.txtAdelanto.TextChanged += new System.EventHandler(this.txtAdelanto_TextChanged);
+            this.txtAdelanto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdelanto_KeyPress);
             // 
             // labelX12
             // 

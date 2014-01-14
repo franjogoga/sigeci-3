@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosFormulario));
             this.gbUsuario = new System.Windows.Forms.GroupBox();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.txtDNI = new System.Windows.Forms.TextBox();
@@ -88,6 +87,7 @@
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(147, 20);
             this.txtDNI.TabIndex = 9;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // labelX4
             // 
@@ -228,7 +228,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.gbUsuario);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;            
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "UsuariosFormulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";

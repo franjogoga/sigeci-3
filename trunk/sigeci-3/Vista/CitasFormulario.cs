@@ -228,12 +228,22 @@ namespace Vista
 
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
-            txtCostoFinal.Text = (float.Parse(txtCosto.Text) - float.Parse(txtDescuento.Text)).ToString();
+            if (txtDescuento.Text.Equals(""))
+            {
+                txtDescuento.Text = "0";
+            }         
+            
+            txtCostoFinal.Text = (float.Parse(txtCosto.Text) - float.Parse(txtDescuento.Text)).ToString();            
         }
 
         private void txtAdelanto_TextChanged(object sender, EventArgs e)
         {
-            txtSaldoRestante.Text = (float.Parse(txtCostoFinal.Text) - float.Parse(txtAdelanto.Text)).ToString();
+            if (txtAdelanto.Text.Equals(""))
+            {
+                txtAdelanto.Text = "0";
+            }
+            
+            txtSaldoRestante.Text = (float.Parse(txtCostoFinal.Text) - float.Parse(txtAdelanto.Text)).ToString();            
         }
 
         private void txtCostoFinal_TextChanged(object sender, EventArgs e)
@@ -481,6 +491,46 @@ namespace Vista
         private void CitasFornulario_Load(object sender, EventArgs e)
         {
             //this.reportViewer1.RefreshReport();
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan 
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtAdelanto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan 
+                    e.Handled = true;
+                }
+            }
         }
     }
 }

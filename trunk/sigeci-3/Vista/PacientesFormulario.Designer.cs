@@ -59,6 +59,17 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtNumeroHistoria = new System.Windows.Forms.TextBox();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelX20 = new DevComponents.DotNetBar.LabelX();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
+            this.labelX22 = new DevComponents.DotNetBar.LabelX();
+            this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.txtLugarLaboral = new System.Windows.Forms.TextBox();
+            this.txtGradoInstruccion = new System.Windows.Forms.TextBox();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtOcupacion = new System.Windows.Forms.TextBox();
+            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
@@ -77,26 +88,15 @@
             this.txtNombreMadre = new System.Windows.Forms.TextBox();
             this.txtNombrePadre = new System.Windows.Forms.TextBox();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.labelX20 = new DevComponents.DotNetBar.LabelX();
-            this.labelX19 = new DevComponents.DotNetBar.LabelX();
-            this.labelX22 = new DevComponents.DotNetBar.LabelX();
-            this.labelX18 = new DevComponents.DotNetBar.LabelX();
-            this.txtLugarLaboral = new System.Windows.Forms.TextBox();
-            this.txtGradoInstruccion = new System.Windows.Forms.TextBox();
-            this.txtCelular = new System.Windows.Forms.TextBox();
-            this.txtOcupacion = new System.Windows.Forms.TextBox();
-            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.superTabControlPanel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.superTabControlPanel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.superTabControlPanel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -144,9 +144,9 @@
             this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
-            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Location = new System.Drawing.Point(3, 3);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
@@ -297,6 +297,7 @@
             this.txtComoEntero.Name = "txtComoEntero";
             this.txtComoEntero.Size = new System.Drawing.Size(179, 20);
             this.txtComoEntero.TabIndex = 8;
+            this.txtComoEntero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComoEntero_KeyPress);
             // 
             // txtCorreo
             // 
@@ -304,6 +305,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(160, 20);
             this.txtCorreo.TabIndex = 8;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // txtTelefonoCasa
             // 
@@ -311,6 +313,7 @@
             this.txtTelefonoCasa.Name = "txtTelefonoCasa";
             this.txtTelefonoCasa.Size = new System.Drawing.Size(180, 20);
             this.txtTelefonoCasa.TabIndex = 8;
+            this.txtTelefonoCasa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoCasa_KeyPress);
             // 
             // txtDistrito
             // 
@@ -318,6 +321,7 @@
             this.txtDistrito.Name = "txtDistrito";
             this.txtDistrito.Size = new System.Drawing.Size(160, 20);
             this.txtDistrito.TabIndex = 8;
+            this.txtDistrito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDistrito_KeyPress);
             // 
             // txtApellidoMaterno
             // 
@@ -325,6 +329,7 @@
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.Size = new System.Drawing.Size(180, 20);
             this.txtApellidoMaterno.TabIndex = 8;
+            this.txtApellidoMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoMaterno_KeyPress);
             // 
             // labelX9
             // 
@@ -404,6 +409,7 @@
             this.txtLugarNacimiento.Name = "txtLugarNacimiento";
             this.txtLugarNacimiento.Size = new System.Drawing.Size(159, 20);
             this.txtLugarNacimiento.TabIndex = 6;
+            this.txtLugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLugarNacimiento_KeyPress);
             // 
             // txtDNI
             // 
@@ -419,6 +425,7 @@
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.Size = new System.Drawing.Size(160, 20);
             this.txtApellidoPaterno.TabIndex = 6;
+            this.txtApellidoPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoPaterno_KeyPress);
             // 
             // txtNombres
             // 
@@ -426,6 +433,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(180, 20);
             this.txtNombres.TabIndex = 6;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // labelX1
             // 
@@ -454,6 +462,125 @@
             this.superTabItem1.GlobalItem = false;
             this.superTabItem1.Name = "superTabItem1";
             this.superTabItem1.Text = "Datos Principales";
+            // 
+            // superTabControlPanel3
+            // 
+            this.superTabControlPanel3.Controls.Add(this.groupBox3);
+            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel3.Name = "superTabControlPanel3";
+            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 332);
+            this.superTabControlPanel3.TabIndex = 0;
+            this.superTabControlPanel3.TabItem = this.superTabItem3;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.labelX20);
+            this.groupBox3.Controls.Add(this.labelX19);
+            this.groupBox3.Controls.Add(this.labelX22);
+            this.groupBox3.Controls.Add(this.labelX18);
+            this.groupBox3.Controls.Add(this.txtLugarLaboral);
+            this.groupBox3.Controls.Add(this.txtGradoInstruccion);
+            this.groupBox3.Controls.Add(this.txtCelular);
+            this.groupBox3.Controls.Add(this.txtOcupacion);
+            this.groupBox3.Location = new System.Drawing.Point(10, 8);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(667, 311);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Datos de Mayor de Edad";
+            // 
+            // labelX20
+            // 
+            // 
+            // 
+            // 
+            this.labelX20.BackgroundStyle.Class = "";
+            this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX20.Location = new System.Drawing.Point(32, 158);
+            this.labelX20.Name = "labelX20";
+            this.labelX20.Size = new System.Drawing.Size(108, 23);
+            this.labelX20.TabIndex = 11;
+            this.labelX20.Text = "Lugar Laboral :";
+            // 
+            // labelX19
+            // 
+            // 
+            // 
+            // 
+            this.labelX19.BackgroundStyle.Class = "";
+            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX19.Location = new System.Drawing.Point(32, 117);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(108, 23);
+            this.labelX19.TabIndex = 11;
+            this.labelX19.Text = "Grado de Instrucción :";
+            // 
+            // labelX22
+            // 
+            // 
+            // 
+            // 
+            this.labelX22.BackgroundStyle.Class = "";
+            this.labelX22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX22.Location = new System.Drawing.Point(32, 33);
+            this.labelX22.Name = "labelX22";
+            this.labelX22.Size = new System.Drawing.Size(108, 23);
+            this.labelX22.TabIndex = 11;
+            this.labelX22.Text = "Celular :";
+            // 
+            // labelX18
+            // 
+            // 
+            // 
+            // 
+            this.labelX18.BackgroundStyle.Class = "";
+            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX18.Location = new System.Drawing.Point(32, 75);
+            this.labelX18.Name = "labelX18";
+            this.labelX18.Size = new System.Drawing.Size(108, 23);
+            this.labelX18.TabIndex = 11;
+            this.labelX18.Text = "Ocupación :";
+            // 
+            // txtLugarLaboral
+            // 
+            this.txtLugarLaboral.Location = new System.Drawing.Point(158, 161);
+            this.txtLugarLaboral.Name = "txtLugarLaboral";
+            this.txtLugarLaboral.Size = new System.Drawing.Size(176, 20);
+            this.txtLugarLaboral.TabIndex = 10;
+            this.txtLugarLaboral.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLugarLaboral_KeyPress);
+            // 
+            // txtGradoInstruccion
+            // 
+            this.txtGradoInstruccion.Location = new System.Drawing.Point(158, 120);
+            this.txtGradoInstruccion.Name = "txtGradoInstruccion";
+            this.txtGradoInstruccion.Size = new System.Drawing.Size(176, 20);
+            this.txtGradoInstruccion.TabIndex = 10;
+            this.txtGradoInstruccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGradoInstruccion_KeyPress);
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(158, 36);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(176, 20);
+            this.txtCelular.TabIndex = 10;
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
+            // 
+            // txtOcupacion
+            // 
+            this.txtOcupacion.Location = new System.Drawing.Point(158, 78);
+            this.txtOcupacion.Name = "txtOcupacion";
+            this.txtOcupacion.Size = new System.Drawing.Size(176, 20);
+            this.txtOcupacion.TabIndex = 10;
+            this.txtOcupacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOcupacion_KeyPress);
+            // 
+            // superTabItem3
+            // 
+            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Name = "superTabItem3";
+            this.superTabItem3.Text = "Datos de Mayor Edad";
             // 
             // superTabControlPanel2
             // 
@@ -522,6 +649,7 @@
             this.txtCelularMadre.Name = "txtCelularMadre";
             this.txtCelularMadre.Size = new System.Drawing.Size(160, 20);
             this.txtCelularMadre.TabIndex = 12;
+            this.txtCelularMadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelularMadre_KeyPress);
             // 
             // txtCelularPadre
             // 
@@ -529,6 +657,7 @@
             this.txtCelularPadre.Name = "txtCelularPadre";
             this.txtCelularPadre.Size = new System.Drawing.Size(160, 20);
             this.txtCelularPadre.TabIndex = 12;
+            this.txtCelularPadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelularPadre_KeyPress);
             // 
             // rbNo
             // 
@@ -623,6 +752,7 @@
             this.txtUbicacionColegio.Name = "txtUbicacionColegio";
             this.txtUbicacionColegio.Size = new System.Drawing.Size(165, 20);
             this.txtUbicacionColegio.TabIndex = 8;
+            this.txtUbicacionColegio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUbicacionColegio_KeyPress);
             // 
             // txtNombreColegio
             // 
@@ -630,6 +760,7 @@
             this.txtNombreColegio.Name = "txtNombreColegio";
             this.txtNombreColegio.Size = new System.Drawing.Size(165, 20);
             this.txtNombreColegio.TabIndex = 8;
+            this.txtNombreColegio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreColegio_KeyPress);
             // 
             // txtNombreMadre
             // 
@@ -637,6 +768,7 @@
             this.txtNombreMadre.Name = "txtNombreMadre";
             this.txtNombreMadre.Size = new System.Drawing.Size(481, 20);
             this.txtNombreMadre.TabIndex = 8;
+            this.txtNombreMadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreMadre_KeyPress);
             // 
             // txtNombrePadre
             // 
@@ -644,6 +776,7 @@
             this.txtNombrePadre.Name = "txtNombrePadre";
             this.txtNombrePadre.Size = new System.Drawing.Size(481, 20);
             this.txtNombrePadre.TabIndex = 8;
+            this.txtNombrePadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePadre_KeyPress);
             // 
             // superTabItem2
             // 
@@ -651,121 +784,6 @@
             this.superTabItem2.GlobalItem = false;
             this.superTabItem2.Name = "superTabItem2";
             this.superTabItem2.Text = "Datos de Menor de Edad";
-            // 
-            // superTabControlPanel3
-            // 
-            this.superTabControlPanel3.Controls.Add(this.groupBox3);
-            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
-            this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 332);
-            this.superTabControlPanel3.TabIndex = 0;
-            this.superTabControlPanel3.TabItem = this.superTabItem3;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.labelX20);
-            this.groupBox3.Controls.Add(this.labelX19);
-            this.groupBox3.Controls.Add(this.labelX22);
-            this.groupBox3.Controls.Add(this.labelX18);
-            this.groupBox3.Controls.Add(this.txtLugarLaboral);
-            this.groupBox3.Controls.Add(this.txtGradoInstruccion);
-            this.groupBox3.Controls.Add(this.txtCelular);
-            this.groupBox3.Controls.Add(this.txtOcupacion);
-            this.groupBox3.Location = new System.Drawing.Point(10, 8);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(667, 311);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Datos de Mayor de Edad";
-            // 
-            // labelX20
-            // 
-            // 
-            // 
-            // 
-            this.labelX20.BackgroundStyle.Class = "";
-            this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX20.Location = new System.Drawing.Point(32, 158);
-            this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(108, 23);
-            this.labelX20.TabIndex = 11;
-            this.labelX20.Text = "Lugar Laboral :";
-            // 
-            // labelX19
-            // 
-            // 
-            // 
-            // 
-            this.labelX19.BackgroundStyle.Class = "";
-            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX19.Location = new System.Drawing.Point(32, 117);
-            this.labelX19.Name = "labelX19";
-            this.labelX19.Size = new System.Drawing.Size(108, 23);
-            this.labelX19.TabIndex = 11;
-            this.labelX19.Text = "Grado de Instrucción :";
-            // 
-            // labelX22
-            // 
-            // 
-            // 
-            // 
-            this.labelX22.BackgroundStyle.Class = "";
-            this.labelX22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX22.Location = new System.Drawing.Point(32, 33);
-            this.labelX22.Name = "labelX22";
-            this.labelX22.Size = new System.Drawing.Size(108, 23);
-            this.labelX22.TabIndex = 11;
-            this.labelX22.Text = "Celular :";
-            // 
-            // labelX18
-            // 
-            // 
-            // 
-            // 
-            this.labelX18.BackgroundStyle.Class = "";
-            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX18.Location = new System.Drawing.Point(32, 75);
-            this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(108, 23);
-            this.labelX18.TabIndex = 11;
-            this.labelX18.Text = "Ocupación :";
-            // 
-            // txtLugarLaboral
-            // 
-            this.txtLugarLaboral.Location = new System.Drawing.Point(158, 161);
-            this.txtLugarLaboral.Name = "txtLugarLaboral";
-            this.txtLugarLaboral.Size = new System.Drawing.Size(176, 20);
-            this.txtLugarLaboral.TabIndex = 10;
-            // 
-            // txtGradoInstruccion
-            // 
-            this.txtGradoInstruccion.Location = new System.Drawing.Point(158, 120);
-            this.txtGradoInstruccion.Name = "txtGradoInstruccion";
-            this.txtGradoInstruccion.Size = new System.Drawing.Size(176, 20);
-            this.txtGradoInstruccion.TabIndex = 10;
-            // 
-            // txtCelular
-            // 
-            this.txtCelular.Location = new System.Drawing.Point(158, 36);
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(176, 20);
-            this.txtCelular.TabIndex = 10;
-            // 
-            // txtOcupacion
-            // 
-            this.txtOcupacion.Location = new System.Drawing.Point(158, 78);
-            this.txtOcupacion.Name = "txtOcupacion";
-            this.txtOcupacion.Size = new System.Drawing.Size(176, 20);
-            this.txtOcupacion.TabIndex = 10;
-            // 
-            // superTabItem3
-            // 
-            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Name = "superTabItem3";
-            this.superTabItem3.Text = "Datos de Mayor Edad";
             // 
             // styleManager1
             // 
@@ -790,12 +808,12 @@
             this.superTabControlPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.superTabControlPanel2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.superTabControlPanel3.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.superTabControlPanel2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -66,6 +66,7 @@
             this.txtNombreModalidad.Name = "txtNombreModalidad";
             this.txtNombreModalidad.Size = new System.Drawing.Size(182, 20);
             this.txtNombreModalidad.TabIndex = 6;
+            this.txtNombreModalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreModalidad_KeyPress);
             // 
             // btnCancelar
             // 

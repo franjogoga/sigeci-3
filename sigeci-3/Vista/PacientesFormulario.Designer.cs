@@ -810,7 +810,7 @@
             this.MaximizeBox = false;
             this.Name = "PacientesFormulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PacientesFormulario";
+            this.Text = "Pacientes";
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);

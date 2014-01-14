@@ -70,6 +70,9 @@ namespace Vista
             {
                 if (modo == 0)
                 {
+                    if (txtApellidoMaterno.Text.Equals("")) txtApellidoMaterno.Text = "-";
+                    if (txtDNI.Text.Equals("")) txtDNI.Text = "0";
+
                     Usuario usuario = new Usuario();
                     Persona persona = new Persona();
                     persona.nombres = txtNombres.Text;
@@ -92,6 +95,9 @@ namespace Vista
                 }
                 else
                 {
+                    if (txtApellidoMaterno.Text.Equals("")) txtApellidoMaterno.Text = "-";
+                    if (txtDNI.Text.Equals("")) txtDNI.Text = "0";
+
                     usuario.username = txtUsername.Text;
                     usuario.password = txtPassword.Text;
                     usuario.persona.nombres = txtNombres.Text;

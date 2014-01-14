@@ -24,6 +24,7 @@ namespace Vista
         {
             this.paciente = paciente;
             InitializeComponent();
+            rbNo.Checked = true;
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             this.padre = pacientesForm;
             this.modo = modo;
@@ -71,32 +72,51 @@ namespace Vista
             {
                 if (modo == 0)
                 {
+                    if (txtApellidoMaterno.Text.Equals("")) txtApellidoMaterno.Text = "-";
+                    if (txtDNI.Text.Equals("")) txtDNI.Text = "0";
+                    if (txtLugarNacimiento.Text.Equals("")) txtLugarNacimiento.Text = "-";
+                    if (txtDomicilio.Text.Equals("")) txtDomicilio.Text = "-";
+                    if (txtDistrito.Text.Equals("")) txtDistrito.Text = "-";
+                    if (txtTelefonoCasa.Text.Equals("")) txtTelefonoCasa.Text = "-";
+                    if (txtCorreo.Text.Equals("")) txtCorreo.Text = "-";
+                    if (txtComoEntero.Text.Equals("")) txtComoEntero.Text = "-";
+                    if (txtNombrePadre.Text.Equals("")) txtNombrePadre.Text = "-";
+                    if (txtNombreMadre.Text.Equals("")) txtNombreMadre.Text = "-";
+                    if (txtCelularPadre.Text.Equals("")) txtCelularPadre.Text = "-";
+                    if (txtCelularMadre.Text.Equals("")) txtCelularMadre.Text = "-";
+                    if (txtNombreColegio.Text.Equals("")) txtNombreColegio.Text = "-";
+                    if (txtUbicacionColegio.Text.Equals("")) txtUbicacionColegio.Text = "-";
+                    if (txtCelular.Text.Equals("")) txtCelular.Text = "-";
+                    if (txtGradoInstruccion.Text.Equals("")) txtGradoInstruccion.Text = "-";
+                    if (txtOcupacion.Text.Equals("")) txtOcupacion.Text = "-";
+                    if (txtLugarLaboral.Text.Equals("")) txtLugarLaboral.Text = "-";
+
                     Persona persona = new Persona();
                     persona.nombres = txtNombres.Text;
-                    persona.apellidoPaterno = txtApellidoPaterno.Text;
-                    persona.apellidoMaterno = txtApellidoMaterno.Text;
+                    persona.apellidoPaterno = txtApellidoPaterno.Text;                    
+                    persona.apellidoMaterno = txtApellidoMaterno.Text;                    
                     persona.dni = int.Parse(txtDNI.Text);
                     persona.estado = "activo";
                     Paciente paciente = new Paciente();
-                    paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
-                    paciente.lugarNacimiento = txtLugarNacimiento.Text;
-                    paciente.domicilio = txtDomicilio.Text;
-                    paciente.distrito = txtDistrito.Text;
-                    paciente.telefonoCasa = txtTelefonoCasa.Text;
-                    paciente.correo = txtCorreo.Text;
+                    paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);                    
+                    paciente.lugarNacimiento = txtLugarNacimiento.Text;                    
+                    paciente.domicilio = txtDomicilio.Text;                    
+                    paciente.distrito = txtDistrito.Text;                    
+                    paciente.telefonoCasa = txtTelefonoCasa.Text;                    
+                    paciente.correo = txtCorreo.Text;                    
                     paciente.comoEntero = txtComoEntero.Text;
-                    MenorEdad menorEdad = new MenorEdad();
-                    menorEdad.nombrePadre = txtNombrePadre.Text;
-                    menorEdad.nombreMadre = txtNombreMadre.Text;
-                    menorEdad.celularPadre = txtCelularPadre.Text;
-                    menorEdad.celularMadre = txtCelularMadre.Text;
-                    menorEdad.nombreColegio = txtNombreColegio.Text;
+                    MenorEdad menorEdad = new MenorEdad();                    
+                    menorEdad.nombrePadre = txtNombrePadre.Text;                    
+                    menorEdad.nombreMadre = txtNombreMadre.Text;                    
+                    menorEdad.celularPadre = txtCelularPadre.Text;                    
+                    menorEdad.celularMadre = txtCelularMadre.Text;                    
+                    menorEdad.nombreColegio = txtNombreColegio.Text;                    
                     menorEdad.ubicacionColegio = txtUbicacionColegio.Text;
                     if (rbSi.Checked) menorEdad.escolaridad = "si"; else menorEdad.escolaridad = "no";
-                    MayorEdad mayorEdad = new MayorEdad();
-                    mayorEdad.celular = txtCelular.Text;
-                    mayorEdad.gradoInstruccion = txtGradoInstruccion.Text;
-                    mayorEdad.ocupacion = txtOcupacion.Text;
+                    MayorEdad mayorEdad = new MayorEdad();                    
+                    mayorEdad.celular = txtCelular.Text;                    
+                    mayorEdad.gradoInstruccion = txtGradoInstruccion.Text;                    
+                    mayorEdad.ocupacion = txtOcupacion.Text;                    
                     mayorEdad.lugarLaboral = txtLugarLaboral.Text;
                     paciente.persona = persona;
                     paciente.menorEdad = menorEdad;
@@ -113,6 +133,25 @@ namespace Vista
                 }
                 else
                 {
+                    if (txtApellidoMaterno.Text.Equals("")) txtApellidoMaterno.Text = "-";
+                    if (txtDNI.Text.Equals("")) txtDNI.Text = "0";
+                    if (txtLugarNacimiento.Text.Equals("")) txtLugarNacimiento.Text = "-";
+                    if (txtDomicilio.Text.Equals("")) txtDomicilio.Text = "-";
+                    if (txtDistrito.Text.Equals("")) txtDistrito.Text = "-";
+                    if (txtTelefonoCasa.Text.Equals("")) txtTelefonoCasa.Text = "-";
+                    if (txtCorreo.Text.Equals("")) txtCorreo.Text = "-";
+                    if (txtComoEntero.Text.Equals("")) txtComoEntero.Text = "-";
+                    if (txtNombrePadre.Text.Equals("")) txtNombrePadre.Text = "-";
+                    if (txtNombreMadre.Text.Equals("")) txtNombreMadre.Text = "-";
+                    if (txtCelularPadre.Text.Equals("")) txtCelularPadre.Text = "-";
+                    if (txtCelularMadre.Text.Equals("")) txtCelularMadre.Text = "-";
+                    if (txtNombreColegio.Text.Equals("")) txtNombreColegio.Text = "-";
+                    if (txtUbicacionColegio.Text.Equals("")) txtUbicacionColegio.Text = "-";
+                    if (txtCelular.Text.Equals("")) txtCelular.Text = "-";
+                    if (txtGradoInstruccion.Text.Equals("")) txtGradoInstruccion.Text = "-";
+                    if (txtOcupacion.Text.Equals("")) txtOcupacion.Text = "-";
+                    if (txtLugarLaboral.Text.Equals("")) txtLugarLaboral.Text = "-";
+
                     paciente.persona.nombres = txtNombres.Text;
                     paciente.persona.apellidoPaterno = txtApellidoPaterno.Text;
                     paciente.persona.apellidoMaterno = txtApellidoMaterno.Text;

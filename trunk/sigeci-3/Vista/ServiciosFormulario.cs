@@ -80,7 +80,7 @@ namespace Vista
             if (!error)
             {
                 if (modo == 0)
-                {
+                {                    
                     Servicio servicio = new Servicio();
                     servicio.nombreServicio = txtNombreServicio.Text;
                     servicio.intervaloHora = int.Parse(txtIntervaloHora.Text);

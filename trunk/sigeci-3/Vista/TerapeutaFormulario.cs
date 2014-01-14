@@ -166,6 +166,10 @@ namespace Vista
             {
                 if (modo == 0)
                 {
+                    if (txtApellidoMaterno.Text.Equals("")) txtApellidoMaterno.Text = "-";
+                    if (txtDNI.Text.Equals("")) txtDNI.Text = "0";
+                    if (txtTelefono.Text.Equals("")) txtTelefono.Text = "-";
+
                     Terapeuta terapeuta = new Terapeuta();
                     Persona persona = new Persona();
                     persona.nombres = txtNombres.Text;
@@ -236,6 +240,10 @@ namespace Vista
                 }
                 else
                 {
+                    if (txtApellidoMaterno.Text.Equals("")) txtApellidoMaterno.Text = "-";
+                    if (txtDNI.Text.Equals("")) txtDNI.Text = "0";
+                    if (txtTelefono.Text.Equals("")) txtTelefono.Text = "-";
+
                     terapeuta.persona.nombres = txtNombres.Text;
                     terapeuta.persona.apellidoPaterno = txtApellidoPaterno.Text;
                     terapeuta.persona.apellidoMaterno = txtApellidoMaterno.Text;

@@ -53,36 +53,57 @@ namespace Vista
             txtNombreModalidad.Text = modalidad.nombreModalidad;
         }
 
+        private bool validarCampoNoVacio(TextBox txtBox)
+        {
+            errorProvider.Clear();
+            bool error = false;
+            if (txtBox.TextLength == 0)
+            {
+                error = true;
+                errorProvider.SetError(txtBox, "Llenar Dato");
+            }
+            return error;
+        }
+
+        private bool validarCampos()
+        {
+            return validarCampoNoVacio(txtNombreModalidad);
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (modo == 0)
+            bool error = validarCampos();
+            if (!error)
             {
-                Modalidad modalidad = new Modalidad();
-                modalidad.nombreModalidad = txtNombreModalidad.Text;
-                modalidad.estado = "activo";
-                modalidad.idServicio = idServicio;
-
-                if (controladorModalidad.agregarModalidad(modalidad))
+                if (modo == 0)
                 {
-                    MessageBox.Show("Modalidad Agregada");
-                    this.Dispose();
-                    padre.llenarModalidades("", idServicio);
+                    Modalidad modalidad = new Modalidad();
+                    modalidad.nombreModalidad = txtNombreModalidad.Text;
+                    modalidad.estado = "activo";
+                    modalidad.idServicio = idServicio;
+
+                    if (controladorModalidad.agregarModalidad(modalidad))
+                    {
+                        MessageBox.Show("Modalidad Agregada");
+                        this.Dispose();
+                        padre.llenarModalidades("", idServicio);
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
                 else
-                    MessageBox.Show("Ha ocurrido un error");
-            }
-            else
-            {
-                modalidad.nombreModalidad = txtNombreModalidad.Text;
-
-                if (controladorModalidad.modificarModalidad(modalidad))
                 {
-                    MessageBox.Show("Modalidad Modificada");
-                    this.Dispose();
-                    padre.llenarModalidades("", idServicio);
+                    modalidad.nombreModalidad = txtNombreModalidad.Text;
+
+                    if (controladorModalidad.modificarModalidad(modalidad))
+                    {
+                        MessageBox.Show("Modalidad Modificada");
+                        this.Dispose();
+                        padre.llenarModalidades("", idServicio);
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error");
                 }
-                else
-                    MessageBox.Show("Ha ocurrido un error");
             }
         }
 

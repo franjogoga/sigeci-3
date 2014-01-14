@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtNombreModalidad = new System.Windows.Forms.TextBox();
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -58,7 +61,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(151, 23);
             this.labelX1.TabIndex = 7;
-            this.labelX1.Text = "Nombre de la Modalidad :";
+            this.labelX1.Text = "Nombre de la Modalidad (*):";
             // 
             // txtNombreModalidad
             // 
@@ -96,6 +99,10 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // ModalidadesFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,6 +120,7 @@
             this.Text = "Modalidades";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -124,5 +132,6 @@
         private DevComponents.DotNetBar.ButtonX btnAceptar;
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.TextBox txtNombreModalidad;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -87,6 +87,7 @@
             this.txtModalidad.Name = "txtModalidad";
             this.txtModalidad.Size = new System.Drawing.Size(150, 20);
             this.txtModalidad.TabIndex = 0;
+            this.txtModalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModalidad_KeyPress);
             // 
             // dgvModalidades
             // 

@@ -90,6 +90,7 @@
             this.txtNombreServicio.Name = "txtNombreServicio";
             this.txtNombreServicio.Size = new System.Drawing.Size(183, 20);
             this.txtNombreServicio.TabIndex = 0;
+            this.txtNombreServicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreServicio_KeyPress);
             // 
             // dgvServicios
             // 

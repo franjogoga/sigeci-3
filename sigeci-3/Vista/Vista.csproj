@@ -133,11 +133,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ReportesForm.cs">
+    <Compile Include="CitasxPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportesForm.Designer.cs">
-      <DependentUpon>ReportesForm.cs</DependentUpon>
+    <Compile Include="CitasxPaciente.Designer.cs">
+      <DependentUpon>CitasxPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="ServiciosForm.cs">
       <SubType>Form</SubType>
@@ -213,8 +213,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteCita.rdlc" />
-    <EmbeddedResource Include="ReportesForm.resx">
-      <DependentUpon>ReportesForm.cs</DependentUpon>
+    <EmbeddedResource Include="CitasxPaciente.resx">
+      <DependentUpon>CitasxPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiciosForm.resx">
       <DependentUpon>ServiciosForm.cs</DependentUpon>
@@ -310,6 +310,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="angelico.ico" />
+    <None Include="Resources\imprimir.png" />
     <None Include="Resources\logo angelitos de jesus1.jpg" />
     <None Include="Resources\lineavert.png" />
     <None Include="Resources\angelico.ico" />

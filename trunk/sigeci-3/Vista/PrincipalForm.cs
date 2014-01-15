@@ -79,7 +79,14 @@ namespace Vista
 
         private void btnReporteCitasxPaciente_Click(object sender, EventArgs e)
         {
+            CitasxPaciente citasxPaciente = new CitasxPaciente();
+            citasxPaciente.ShowDialog();
+        }
 
+        private void btnReportePagos_Click(object sender, EventArgs e)
+        {
+            ReportePagos reportePagos = new ReportePagos();            
+            reportePagos.ShowDialog();            
         }
        
 

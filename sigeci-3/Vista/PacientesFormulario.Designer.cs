@@ -90,6 +90,8 @@
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.labelX24 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
@@ -189,11 +191,13 @@
             this.groupBox1.Controls.Add(this.txtDistrito);
             this.groupBox1.Controls.Add(this.txtApellidoMaterno);
             this.groupBox1.Controls.Add(this.labelX9);
+            this.groupBox1.Controls.Add(this.labelX24);
             this.groupBox1.Controls.Add(this.labelX7);
             this.groupBox1.Controls.Add(this.labelX5);
             this.groupBox1.Controls.Add(this.labelX3);
             this.groupBox1.Controls.Add(this.labelX2);
             this.groupBox1.Controls.Add(this.txtDomicilio);
+            this.groupBox1.Controls.Add(this.txtEdad);
             this.groupBox1.Controls.Add(this.txtLugarNacimiento);
             this.groupBox1.Controls.Add(this.txtDNI);
             this.groupBox1.Controls.Add(this.txtApellidoPaterno);
@@ -210,11 +214,12 @@
             // dateFechaNacimiento
             // 
             this.dateFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaNacimiento.Location = new System.Drawing.Point(448, 156);
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(139, 158);
             this.dateFechaNacimiento.Name = "dateFechaNacimiento";
-            this.dateFechaNacimiento.Size = new System.Drawing.Size(180, 20);
+            this.dateFechaNacimiento.Size = new System.Drawing.Size(160, 20);
             this.dateFechaNacimiento.TabIndex = 10;
             this.dateFechaNacimiento.Value = new System.DateTime(2000, 1, 1, 14, 55, 0, 0);
+            this.dateFechaNacimiento.ValueChanged += new System.EventHandler(this.dateFechaNacimiento_ValueChanged);
             // 
             // labelX8
             // 
@@ -275,7 +280,7 @@
             // 
             this.labelX6.BackgroundStyle.Class = "";
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(330, 153);
+            this.labelX6.Location = new System.Drawing.Point(11, 155);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(112, 23);
             this.labelX6.TabIndex = 9;
@@ -354,9 +359,9 @@
             // 
             this.labelX7.BackgroundStyle.Class = "";
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(11, 153);
+            this.labelX7.Location = new System.Drawing.Point(330, 115);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(122, 23);
+            this.labelX7.Size = new System.Drawing.Size(113, 23);
             this.labelX7.TabIndex = 7;
             this.labelX7.Text = "Lugar de Nacimiento :";
             // 
@@ -408,9 +413,9 @@
             // 
             // txtLugarNacimiento
             // 
-            this.txtLugarNacimiento.Location = new System.Drawing.Point(139, 156);
+            this.txtLugarNacimiento.Location = new System.Drawing.Point(449, 117);
             this.txtLugarNacimiento.Name = "txtLugarNacimiento";
-            this.txtLugarNacimiento.Size = new System.Drawing.Size(159, 20);
+            this.txtLugarNacimiento.Size = new System.Drawing.Size(179, 20);
             this.txtLugarNacimiento.TabIndex = 6;
             this.txtLugarNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLugarNacimiento_KeyPress);
             // 
@@ -797,6 +802,27 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(449, 157);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(179, 20);
+            this.txtEdad.TabIndex = 6;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLugarNacimiento_KeyPress);
+            // 
+            // labelX24
+            // 
+            // 
+            // 
+            // 
+            this.labelX24.BackgroundStyle.Class = "";
+            this.labelX24.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX24.Location = new System.Drawing.Point(330, 155);
+            this.labelX24.Name = "labelX24";
+            this.labelX24.Size = new System.Drawing.Size(113, 23);
+            this.labelX24.TabIndex = 7;
+            this.labelX24.Text = "Edad :";
+            // 
             // PacientesFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -890,5 +916,7 @@
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private DevComponents.DotNetBar.LabelX labelX24;
+        private System.Windows.Forms.TextBox txtEdad;
     }
 }

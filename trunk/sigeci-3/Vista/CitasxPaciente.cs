@@ -11,12 +11,14 @@ using DevComponents.DotNetBar;
 
 namespace Vista
 {
-    public partial class ReportesForm : Office2007Form
+    public partial class CitasxPaciente : Office2007Form
     {
-        public ReportesForm()
+        public CitasxPaciente()
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
+
+
     }
 }

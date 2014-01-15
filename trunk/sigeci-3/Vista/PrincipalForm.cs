@@ -71,6 +71,16 @@ namespace Vista
             //ReportesForm reportesForm = new ReportesForm();
             //reportesForm.ShowDialog();            
         }
+
+        private void btnReporteCitas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReporteCitasxPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
        
 
     }

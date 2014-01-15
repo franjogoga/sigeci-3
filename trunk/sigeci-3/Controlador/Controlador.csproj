@@ -48,9 +48,8 @@
       <Name>Modelo</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Data\terapiaDB_desarrollo.accdb">
+    <Content Include="Data\terapiaDB.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

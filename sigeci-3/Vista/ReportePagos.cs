@@ -30,7 +30,7 @@ namespace Vista
             dgvPagos.Rows.Clear();
             foreach (Pago pago in pagos)
             {
-                fila = new string[] { "" + pago.idCita, ""+pago.idPago, "" + pago.monto, "" + pago.fecha, pago.estado};
+                fila = new string[] { "" + pago.idCita, ""+pago.idPago, "" + pago.monto, "" + pago.fecha.ToShortDateString(), pago.estado};
                 dgvPagos.Rows.Add(fila);
             }
         }

@@ -11,7 +11,7 @@ namespace Controlador
 {
     public class ControladorUsuario
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB.accdb;Persist Security Info=True;";
         private List<Usuario> usuarios;
         static ControladorUsuario controladorUsuario = null;
 
@@ -246,7 +246,7 @@ namespace Controlador
 
     public class ControladorPaciente
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB.accdb;Persist Security Info=True;";
         private List<Paciente> pacientes;
         static ControladorPaciente controladorPaciente = null;
 
@@ -645,7 +645,7 @@ namespace Controlador
 
     public class ControladorTerapeuta
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB.accdb;Persist Security Info=True;";
         private List<Terapeuta> terapeutas;
         static ControladorTerapeuta controladorTerapeuta = null;
 
@@ -1058,7 +1058,7 @@ namespace Controlador
 
     public class ControladorServicio
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB.accdb;Persist Security Info=True;";
         private List<Servicio> servicios;
         static ControladorServicio controladorServicio = null;
 
@@ -1310,7 +1310,7 @@ namespace Controlador
 
     public class ControladorHorarioTerapeuta
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB.accdb;Persist Security Info=True;";
         private List<HorarioTerapeuta> horarioTerapeutas;
         static ControladorHorarioTerapeuta controladorHorarioTerapeuta = null;
 
@@ -1372,7 +1372,7 @@ namespace Controlador
 
     public class ControladorModalidad
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB.accdb;Persist Security Info=True;";
         private List<Modalidad> modalidades;
         static ControladorModalidad controladorModalidad = null;
 
@@ -1533,7 +1533,7 @@ namespace Controlador
 
     public class ControladorCita
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB.accdb;Persist Security Info=True;";
         private List<Cita> citas;
         static ControladorCita controladorCita = null;
 
@@ -1847,7 +1847,7 @@ namespace Controlador
 
     public class ControladorPago
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True;";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB.accdb;Persist Security Info=True;";
         private List<Pago> pagos;
         static ControladorPago controladorPago = null;
 

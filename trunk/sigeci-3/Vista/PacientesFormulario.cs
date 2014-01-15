@@ -23,7 +23,7 @@ namespace Vista
         public PacientesFormulario(PacientesForm pacientesForm, int modo, Paciente paciente)
         {
             this.paciente = paciente;
-            InitializeComponent();
+            InitializeComponent();            
             rbNo.Checked = true;
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             this.padre = pacientesForm;
@@ -199,6 +199,7 @@ namespace Vista
             txtDNI.ReadOnly = true;
             txtLugarNacimiento.ReadOnly = true;
             dateFechaNacimiento.Enabled = false;
+            txtEdad.ReadOnly = true;
             txtDomicilio.ReadOnly = true;
             txtDistrito.ReadOnly = true;
             txtTelefonoCasa.ReadOnly = true;
@@ -253,6 +254,9 @@ namespace Vista
             txtOcupacion.Text = paciente.mayorEdad.ocupacion;
             txtGradoInstruccion.Text = paciente.mayorEdad.gradoInstruccion;
             txtLugarLaboral.Text = paciente.mayorEdad.lugarLaboral;
+
+            int edad = calculaEdad(dateFechaNacimiento.Value);
+            txtEdad.Text = "" + edad;
         }
 
         private void txtNumeroHistoria_KeyPress(object sender, KeyPressEventArgs e)
@@ -509,6 +513,27 @@ namespace Vista
             {
                 e.Handled = true;
             }
+        }
+
+        public int calculaEdad(DateTime fechaNacimiento)
+        {
+             //Obtengo la diferencia en años.
+             int edad = DateTime.Now.Year - fechaNacimiento.Year;
+             //Obtengo la fecha de cumpleaños de este año.
+             DateTime nacimientoAhora = fechaNacimiento.AddYears(edad);
+             //Le resto un año si la fecha actual es anterior 
+             //al día de nacimiento.
+             if (DateTime.Now.CompareTo(nacimientoAhora) > 0)
+             { 
+              edad--; 
+             }        
+             return edad;
+        }
+
+        private void dateFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            int edad = calculaEdad(dateFechaNacimiento.Value);
+            txtEdad.Text = "" + edad;
         }
 
     }

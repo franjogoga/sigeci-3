@@ -23,7 +23,8 @@ namespace Vista
         public PacientesFormulario(PacientesForm pacientesForm, int modo, Paciente paciente)
         {
             this.paciente = paciente;
-            InitializeComponent();            
+            InitializeComponent();
+            txtEdad.ReadOnly = true;
             rbNo.Checked = true;
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             this.padre = pacientesForm;

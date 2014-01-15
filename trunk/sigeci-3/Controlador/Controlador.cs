@@ -1939,6 +1939,51 @@ namespace Controlador
             }
             return numFilas == 1;            
         }
+
+        public List<Pago> getListaPagos(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            List<Pago> ps = new List<Pago>();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("select * from pago where fecha<=@fechaHasta and fecha>=@fechaDesde order by idPago asc, fecha asc");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@fechaHasta", fechaHasta.Date),
+                new OleDbParameter("@fechaDesde", fechaDesde.Date),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Pago pago = new Pago();
+                    pago.idPago = r.GetInt32(0);
+                    pago.idCita = r.GetInt32(1);
+                    pago.monto = r.GetFloat(2);
+                    pago.fecha = r.GetDateTime(3);
+                    pago.estado = r.GetString(4);
+
+                    ps.Add(pago);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return ps;
+        }
+
     }
 
 

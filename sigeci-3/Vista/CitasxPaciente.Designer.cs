@@ -30,8 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateHasta = new System.Windows.Forms.DateTimePicker();
+            this.dateDesde = new System.Windows.Forms.DateTimePicker();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -51,8 +51,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateHasta);
+            this.groupBox1.Controls.Add(this.dateDesde);
             this.groupBox1.Controls.Add(this.labelX4);
             this.groupBox1.Controls.Add(this.labelX10);
             this.groupBox1.Controls.Add(this.labelX5);
@@ -84,21 +84,21 @@
             this.btnBuscar.TabIndex = 20;
             this.btnBuscar.Text = "Buscar";
             // 
-            // dateTimePicker2
+            // dateHasta
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(510, 105);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(189, 20);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dateHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateHasta.Location = new System.Drawing.Point(510, 105);
+            this.dateHasta.Name = "dateHasta";
+            this.dateHasta.Size = new System.Drawing.Size(189, 20);
+            this.dateHasta.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // dateDesde
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(157, 108);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(182, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dateDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDesde.Location = new System.Drawing.Point(157, 108);
+            this.dateDesde.Name = "dateDesde";
+            this.dateDesde.Size = new System.Drawing.Size(182, 20);
+            this.dateDesde.TabIndex = 2;
             // 
             // labelX4
             // 
@@ -230,7 +230,7 @@
             this.dgvCitas.Size = new System.Drawing.Size(750, 197);
             this.dgvCitas.TabIndex = 2;
             // 
-            // ReportesForm
+            // CitasxPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -241,7 +241,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "ReportesForm";
+            this.Name = "CitasxPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas por Paciente";
             this.groupBox1.ResumeLayout(false);
@@ -263,8 +263,8 @@
         private DevComponents.DotNetBar.ButtonX btnBuscarPaciente;
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.TextBox txtNumeroHistoria;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateHasta;
+        private System.Windows.Forms.DateTimePicker dateDesde;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX5;
         private System.Windows.Forms.DataGridView dgvCitas;

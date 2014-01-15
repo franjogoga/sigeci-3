@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.btnReportes = new DevComponents.DotNetBar.ButtonX();
-            this.btnReporteCitasxPaciente = new DevComponents.DotNetBar.ButtonItem();
-            this.btnReporteCitasxTerapeuta = new DevComponents.DotNetBar.ButtonItem();
             this.btnReportePagos = new DevComponents.DotNetBar.ButtonItem();
             this.btnUsuarios = new DevComponents.DotNetBar.ButtonX();
             this.btnTerapeutas = new DevComponents.DotNetBar.ButtonX();
@@ -40,8 +38,6 @@
             this.btnPacientes = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCitas = new DevComponents.DotNetBar.ButtonX();
-            this.btnReporteCitas = new DevComponents.DotNetBar.ButtonItem();
-            this.btnReporteCitasxServicio = new DevComponents.DotNetBar.ButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,34 +56,18 @@
             this.btnReportes.Size = new System.Drawing.Size(116, 56);
             this.btnReportes.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnReportes.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnReporteCitas,
-            this.btnReporteCitasxPaciente,
-            this.btnReporteCitasxServicio,
-            this.btnReporteCitasxTerapeuta,
             this.btnReportePagos});
             this.btnReportes.TabIndex = 7;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.Tooltip = "Elija un tipo de reporte";
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
-            // btnReporteCitasxPaciente
-            // 
-            this.btnReporteCitasxPaciente.GlobalItem = false;
-            this.btnReporteCitasxPaciente.Name = "btnReporteCitasxPaciente";
-            this.btnReporteCitasxPaciente.Text = "Citas por Paciente";
-            this.btnReporteCitasxPaciente.Click += new System.EventHandler(this.btnReporteCitasxPaciente_Click);
-            // 
-            // btnReporteCitasxTerapeuta
-            // 
-            this.btnReporteCitasxTerapeuta.GlobalItem = false;
-            this.btnReporteCitasxTerapeuta.Name = "btnReporteCitasxTerapeuta";
-            this.btnReporteCitasxTerapeuta.Text = "Citas por Terapeuta";
-            // 
             // btnReportePagos
             // 
             this.btnReportePagos.GlobalItem = false;
             this.btnReportePagos.Name = "btnReportePagos";
             this.btnReportePagos.Text = "Pagos";
+            this.btnReportePagos.Click += new System.EventHandler(this.btnReportePagos_Click);
             // 
             // btnUsuarios
             // 
@@ -177,19 +157,6 @@
     "mas";
             this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
-            // btnReporteCitas
-            // 
-            this.btnReporteCitas.GlobalItem = false;
-            this.btnReporteCitas.Name = "btnReporteCitas";
-            this.btnReporteCitas.Text = "Citas";
-            this.btnReporteCitas.Click += new System.EventHandler(this.btnReporteCitas_Click);
-            // 
-            // btnReporteCitasxServicio
-            // 
-            this.btnReporteCitasxServicio.GlobalItem = false;
-            this.btnReporteCitasxServicio.Name = "btnReporteCitasxServicio";
-            this.btnReporteCitasxServicio.Text = "Citas por Servicio";
-            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,10 +193,6 @@
         private DevComponents.DotNetBar.ButtonX btnTerapeutas;
         private DevComponents.DotNetBar.ButtonX btnReportes;
         private DevComponents.DotNetBar.ButtonX btnUsuarios;
-        private DevComponents.DotNetBar.ButtonItem btnReporteCitasxPaciente;
-        private DevComponents.DotNetBar.ButtonItem btnReporteCitasxTerapeuta;
         private DevComponents.DotNetBar.ButtonItem btnReportePagos;
-        private DevComponents.DotNetBar.ButtonItem btnReporteCitas;
-        private DevComponents.DotNetBar.ButtonItem btnReporteCitasxServicio;
     }
 }

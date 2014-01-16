@@ -145,6 +145,12 @@
     <Compile Include="ReportePagos.Designer.cs">
       <DependentUpon>ReportePagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportePagosRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportePagosRpt.Designer.cs">
+      <DependentUpon>ReportePagosRpt.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiciosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,10 @@
     <EmbeddedResource Include="ReportePagos.resx">
       <DependentUpon>ReportePagos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportePagosRpt.rdlc" />
+    <EmbeddedResource Include="ReportePagosRpt.resx">
+      <DependentUpon>ReportePagosRpt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServiciosForm.resx">
       <DependentUpon>ServiciosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,7 +256,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Properties\DataSources\Modelo.Cita.datasource" />
+    <None Include="Properties\DataSources\Modelo.Pago.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

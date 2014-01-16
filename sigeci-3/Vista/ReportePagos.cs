@@ -15,8 +15,8 @@ namespace Vista
 {
     public partial class ReportePagos : Office2007Form
     {
-        ControladorPago controladorPago = ControladorPago.Instancia();
-        List<Pago> pagos;
+        private ControladorPago controladorPago = ControladorPago.Instancia();
+        private List<Pago> pagos = null;
         public ReportePagos()
         {
             InitializeComponent();
@@ -38,6 +38,19 @@ namespace Vista
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             llenarPagos(dateDesde.Value, dateHasta.Value);
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (pagos != null)
+            {
+                ReportePagosRpt reportePagosRpt = new ReportePagosRpt(dateDesde.Value, dateHasta.Value, pagos);
+                reportePagosRpt.Show();
+            }
+            else
+            {
+                MessageBox.Show("Primero realice una búsqueda antes de imprimir");
+            }
         }
     }
 }

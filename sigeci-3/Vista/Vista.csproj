@@ -224,7 +224,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteCita.rdlc" />
     <EmbeddedResource Include="CitasxPaciente.resx">
       <DependentUpon>CitasxPaciente.cs</DependentUpon>
     </EmbeddedResource>

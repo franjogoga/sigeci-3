@@ -567,4 +567,41 @@ namespace Modelo
             set { _citaSabado = value; }
         }
     }
+
+    public class ReporteCita
+    {
+        private int _idCita;
+        private string _paciente;
+        private DateTime _fecha;
+        private DateTime _hora;
+        private string _estado;
+
+        public int idCita
+        {
+            get { return _idCita; }
+            set { _idCita = value; }
+        }
+        public string paciente
+        {
+            get { return _paciente; }
+            set { _paciente = value; }
+        }
+        public DateTime fecha
+        {
+            get { return _fecha; }
+            set { _fecha = value; }
+        }
+        public DateTime hora
+        {
+            get { return _hora; }
+            set { _hora = value; }
+        }
+        public string estado
+        {
+            get { return _estado; }
+            set { _estado = value; }
+        }
+    }
+
+
 }

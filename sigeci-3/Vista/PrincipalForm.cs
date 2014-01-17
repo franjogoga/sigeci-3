@@ -88,6 +88,12 @@ namespace Vista
             ReportePagos reportePagos = new ReportePagos();            
             reportePagos.ShowDialog();            
         }
+
+        private void btnReporteCitasxTerapeuta_Click(object sender, EventArgs e)
+        {
+            ReporteCitasxTerapeuta reporteCitasxTerapeuta = new ReporteCitasxTerapeuta();
+            reporteCitasxTerapeuta.ShowDialog();
+        }
        
 
     }

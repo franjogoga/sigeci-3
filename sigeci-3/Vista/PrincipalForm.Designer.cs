@@ -38,6 +38,7 @@
             this.btnPacientes = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCitas = new DevComponents.DotNetBar.ButtonX();
+            this.btnReporteCitasxTerapeuta = new DevComponents.DotNetBar.ButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@
             this.btnReportes.Size = new System.Drawing.Size(116, 56);
             this.btnReportes.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnReportes.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnReportePagos});
+            this.btnReportePagos,
+            this.btnReporteCitasxTerapeuta});
             this.btnReportes.TabIndex = 7;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.Tooltip = "Elija un tipo de reporte";
@@ -157,6 +159,13 @@
     "mas";
             this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
+            // btnReporteCitasxTerapeuta
+            // 
+            this.btnReporteCitasxTerapeuta.GlobalItem = false;
+            this.btnReporteCitasxTerapeuta.Name = "btnReporteCitasxTerapeuta";
+            this.btnReporteCitasxTerapeuta.Text = "Citas por Terapeuta";
+            this.btnReporteCitasxTerapeuta.Click += new System.EventHandler(this.btnReporteCitasxTerapeuta_Click);
+            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,5 +203,6 @@
         private DevComponents.DotNetBar.ButtonX btnReportes;
         private DevComponents.DotNetBar.ButtonX btnUsuarios;
         private DevComponents.DotNetBar.ButtonItem btnReportePagos;
+        private DevComponents.DotNetBar.ButtonItem btnReporteCitasxTerapeuta;
     }
 }

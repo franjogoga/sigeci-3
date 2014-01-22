@@ -17,7 +17,7 @@ namespace Controlador
 
         private ControladorUsuario()
         {
-            usuarios = new List<Usuario>(); //usuario: admin contraseña:adminterapia
+            usuarios = new List<Usuario>(); //usuario:admin contraseña:adminterapia
         }
 
         static public ControladorUsuario Instancia()

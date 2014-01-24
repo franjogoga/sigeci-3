@@ -1649,8 +1649,12 @@ namespace Controlador
 
         public List<Cita> getListaCitasxTerapeuta(DateTime fechaDesde, DateTime fechaHasta, int idTerapeuta)
         {
+            int idP = 0, idT = 0;
             List<Cita> ct = new List<Cita>();
             OleDbDataReader r = null;
+            ControladorPaciente controladorPaciente = ControladorPaciente.Instancia();
+            ControladorTerapeuta controladorTerapeuta = ControladorTerapeuta.Instancia();
+            ControladorPago controladorPago = ControladorPago.Instancia();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
             OleDbCommand comando = new OleDbCommand("SELECT * from cita where terapeuta_persona_idPersona = @idTerapeuta and fechaCita <= @fechaHasta and fechaCita >= @fechaDesde order by fechaCita asc, horaCita asc");
@@ -1666,7 +1670,47 @@ namespace Controlador
 
             try
             {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Cita cita = new Cita();
+                    cita.idCita = r.GetInt32(0);
+                    idP = r.GetInt32(1);
+                    Paciente p = new Paciente();
+                    p = controladorPaciente.getPaciente(idP);
+                    cita.fechaCita = r.GetDateTime(2);
+                    cita.horaCita = r.GetDateTime(3);
+                    cita.estado = r.GetString(6);
+                    cita.fechaRegistro = r.GetDateTime(7);
+                    cita.costo = float.Parse(r.GetValue(8).ToString());
+                    cita.descuento = r.GetFloat(9);
+                    cita.estadoEvaluacion = r.GetString(10);
+                    idT = r.GetInt32(11);
+                    Terapeuta t = new Terapeuta();
+                    t = controladorTerapeuta.getTerapeuta(idT);
+                    Servicio s = new Servicio();
+                    s.idServicio = r.GetInt32(12);
+                    s.nombreServicio = r.GetString(13);
+                    s.intervaloHora = r.GetInt32(14);
+                    s.costo = r.GetFloat(15);
+                    s.maximoPacientes = r.GetInt32(16);
+                    s.estado = r.GetString(17);
+                    Modalidad m = new Modalidad();
+                    m.idModalidad = r.GetInt32(18);
+                    m.nombreModalidad = r.GetString(19);
+                    m.idServicio = r.GetInt32(20);
+                    m.estado = r.GetString(21);
+                    cita.servicio = s;
+                    cita.modalidad = m;
+                    cita.paciente = p;
+                    cita.terapeuta = t;
+                    List<Pago> pagos = new List<Pago>();
+                    pagos = controladorPago.getListaPagosxCita(cita.idCita);
+                    cita.pagos = pagos;
 
+                    ct.Add(cita);
+                }
             }
             catch (Exception ex)
             {

@@ -26,6 +26,7 @@ namespace Vista
         public ReporteCitasxTerapeuta()
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             llenarServicios();
         }
 

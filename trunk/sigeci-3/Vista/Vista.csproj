@@ -276,6 +276,7 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\Modelo.Cita.datasource" />
     <None Include="Properties\DataSources\Modelo.Pago.datasource" />
+    <None Include="Properties\DataSources\Modelo.ReporteCita.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

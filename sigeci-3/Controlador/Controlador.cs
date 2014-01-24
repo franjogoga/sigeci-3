@@ -1647,6 +1647,35 @@ namespace Controlador
             return cs;
         }
 
+        public List<Cita> getListaCitasxTerapeuta(DateTime fechaDesde, DateTime fechaHasta, int idTerapeuta)
+        {
+            List<Cita> ct = new List<Cita>();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("SELECT * from cita where terapeuta_persona_idPersona = @idTerapeuta and fechaCita <= @fechaHasta and fechaCita >= @fechaDesde order by fechaCita asc, horaCita asc");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@idTerapeuta", idTerapeuta),
+                new OleDbParameter("@fechaHasta", fechaHasta.Date),
+                new OleDbParameter("@fechaDesde", fechaDesde.Date),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return ct;
+        }
+        
+
         private bool seCruza(Cita c, DateTime horaCita, int intervaloHora)
         {
             bool resultado = false;

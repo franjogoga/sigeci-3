@@ -39,12 +39,12 @@
             this.comboServicios = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.btnImprimir = new DevComponents.DotNetBar.ButtonX();
             this.numeroCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
@@ -193,19 +193,6 @@
             this.dgvCitas.Size = new System.Drawing.Size(740, 202);
             this.dgvCitas.TabIndex = 1;
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnImprimir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnImprimir.Image = global::Vista.Properties.Resources.imprimir;
-            this.btnImprimir.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnImprimir.Location = new System.Drawing.Point(326, 396);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(123, 32);
-            this.btnImprimir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnImprimir.TabIndex = 22;
-            this.btnImprimir.Text = "Imprimir";
-            // 
             // numeroCita
             // 
             this.numeroCita.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -241,6 +228,20 @@
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnImprimir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnImprimir.Image = global::Vista.Properties.Resources.imprimir;
+            this.btnImprimir.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnImprimir.Location = new System.Drawing.Point(326, 396);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(123, 32);
+            this.btnImprimir.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnImprimir.TabIndex = 22;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // ReporteCitasxTerapeuta
             // 

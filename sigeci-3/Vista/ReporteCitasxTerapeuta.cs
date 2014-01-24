@@ -96,9 +96,8 @@ namespace Vista
         {
             if (reporteCitas != null)
             {
-                ReporteCitasxTerapeuta reportePagosRpt = new ReportePagosRpt(dateDesde.Value, dateHasta.Value, pagos);
-                reportePagosRpt.Show();
-
+                ReporteCitasxTerapeutaRpt reporteCitasxTerapeutaRpt = new ReporteCitasxTerapeutaRpt(dateDesde.Value, dateHasta.Value, reporteCitas);
+                reporteCitasxTerapeutaRpt.Show();
             }
             else
             {

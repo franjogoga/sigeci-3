@@ -145,6 +145,12 @@
     <Compile Include="ReporteCitasxTerapeuta.Designer.cs">
       <DependentUpon>ReporteCitasxTerapeuta.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteCitasxTerapeutaRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCitasxTerapeutaRpt.Designer.cs">
+      <DependentUpon>ReporteCitasxTerapeutaRpt.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportePagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
       <DependentUpon>ReporteCitasxTerapeuta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteCitasxTerapeutaRpt.rdlc" />
+    <EmbeddedResource Include="ReporteCitasxTerapeutaRpt.resx">
+      <DependentUpon>ReporteCitasxTerapeutaRpt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportePagos.resx">
       <DependentUpon>ReportePagos.cs</DependentUpon>
     </EmbeddedResource>

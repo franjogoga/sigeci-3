@@ -94,7 +94,16 @@ namespace Vista
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            if (reporteCitas != null)
+            {
+                ReporteCitasxTerapeuta reportePagosRpt = new ReportePagosRpt(dateDesde.Value, dateHasta.Value, pagos);
+                reportePagosRpt.Show();
 
+            }
+            else
+            {
+                MessageBox.Show("Primero realice una búsqueda antes de imprimir");
+            }
         }
 
 

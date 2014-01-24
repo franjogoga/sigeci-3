@@ -194,6 +194,10 @@ namespace Vista
                     pago.fecha = DateTime.Now;
                     pago.monto = float.Parse(txtAdelanto.Text);
                     pago.estado = "Reservado";
+                    if (int.Parse(txtCostoFinal.Text) == int.Parse(txtAdelanto.Text))
+                    {
+                        pago.estado = "Confirmado";
+                    }                    
 
                     int idCita = 0;
                     if (!controladorCita.tieneCrucesHorarioPaciente(paciente, c.horaCita, c.fechaCita, s.intervaloHora))

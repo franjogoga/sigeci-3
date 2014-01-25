@@ -1571,7 +1571,7 @@ namespace Controlador
                 idServicio = int.Parse(strIdServicio);
             }
 
-            OleDbCommand comando = new OleDbCommand("SELECT * from cita, servicio, modalidad, persona where servicio.idServicio = cita.servicio_idServicio and modalidad.idModalidad = cita.modalidad_idModalidad and cita.paciente_persona_idPersona = persona.idPersona and persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and cita.fechaCita = @fechaCita " + cit + servi + " and not cita.estado='Cancelado' order by cita.idCita asc");
+            OleDbCommand comando = new OleDbCommand("SELECT * from cita, servicio, modalidad, persona where servicio.idServicio = cita.servicio_idServicio and modalidad.idModalidad = cita.modalidad_idModalidad and cita.paciente_persona_idPersona = persona.idPersona and persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and cita.fechaCita = @fechaCita " + cit + servi + " and not cita.estado='Anulado' order by cita.idCita asc");
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
@@ -1794,7 +1794,7 @@ namespace Controlador
             OleDbDataReader r = null;
             ControladorServicio controladorServicio = ControladorServicio.Instancia();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
-            OleDbCommand comando = new OleDbCommand("select * from cita " + "where paciente_persona_idPersona=@idPaciente and fechaCita=@fechaCita and not estado='Cancelado' order by idCita asc");
+            OleDbCommand comando = new OleDbCommand("select * from cita " + "where paciente_persona_idPersona=@idPaciente and fechaCita=@fechaCita and not estado='Anulado' order by idCita asc");
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
@@ -1937,7 +1937,7 @@ namespace Controlador
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
-                new OleDbParameter("@estado","Cancelado"),
+                new OleDbParameter("@estado","Anulado"),
                 new OleDbParameter("@idCita",cita.idCita),
             });
 

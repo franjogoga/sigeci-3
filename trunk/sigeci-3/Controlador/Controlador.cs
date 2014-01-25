@@ -1647,7 +1647,7 @@ namespace Controlador
             return cs;
         }
 
-        public List<Cita> getListaCitasxTerapeuta(DateTime fechaDesde, DateTime fechaHasta, int idTerapeuta)
+        public List<Cita> getListaCitasxTerapeuta(DateTime fechaDesde, DateTime fechaHasta, int idTerapeuta,int idServicio)
         {
             int idP = 0, idT = 0;
             List<Cita> ct = new List<Cita>();
@@ -1657,13 +1657,14 @@ namespace Controlador
             ControladorPago controladorPago = ControladorPago.Instancia();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
-            OleDbCommand comando = new OleDbCommand("SELECT * from cita where terapeuta_persona_idPersona = @idTerapeuta and fechaCita <= @fechaHasta and fechaCita >= @fechaDesde order by fechaCita asc, horaCita asc");
+            OleDbCommand comando = new OleDbCommand("SELECT * from cita where terapeuta_persona_idPersona = @idTerapeuta and fechaCita <= @fechaHasta and fechaCita >= @fechaDesde and servicio_idServicio=@idServicio order by fechaCita asc, horaCita asc");
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
                 new OleDbParameter("@idTerapeuta", idTerapeuta),
                 new OleDbParameter("@fechaHasta", fechaHasta.Date),
                 new OleDbParameter("@fechaDesde", fechaDesde.Date),
+                new OleDbParameter("@idServicio", idServicio),
             });
 
             comando.Connection = conexion;

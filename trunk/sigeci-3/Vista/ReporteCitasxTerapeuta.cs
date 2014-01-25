@@ -62,7 +62,7 @@ namespace Vista
         {
             try
             {
-                llenarCitas(dateDesde.Value, dateHasta.Value, (comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta);
+                llenarCitas(dateDesde.Value, dateHasta.Value, (comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta, (comboServicios.SelectedItem as Servicio).idServicio);
             }
             catch (Exception ex)
             {
@@ -71,10 +71,10 @@ namespace Vista
             }
         }
 
-        private void llenarCitas(DateTime fechaDesde, DateTime fechaHasta, int idTerapeuta)
+        private void llenarCitas(DateTime fechaDesde, DateTime fechaHasta, int idTerapeuta, int idServicio)
         {            
             string[] fila;
-            citas = controladorCita.getListaCitasxTerapeuta(fechaDesde, fechaHasta, idTerapeuta);
+            citas = controladorCita.getListaCitasxTerapeuta(fechaDesde, fechaHasta, idTerapeuta, idServicio);
             reporteCitas = new List<ReporteCita>();
             dgvCitas.Rows.Clear();
             foreach (Cita cita in citas)
@@ -96,7 +96,7 @@ namespace Vista
         {
             if (reporteCitas != null)
             {
-                ReporteCitasxTerapeutaRpt reporteCitasxTerapeutaRpt = new ReporteCitasxTerapeutaRpt(dateDesde.Value, dateHasta.Value, reporteCitas);
+                ReporteCitasxTerapeutaRpt reporteCitasxTerapeutaRpt = new ReporteCitasxTerapeutaRpt(dateDesde.Value, dateHasta.Value, reporteCitas, (comboTerapeuta.SelectedItem as TerapeutaCombo).nombreCompleto, (comboServicios.SelectedItem as Servicio).nombreServicio);
                 reporteCitasxTerapeutaRpt.Show();
             }
             else

@@ -31,7 +31,7 @@ namespace Vista
         {
             reportViewer1.LocalReport.DataSources.Clear();
             
-            ReportParameter[] parametros = new ReportParameter[8];
+            ReportParameter[] parametros = new ReportParameter[9];
             parametros[0] = new ReportParameter("idCita", cita.idCita.ToString());
             parametros[1] = new ReportParameter("fechaRegistro", cita.fechaRegistro.ToShortDateString());
             parametros[2] = new ReportParameter("fechaCita", cita.fechaRegistro.ToShortDateString());
@@ -40,6 +40,7 @@ namespace Vista
             parametros[5] = new ReportParameter("terapeuta", nombreTerapeuta);
             parametros[6] = new ReportParameter("paciente", cita.paciente.persona.nombres + " " + cita.paciente.persona.apellidoPaterno + " " + cita.paciente.persona.apellidoMaterno);
             parametros[7] = new ReportParameter("estado", cita.estado);
+            parametros[8] = new ReportParameter("fechaLimite", cita.fechaRegistro.AddDays(2).ToShortDateString());
 
             reportViewer1.LocalReport.SetParameters(parametros);
 

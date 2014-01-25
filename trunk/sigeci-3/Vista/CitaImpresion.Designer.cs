@@ -48,7 +48,7 @@
             this.Controls.Add(this.reportViewer1);
             this.DoubleBuffered = true;
             this.Name = "CitaImpresion";
-            this.Text = "CitaImpresion";
+            this.Text = "Impresion de Cita";
             this.Load += new System.EventHandler(this.CitaImpresion_Load);
             this.ResumeLayout(false);
 

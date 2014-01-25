@@ -237,6 +237,7 @@
             this.dgvCitas.Location = new System.Drawing.Point(12, 153);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
+            this.dgvCitas.RowTemplate.Height = 33;
             this.dgvCitas.Size = new System.Drawing.Size(841, 186);
             this.dgvCitas.TabIndex = 2;
             // 

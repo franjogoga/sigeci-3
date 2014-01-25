@@ -75,7 +75,7 @@
             this.groupBox1.Controls.Add(this.labelX1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(841, 125);
+            this.groupBox1.Size = new System.Drawing.Size(885, 125);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
@@ -83,7 +83,7 @@
             // dateFechaCita
             // 
             this.dateFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaCita.Location = new System.Drawing.Point(89, 75);
+            this.dateFechaCita.Location = new System.Drawing.Point(103, 75);
             this.dateFechaCita.Name = "dateFechaCita";
             this.dateFechaCita.Size = new System.Drawing.Size(162, 20);
             this.dateFechaCita.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             this.txtApellidoPaterno.Border.Class = "TextBoxBorder";
             this.txtApellidoPaterno.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(673, 32);
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(687, 32);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.Size = new System.Drawing.Size(162, 20);
             this.txtApellidoPaterno.TabIndex = 2;
@@ -108,7 +108,7 @@
             // 
             this.txtNombres.Border.Class = "TextBoxBorder";
             this.txtNombres.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNombres.Location = new System.Drawing.Point(362, 32);
+            this.txtNombres.Location = new System.Drawing.Point(376, 32);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(174, 20);
             this.txtNombres.TabIndex = 1;
@@ -121,7 +121,7 @@
             // 
             this.txtNumeroCita.Border.Class = "TextBoxBorder";
             this.txtNumeroCita.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNumeroCita.Location = new System.Drawing.Point(89, 32);
+            this.txtNumeroCita.Location = new System.Drawing.Point(103, 32);
             this.txtNumeroCita.Name = "txtNumeroCita";
             this.txtNumeroCita.Size = new System.Drawing.Size(162, 20);
             this.txtNumeroCita.TabIndex = 0;
@@ -134,7 +134,7 @@
             this.comboServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboServicios.FormattingEnabled = true;
             this.comboServicios.ItemHeight = 14;
-            this.comboServicios.Location = new System.Drawing.Point(362, 75);
+            this.comboServicios.Location = new System.Drawing.Point(376, 75);
             this.comboServicios.Name = "comboServicios";
             this.comboServicios.Size = new System.Drawing.Size(174, 20);
             this.comboServicios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -146,7 +146,7 @@
             this.btnBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnBuscar.Image = global::Vista.Properties.Resources.buscar;
             this.btnBuscar.ImageFixedSize = new System.Drawing.Size(23, 23);
-            this.btnBuscar.Location = new System.Drawing.Point(571, 66);
+            this.btnBuscar.Location = new System.Drawing.Point(585, 66);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 32);
             this.btnBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -161,7 +161,7 @@
             // 
             this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(278, 72);
+            this.labelX4.Location = new System.Drawing.Point(292, 72);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(78, 23);
             this.labelX4.TabIndex = 8;
@@ -174,7 +174,7 @@
             // 
             this.labelX5.BackgroundStyle.Class = "";
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(571, 29);
+            this.labelX5.Location = new System.Drawing.Point(585, 29);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(96, 23);
             this.labelX5.TabIndex = 6;
@@ -187,7 +187,7 @@
             // 
             this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(18, 75);
+            this.labelX3.Location = new System.Drawing.Point(32, 75);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(65, 23);
             this.labelX3.TabIndex = 7;
@@ -200,7 +200,7 @@
             // 
             this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(278, 29);
+            this.labelX2.Location = new System.Drawing.Point(292, 29);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(78, 23);
             this.labelX2.TabIndex = 6;
@@ -213,7 +213,7 @@
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(18, 29);
+            this.labelX1.Location = new System.Drawing.Point(32, 29);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(65, 23);
             this.labelX1.TabIndex = 5;
@@ -238,7 +238,7 @@
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
             this.dgvCitas.RowTemplate.Height = 33;
-            this.dgvCitas.Size = new System.Drawing.Size(841, 186);
+            this.dgvCitas.Size = new System.Drawing.Size(885, 237);
             this.dgvCitas.TabIndex = 2;
             // 
             // idCita
@@ -311,7 +311,7 @@
             this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancelar.Image = global::Vista.Properties.Resources.cancelarcita;
             this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnCancelar.Location = new System.Drawing.Point(556, 345);
+            this.btnCancelar.Location = new System.Drawing.Point(557, 396);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 32);
             this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -325,7 +325,7 @@
             this.btnConfirmar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnConfirmar.Image = global::Vista.Properties.Resources.aceptar;
             this.btnConfirmar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnConfirmar.Location = new System.Drawing.Point(364, 345);
+            this.btnConfirmar.Location = new System.Drawing.Point(365, 396);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(123, 32);
             this.btnConfirmar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -339,7 +339,7 @@
             this.btnReservar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnReservar.Image = global::Vista.Properties.Resources.reloj;
             this.btnReservar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnReservar.Location = new System.Drawing.Point(173, 345);
+            this.btnReservar.Location = new System.Drawing.Point(174, 396);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(123, 32);
             this.btnReservar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -356,7 +356,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(865, 384);
+            this.ClientSize = new System.Drawing.Size(909, 440);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnReservar);

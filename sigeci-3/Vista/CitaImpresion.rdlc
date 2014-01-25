@@ -42,7 +42,9 @@
             <TextRuns>
               <TextRun>
                 <Value>N° de Cita :</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -100,7 +102,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Fecha de Cita :</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -130,7 +134,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Hora de Cita :</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -160,7 +166,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Paciente :</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -189,7 +197,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Terapeuta :</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -219,7 +229,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Servicio :</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -278,7 +290,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Estado :</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -307,7 +321,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!paciente.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -337,7 +351,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!idCita.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -367,7 +381,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!servicio.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -397,7 +411,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!terapeuta.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -427,7 +441,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!fechaCita.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -457,7 +471,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!horaCita.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -502,6 +516,30 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="estado">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="idCita">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="fechaCita">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="horaCita">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="servicio">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="terapeuta">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="paciente">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

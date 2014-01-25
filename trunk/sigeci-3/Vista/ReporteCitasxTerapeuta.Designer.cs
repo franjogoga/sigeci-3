@@ -254,7 +254,7 @@
             this.DoubleBuffered = true;
             this.Name = "ReporteCitasxTerapeuta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReporteCitasxTerapeuta";
+            this.Text = "Reporte de Citas por Terapeuta";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);

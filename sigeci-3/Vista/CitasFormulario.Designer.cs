@@ -378,7 +378,7 @@
             this.groupBox3.Controls.Add(this.labelX9);
             this.groupBox3.Location = new System.Drawing.Point(8, 221);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(752, 318);
+            this.groupBox3.Size = new System.Drawing.Size(752, 328);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cita";
@@ -414,7 +414,7 @@
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
             this.dgvCitas.RowTemplate.Height = 33;
-            this.dgvCitas.Size = new System.Drawing.Size(730, 252);
+            this.dgvCitas.Size = new System.Drawing.Size(730, 262);
             this.dgvCitas.TabIndex = 18;
             this.dgvCitas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCitas_MouseDoubleClick);
             // 
@@ -552,9 +552,9 @@
             this.groupBox4.Controls.Add(this.txtAdelanto);
             this.groupBox4.Controls.Add(this.labelX12);
             this.groupBox4.Controls.Add(this.txtCosto);
-            this.groupBox4.Location = new System.Drawing.Point(6, 545);
+            this.groupBox4.Location = new System.Drawing.Point(6, 555);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(750, 88);
+            this.groupBox4.Size = new System.Drawing.Size(750, 78);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pago";
@@ -566,7 +566,7 @@
             // 
             this.labelX14.BackgroundStyle.Class = "";
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(520, 15);
+            this.labelX14.Location = new System.Drawing.Point(520, 12);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(87, 23);
             this.labelX14.TabIndex = 16;
@@ -574,7 +574,7 @@
             // 
             // txtCostoFinal
             // 
-            this.txtCostoFinal.Location = new System.Drawing.Point(616, 18);
+            this.txtCostoFinal.Location = new System.Drawing.Point(616, 15);
             this.txtCostoFinal.Name = "txtCostoFinal";
             this.txtCostoFinal.ReadOnly = true;
             this.txtCostoFinal.Size = new System.Drawing.Size(86, 20);
@@ -589,7 +589,7 @@
             // 
             this.labelX16.BackgroundStyle.Class = "";
             this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Location = new System.Drawing.Point(254, 50);
+            this.labelX16.Location = new System.Drawing.Point(254, 44);
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(111, 23);
             this.labelX16.TabIndex = 16;
@@ -602,7 +602,7 @@
             // 
             this.labelX13.BackgroundStyle.Class = "";
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(253, 18);
+            this.labelX13.Location = new System.Drawing.Point(253, 15);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(87, 23);
             this.labelX13.TabIndex = 16;
@@ -610,7 +610,7 @@
             // 
             // txtSaldoRestante
             // 
-            this.txtSaldoRestante.Location = new System.Drawing.Point(371, 54);
+            this.txtSaldoRestante.Location = new System.Drawing.Point(371, 48);
             this.txtSaldoRestante.Name = "txtSaldoRestante";
             this.txtSaldoRestante.ReadOnly = true;
             this.txtSaldoRestante.Size = new System.Drawing.Size(86, 20);
@@ -619,7 +619,7 @@
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(371, 19);
+            this.txtDescuento.Location = new System.Drawing.Point(371, 16);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(86, 20);
             this.txtDescuento.TabIndex = 15;
@@ -634,7 +634,7 @@
             // 
             this.labelX15.BackgroundStyle.Class = "";
             this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(36, 47);
+            this.labelX15.Location = new System.Drawing.Point(36, 41);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(71, 23);
             this.labelX15.TabIndex = 14;
@@ -642,7 +642,7 @@
             // 
             // txtAdelanto
             // 
-            this.txtAdelanto.Location = new System.Drawing.Point(113, 49);
+            this.txtAdelanto.Location = new System.Drawing.Point(113, 43);
             this.txtAdelanto.Name = "txtAdelanto";
             this.txtAdelanto.Size = new System.Drawing.Size(86, 20);
             this.txtAdelanto.TabIndex = 13;
@@ -657,7 +657,7 @@
             // 
             this.labelX12.BackgroundStyle.Class = "";
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(34, 14);
+            this.labelX12.Location = new System.Drawing.Point(34, 11);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(61, 23);
             this.labelX12.TabIndex = 14;
@@ -665,7 +665,7 @@
             // 
             // txtCosto
             // 
-            this.txtCosto.Location = new System.Drawing.Point(113, 16);
+            this.txtCosto.Location = new System.Drawing.Point(113, 13);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.ReadOnly = true;
             this.txtCosto.Size = new System.Drawing.Size(86, 20);

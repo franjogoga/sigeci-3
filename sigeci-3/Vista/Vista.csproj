@@ -145,6 +145,12 @@
     <Compile Include="CitasxPaciente.Designer.cs">
       <DependentUpon>CitasxPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteCitasxPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCitasxPaciente.Designer.cs">
+      <DependentUpon>ReporteCitasxPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteCitasxTerapeuta.cs">
       <SubType>Form</SubType>
     </Compile>

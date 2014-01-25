@@ -62,7 +62,9 @@ namespace Vista
         {
             try
             {
-                llenarCitas(dateDesde.Value, dateHasta.Value, (comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta, (comboServicios.SelectedItem as Servicio).idServicio);
+                int idT = (comboTerapeuta.SelectedItem as TerapeutaCombo).idTerapeuta;
+                int idS = (comboServicios.SelectedItem as Servicio).idServicio;               
+                llenarCitas(dateDesde.Value, dateHasta.Value, idT, idS);                
             }
             catch (Exception ex)
             {

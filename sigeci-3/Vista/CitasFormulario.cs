@@ -324,7 +324,7 @@ namespace Vista
                     else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 80)
                     {
                         llenarSemana(80, "08:00", "14:40", "20:00", terapeutaSeleccionado);
-                    }
+                    }                    
                     llenarCitas();
                 }
                 else

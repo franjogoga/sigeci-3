@@ -34,6 +34,7 @@ namespace Vista
         public CitasFornulario(CitasForm citasForm)
         {
             InitializeComponent();
+            this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             this.padre = citasForm;
             llenarServicios();
             llenarTurnos();

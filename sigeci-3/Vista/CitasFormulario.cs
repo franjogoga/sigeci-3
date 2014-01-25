@@ -294,23 +294,14 @@ namespace Vista
                     citasMiercoles = controladorCita.getListaCitasxServicioxTerapeuta(fechaMiercoles, (comboServicios.SelectedItem as Servicio).idServicio, terapeutaSeleccionado.persona.idPersona);
                     citasJueves = controladorCita.getListaCitasxServicioxTerapeuta(fechaJueves, (comboServicios.SelectedItem as Servicio).idServicio, terapeutaSeleccionado.persona.idPersona);
                     citasViernes = controladorCita.getListaCitasxServicioxTerapeuta(fechaViernes, (comboServicios.SelectedItem as Servicio).idServicio, terapeutaSeleccionado.persona.idPersona);
-                    citasSabado = controladorCita.getListaCitasxServicioxTerapeuta(fechaSabado, (comboServicios.SelectedItem as Servicio).idServicio, terapeutaSeleccionado.persona.idPersona);
-
-                    //citasLunes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaLunes);
-                    //citasMartes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMartes);
-                    //citasMiercoles = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMiercoles);
-                    //citasJueves = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaJueves);
-                    //citasViernes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaViernes);
-                    //citasSabado = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaSabado);
+                    citasSabado = controladorCita.getListaCitasxServicioxTerapeuta(fechaSabado, (comboServicios.SelectedItem as Servicio).idServicio, terapeutaSeleccionado.persona.idPersona);                    
 
                     dgvCitas.Columns[1].HeaderText = "Lunes " + fechaLunes.ToShortDateString();
                     dgvCitas.Columns[2].HeaderText = "Martes " + fechaMartes.ToShortDateString();
                     dgvCitas.Columns[3].HeaderText = "Miércoles " + fechaMiercoles.ToShortDateString();
                     dgvCitas.Columns[4].HeaderText = "Jueves " + fechaJueves.ToShortDateString();
                     dgvCitas.Columns[5].HeaderText = "Viernes " + fechaViernes.ToShortDateString();
-                    dgvCitas.Columns[6].HeaderText = "Sábado " + fechaSabado.ToShortDateString();
-
-                    
+                    dgvCitas.Columns[6].HeaderText = "Sábado " + fechaSabado.ToShortDateString();                    
 
                     if ((comboServicios.SelectedItem as Servicio).intervaloHora == 30)
                     {

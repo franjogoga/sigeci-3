@@ -71,7 +71,7 @@ namespace Vista
                     {
                         row.DefaultCellStyle.BackColor = Color.MediumSpringGreen;
                     }
-                    if (row.Cells[7].Value.ToString().Equals("Cancelado"))
+                    if (row.Cells[7].Value.ToString().Equals("Anulado"))
                     {
                         row.DefaultCellStyle.BackColor = Color.Tomato;
                     }
@@ -142,22 +142,22 @@ namespace Vista
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Está seguro que desea cancelar esta cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea anular esta cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (resultado == DialogResult.Yes)
             {
                 try
                 {
-                    if (!dgvCitas.CurrentRow.Cells[7].Value.ToString().Equals("Cancelado"))
+                    if (!dgvCitas.CurrentRow.Cells[7].Value.ToString().Equals("Anulado"))
                     {
                         Cita cita = buscarCita(int.Parse(dgvCitas.CurrentRow.Cells[0].Value.ToString()));
                         Pago pago = new Pago();
                         pago.idCita = cita.idCita;
                         pago.fecha = DateTime.Now;
                         pago.monto = (-1) * int.Parse(dgvCitas.CurrentRow.Cells[6].Value.ToString());
-                        pago.estado = "Cancelado";
+                        pago.estado = "Anulado";
                         if (controladorCita.cancelarCita(cita, pago))
                         {
-                            MessageBox.Show("Cita cancelada");
+                            MessageBox.Show("Cita anulada");
                             llenarCitas("", "", "", cita.servicio.idServicio.ToString(), Convert.ToDateTime(dgvCitas.CurrentRow.Cells[1].Value.ToString()));
                         }
                     }

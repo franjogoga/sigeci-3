@@ -29,8 +29,19 @@ namespace Vista
 
         private void CitaImpresion_Load(object sender, EventArgs e)
         {
+            reportViewer1.LocalReport.DataSources.Clear();
+            
+            ReportParameter[] parametros = new ReportParameter[8];
+            parametros[0] = new ReportParameter("idCita", cita.idCita.ToString());
+            parametros[1] = new ReportParameter("fechaRegistro", cita.fechaRegistro.ToShortDateString());
+            parametros[2] = new ReportParameter("fechaCita", cita.fechaRegistro.ToShortDateString());
+            parametros[3] = new ReportParameter("horaCita", cita.horaCita.ToShortTimeString());
+            parametros[4] = new ReportParameter("servicio", cita.servicio.nombreServicio);
+            parametros[5] = new ReportParameter("terapeuta", nombreTerapeuta);
+            parametros[6] = new ReportParameter("paciente", cita.paciente.persona.nombres + " " + cita.paciente.persona.apellidoPaterno + " " + cita.paciente.persona.apellidoMaterno);
+            parametros[7] = new ReportParameter("estado", cita.estado);
 
-
+            reportViewer1.LocalReport.SetParameters(parametros);
 
             reportViewer1.RefreshReport();
         }

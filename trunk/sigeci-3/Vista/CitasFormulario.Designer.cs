@@ -413,6 +413,7 @@
             this.dgvCitas.Location = new System.Drawing.Point(11, 60);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
+            this.dgvCitas.RowTemplate.Height = 33;
             this.dgvCitas.Size = new System.Drawing.Size(730, 252);
             this.dgvCitas.TabIndex = 18;
             this.dgvCitas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCitas_MouseDoubleClick);

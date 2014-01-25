@@ -203,10 +203,16 @@ namespace Vista
                     if (!controladorCita.tieneCrucesHorarioPaciente(paciente, c.horaCita, c.fechaCita, s.intervaloHora))
                     {
                         if (controladorCita.reservarCita(c, pago, out idCita))
-                        {
-                            MessageBox.Show("Cita N° " + idCita + "\n" + c.fechaCita.ToShortDateString() + "  " + c.horaCita.ToShortTimeString() + "\n" + "Servicio : " + c.servicio.nombreServicio + "\n" + "Terapeuta : " + (comboTerapeuta.SelectedItem as TerapeutaCombo).nombreCompleto + "\n" + "Paciente : " + c.paciente.persona.nombres + " " + c.paciente.persona.apellidoPaterno + " " + c.paciente.persona.apellidoMaterno);
-                            this.Dispose();
-                            padre.llenarCitas("","","",c.servicio.idServicio.ToString(),c.fechaCita);
+                        {                            
+                            c.idCita = idCita;
+                            string nombreTerapeuta = (comboTerapeuta.SelectedItem as TerapeutaCombo).nombreCompleto;
+
+                            CitaImpresion citaImpresion = new CitaImpresion(c, nombreTerapeuta);
+                            citaImpresion.Show();
+
+                            //MessageBox.Show("Cita N° " + idCita + "\n" + c.fechaCita.ToShortDateString() + "  " + c.horaCita.ToShortTimeString() + "\n" + "Servicio : " + c.servicio.nombreServicio + "\n" + "Terapeuta : " + (comboTerapeuta.SelectedItem as TerapeutaCombo).nombreCompleto + "\n" + "Paciente : " + c.paciente.persona.nombres + " " + c.paciente.persona.apellidoPaterno + " " + c.paciente.persona.apellidoMaterno);
+                            padre.llenarCitas("", "", "", c.servicio.idServicio.ToString(), c.fechaCita);
+                            this.Dispose();                            
                         }
                         else
                         {

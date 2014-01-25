@@ -68,6 +68,12 @@
     <Compile Include="BusquedaPacienteForm.Designer.cs">
       <DependentUpon>BusquedaPacienteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CitaImpresion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitaImpresion.Designer.cs">
+      <DependentUpon>CitaImpresion.cs</DependentUpon>
+    </Compile>
     <Compile Include="CitasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,10 @@
   <ItemGroup>
     <EmbeddedResource Include="BusquedaPacienteForm.resx">
       <DependentUpon>BusquedaPacienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CitaImpresion.rdlc" />
+    <EmbeddedResource Include="CitaImpresion.resx">
+      <DependentUpon>CitaImpresion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CitasForm.resx">
       <DependentUpon>CitasForm.cs</DependentUpon>

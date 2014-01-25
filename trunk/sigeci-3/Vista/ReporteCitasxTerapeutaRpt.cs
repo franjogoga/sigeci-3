@@ -43,10 +43,5 @@ namespace Vista
 
             reportViewer1.RefreshReport();
         }
-
-
-
-
-
     }
 }

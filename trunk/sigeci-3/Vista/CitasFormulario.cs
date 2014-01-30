@@ -326,6 +326,11 @@ namespace Vista
                     {
                         llenarSemana(80, "08:00", "14:40", "20:00", terapeutaSeleccionado);
                     }                    
+
+                    if(controladorCita.tieneEvolucion()) {
+                        MessageBox.Show("Es necesario realizar un informe de evolución");
+                    }
+
                     llenarCitas();
                 }
                 else
@@ -336,7 +341,7 @@ namespace Vista
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
-                MessageBox.Show("Seleccione una terapeuta");
+                MessageBox.Show("Seleccione una terapeuta y paciente");
             }
         }
 

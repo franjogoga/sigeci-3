@@ -1833,6 +1833,11 @@ namespace Controlador
             return resultado;            
         }
 
+        public bool tieneEvolucion()
+        {
+            return true;
+        }
+
         public bool reservarCita(Cita cita, Pago pago, out int idCita)
         {
             int idC = 0, numFilas = 0;

@@ -31,11 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
-            this.txtEvaluacion = new System.Windows.Forms.TextBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -89,11 +87,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.labelX4);
-            this.groupBox1.Controls.Add(this.labelX10);
             this.groupBox1.Controls.Add(this.labelX5);
             this.groupBox1.Controls.Add(this.labelX3);
             this.groupBox1.Controls.Add(this.txtApellidoMaterno);
-            this.groupBox1.Controls.Add(this.txtEvaluacion);
             this.groupBox1.Controls.Add(this.txtDNI);
             this.groupBox1.Controls.Add(this.txtApellidoPaterno);
             this.groupBox1.Controls.Add(this.labelX2);
@@ -120,19 +116,6 @@
             this.labelX4.Size = new System.Drawing.Size(107, 23);
             this.labelX4.TabIndex = 12;
             this.labelX4.Text = "Apellido Materno :";
-            // 
-            // labelX10
-            // 
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.Class = "";
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(397, 79);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(107, 23);
-            this.labelX10.TabIndex = 12;
-            this.labelX10.Text = "Evaluacion :";
             // 
             // labelX5
             // 
@@ -167,14 +150,6 @@
             this.txtApellidoMaterno.ReadOnly = true;
             this.txtApellidoMaterno.Size = new System.Drawing.Size(189, 20);
             this.txtApellidoMaterno.TabIndex = 11;
-            // 
-            // txtEvaluacion
-            // 
-            this.txtEvaluacion.Location = new System.Drawing.Point(510, 82);
-            this.txtEvaluacion.Name = "txtEvaluacion";
-            this.txtEvaluacion.ReadOnly = true;
-            this.txtEvaluacion.Size = new System.Drawing.Size(189, 20);
-            this.txtEvaluacion.TabIndex = 11;
             // 
             // txtDNI
             // 
@@ -724,8 +699,6 @@
         private System.Windows.Forms.DateTimePicker dateFechaCita;
         private DevComponents.DotNetBar.LabelX labelX9;
         private System.Windows.Forms.DataGridView dgvCitas;
-        private DevComponents.DotNetBar.LabelX labelX10;
-        private System.Windows.Forms.TextBox txtEvaluacion;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.ButtonX btnCancelar;
         private DevComponents.DotNetBar.ButtonX btnAceptar;

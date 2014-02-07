@@ -1835,7 +1835,7 @@ namespace Controlador
 
         public bool tieneEvolucion(int numHistoria, int idServicio, int idTerapeuta)
         {
-            bool resultado = false;
+            bool resultado = true;
             DateTime fechaTresMesesAntes = DateTime.Now.AddMonths(-3);
             OleDbDataReader r = null;
             ControladorServicio controladorServicio = ControladorServicio.Instancia();
@@ -1858,7 +1858,7 @@ namespace Controlador
                 r = comando.ExecuteReader();
 
                 if (r != null)
-                    resultado = true;                        
+                    resultado = false;                        
             }
             catch (Exception e)
             {

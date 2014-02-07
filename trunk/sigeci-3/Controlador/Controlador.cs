@@ -1857,7 +1857,7 @@ namespace Controlador
                 conexion.Open();
                 r = comando.ExecuteReader();
 
-                if (r == null)
+                if (r != null)
                     resultado = true;                        
             }
             catch (Exception e)

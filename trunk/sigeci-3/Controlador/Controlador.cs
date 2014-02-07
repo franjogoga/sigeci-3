@@ -1833,9 +1833,42 @@ namespace Controlador
             return resultado;            
         }
 
-        public bool tieneEvolucion()
+        public bool tieneEvolucion(int numHistoria, int idServicio, int idTerapeuta)
         {
-            return true;
+            bool resultado = false;
+            DateTime fechaTresMesesAntes = DateTime.Now.AddMonths(-3);
+            OleDbDataReader r = null;
+            ControladorServicio controladorServicio = ControladorServicio.Instancia();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("select * from cita, paciente " + "where paciente.numeroHistoria=@numeroHistoria and paciente.persona_idPersona=cita.paciente_persona_idPersona and cita.servicio_idServicio=@idServicio and cita.terapeuta_persona_idPersona=@idTerapeuta and cita.fechaCita>@fechaCita and not cita.estado='Anulado' order by cita.idCita asc");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@numeroHistoria",numHistoria),                
+                new OleDbParameter("@idServicio",idServicio),
+                new OleDbParameter("@idTerapeuta",idTerapeuta),
+                new OleDbParameter("@fechaCita",fechaTresMesesAntes.Date),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+
+                if (r == null)
+                    resultado = true;                        
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return resultado;                      
         }
 
         public bool reservarCita(Cita cita, Pago pago, out int idCita)

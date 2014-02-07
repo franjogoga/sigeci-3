@@ -325,9 +325,10 @@ namespace Vista
                     else if ((comboServicios.SelectedItem as Servicio).intervaloHora == 80)
                     {
                         llenarSemana(80, "08:00", "14:40", "20:00", terapeutaSeleccionado);
-                    }                    
+                    }
 
-                    if(controladorCita.tieneEvolucion()) {
+                    if (controladorCita.tieneEvolucion( int.Parse(txtNumeroHistoria.Text),(comboServicios.SelectedItem as Servicio).idServicio, terapeutaSeleccionado.persona.idPersona))
+                    {
                         MessageBox.Show("Es necesario realizar un informe de evolución");
                     }
 

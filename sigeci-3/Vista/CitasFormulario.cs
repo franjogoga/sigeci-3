@@ -35,6 +35,7 @@ namespace Vista
         {
             InitializeComponent();
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            dgvCitas.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             this.padre = citasForm;
             llenarServicios();
             llenarTurnos();
@@ -397,12 +398,45 @@ namespace Vista
         }
 
         private void llenarCitas()
-        {                    
-            string[] fila;            
+        {
+            string[] fila;
+            string textoLunes, textoMartes, textoMiercoles, textoJueves, textoViernes, textoSabado;
             dgvCitas.Rows.Clear();
             foreach (Semana s in semanas)
             {
-                fila = new string[] { ""+s.hora.ToShortTimeString(), s.citaLunes.estado, s.citaMartes.estado, s.citaMiercoles.estado, s.citaJueves.estado, s.citaViernes.estado, s.citaSabado.estado};
+                textoLunes=s.citaLunes.estado;
+                textoMartes=s.citaMartes.estado;
+                textoMiercoles=s.citaMiercoles.estado;
+                textoJueves=s.citaJueves.estado;
+                textoViernes=s.citaViernes.estado;
+                textoSabado=s.citaSabado.estado;
+
+                if (s.citaLunes.estado.Equals("Reservado") || s.citaLunes.estado.Equals("Confirmado"))
+                {
+                    textoLunes = s.citaLunes.estado + "\n" + s.citaLunes.paciente.persona.nombres + " " + s.citaLunes.paciente.persona.apellidoPaterno + " " + s.citaLunes.paciente.persona.apellidoMaterno;
+                }
+                if (s.citaMartes.estado.Equals("Reservado") || s.citaMartes.estado.Equals("Confirmado"))
+                {
+                    textoMartes = s.citaMartes.estado + "\n" + s.citaMartes.paciente.persona.nombres + " " + s.citaMartes.paciente.persona.apellidoPaterno + " " + s.citaMartes.paciente.persona.apellidoMaterno;
+                }
+                if (s.citaMiercoles.estado.Equals("Reservado") || s.citaMiercoles.estado.Equals("Confirmado"))
+                {
+                    textoMiercoles = s.citaMiercoles.estado + "\n" + s.citaMiercoles.paciente.persona.nombres + " " + s.citaMiercoles.paciente.persona.apellidoPaterno + " " + s.citaMiercoles.paciente.persona.apellidoMaterno;
+                }
+                if (s.citaJueves.estado.Equals("Reservado") || s.citaJueves.estado.Equals("Confirmado"))
+                {
+                    textoJueves = s.citaJueves.estado + "\n" + s.citaJueves.paciente.persona.nombres + " " + s.citaJueves.paciente.persona.apellidoPaterno + " " + s.citaJueves.paciente.persona.apellidoMaterno;
+                }
+                if (s.citaViernes.estado.Equals("Reservado") || s.citaViernes.estado.Equals("Confirmado"))
+                {
+                    textoViernes = s.citaViernes.estado + "\n" + s.citaViernes.paciente.persona.nombres + " " + s.citaViernes.paciente.persona.apellidoPaterno + " " + s.citaViernes.paciente.persona.apellidoMaterno;
+                }
+                if (s.citaSabado.estado.Equals("Reservado") || s.citaSabado.estado.Equals("Confirmado"))
+                {
+                    textoSabado = s.citaSabado.estado + "\n" + s.citaSabado.paciente.persona.nombres + " " + s.citaSabado.paciente.persona.apellidoPaterno + " " + s.citaSabado.paciente.persona.apellidoMaterno;
+                }
+
+                fila = new string[] { ""+s.hora.ToShortTimeString(), textoLunes, textoMartes, textoMiercoles, textoJueves, textoViernes, textoSabado};
                 dgvCitas.Rows.Add(fila);
             }
 
@@ -410,15 +444,15 @@ namespace Vista
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {                    
-                    if (cell.Value.ToString().Equals("No Disponible"))
+                    if (cell.Value.ToString().Contains("No Disponible"))
                     {
                         cell.Style.BackColor = Color.Tomato;
                     }
-                    if (cell.Value.ToString().Equals("Confirmado"))
+                    if (cell.Value.ToString().Contains("Confirmado"))
                     {
                         cell.Style.BackColor = Color.MediumSpringGreen;
                     }
-                    if (cell.Value.ToString().Equals("Reservado"))
+                    if (cell.Value.ToString().Contains("Reservado"))
                     {
                         cell.Style.BackColor = Color.Yellow;
                     }

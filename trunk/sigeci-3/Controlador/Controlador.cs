@@ -1857,8 +1857,11 @@ namespace Controlador
                 conexion.Open();
                 r = comando.ExecuteReader();
 
-                if (r != null)
-                    resultado = false;                        
+                while (r.Read())
+                {
+                    resultado = false;
+                    break;
+                }
             }
             catch (Exception e)
             {

@@ -254,6 +254,7 @@
             // 
             this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnEliminar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Image = global::Vista.Properties.Resources.borrar;
             this.btnEliminar.ImageFixedSize = new System.Drawing.Size(25, 25);
             this.btnEliminar.Location = new System.Drawing.Point(482, 374);

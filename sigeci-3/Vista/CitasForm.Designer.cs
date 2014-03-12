@@ -238,7 +238,7 @@
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
             this.dgvCitas.RowTemplate.Height = 33;
-            this.dgvCitas.Size = new System.Drawing.Size(885, 237);
+            this.dgvCitas.Size = new System.Drawing.Size(885, 272);
             this.dgvCitas.TabIndex = 2;
             // 
             // idCita
@@ -311,7 +311,7 @@
             this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancelar.Image = global::Vista.Properties.Resources.cancelarcita;
             this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnCancelar.Location = new System.Drawing.Point(557, 396);
+            this.btnCancelar.Location = new System.Drawing.Point(557, 438);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 32);
             this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -325,7 +325,7 @@
             this.btnConfirmar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnConfirmar.Image = global::Vista.Properties.Resources.aceptar;
             this.btnConfirmar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnConfirmar.Location = new System.Drawing.Point(365, 396);
+            this.btnConfirmar.Location = new System.Drawing.Point(365, 438);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(123, 32);
             this.btnConfirmar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -339,7 +339,7 @@
             this.btnReservar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnReservar.Image = global::Vista.Properties.Resources.reloj;
             this.btnReservar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnReservar.Location = new System.Drawing.Point(174, 396);
+            this.btnReservar.Location = new System.Drawing.Point(174, 438);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(123, 32);
             this.btnReservar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -356,7 +356,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(909, 440);
+            this.ClientSize = new System.Drawing.Size(909, 482);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnReservar);

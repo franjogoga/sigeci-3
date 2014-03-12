@@ -146,7 +146,7 @@ namespace Vista
                 Cita c = new Cita();
                 int fila = dgvCitas.CurrentCell.RowIndex;
                 int columna = dgvCitas.CurrentCell.ColumnIndex;
-                if (columna != 0 && dgvCitas.CurrentCell.Value.ToString().Equals("Libre"))
+                if (columna != 0 && dgvCitas.CurrentCell.Value.ToString().Equals("Libre") || dgvCitas.CurrentCell.Value.ToString().Equals("Anulado"))
                 {
                     c.paciente = paciente;                    
                     switch (columna)
@@ -198,6 +198,7 @@ namespace Vista
                     pago.estado = "Reservado";
                     if (int.Parse(txtCostoFinal.Text) == int.Parse(txtAdelanto.Text))
                     {
+                        c.estado = "Confirmado";
                         pago.estado = "Confirmado";
                     }                    
 

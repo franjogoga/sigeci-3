@@ -55,6 +55,7 @@
             this.btnConfirmar = new DevComponents.DotNetBar.ButtonX();
             this.btnReservar = new DevComponents.DotNetBar.ButtonX();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.btnPermiso = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
@@ -311,7 +312,7 @@
             this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancelar.Image = global::Vista.Properties.Resources.cancelarcita;
             this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnCancelar.Location = new System.Drawing.Point(557, 438);
+            this.btnCancelar.Location = new System.Drawing.Point(488, 438);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 32);
             this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -325,7 +326,7 @@
             this.btnConfirmar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnConfirmar.Image = global::Vista.Properties.Resources.aceptar;
             this.btnConfirmar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnConfirmar.Location = new System.Drawing.Point(365, 438);
+            this.btnConfirmar.Location = new System.Drawing.Point(296, 438);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(123, 32);
             this.btnConfirmar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -339,7 +340,7 @@
             this.btnReservar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnReservar.Image = global::Vista.Properties.Resources.reloj;
             this.btnReservar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnReservar.Location = new System.Drawing.Point(174, 438);
+            this.btnReservar.Location = new System.Drawing.Point(105, 438);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(123, 32);
             this.btnReservar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -351,12 +352,27 @@
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
             // 
+            // btnPermiso
+            // 
+            this.btnPermiso.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnPermiso.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnPermiso.Image = global::Vista.Properties.Resources.reloj;
+            this.btnPermiso.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnPermiso.Location = new System.Drawing.Point(676, 438);
+            this.btnPermiso.Name = "btnPermiso";
+            this.btnPermiso.Size = new System.Drawing.Size(123, 32);
+            this.btnPermiso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnPermiso.TabIndex = 13;
+            this.btnPermiso.Text = "Permiso";
+            this.btnPermiso.Click += new System.EventHandler(this.btnPermiso_Click);
+            // 
             // CitasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(909, 482);
+            this.Controls.Add(this.btnPermiso);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnReservar);
@@ -403,5 +419,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pagado;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn terapeuta;
+        private DevComponents.DotNetBar.ButtonX btnPermiso;
     }
 }

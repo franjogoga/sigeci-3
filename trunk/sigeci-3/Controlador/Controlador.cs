@@ -2001,6 +2001,42 @@ namespace Controlador
             }
             return numFilas == 1 && resultadoPago;     
         }
+
+        public bool permisoCita(Cita cita, Pago pago)
+        {
+            int numFilas = 0;
+            bool resultadoPago = false;
+            ControladorPago controladorPago = ControladorPago.Instancia();
+            citas.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update cita set estado=@estado " +
+                                                    "where idCita=@idCita");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@estado","Permiso"),
+                new OleDbParameter("@idCita",cita.idCita),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+                resultadoPago = controladorPago.procesarPago(pago, cita.idCita);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas == 1 && resultadoPago;     
+        }
+    
     }
 
     public class ControladorPago

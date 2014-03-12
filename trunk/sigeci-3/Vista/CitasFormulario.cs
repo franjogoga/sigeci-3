@@ -146,7 +146,7 @@ namespace Vista
                 Cita c = new Cita();
                 int fila = dgvCitas.CurrentCell.RowIndex;
                 int columna = dgvCitas.CurrentCell.ColumnIndex;
-                if (columna != 0 && dgvCitas.CurrentCell.Value.ToString().Equals("Libre") || dgvCitas.CurrentCell.Value.ToString().Equals("Anulado"))
+                if (columna != 0 && dgvCitas.CurrentCell.Value.ToString().Equals("Libre") || dgvCitas.CurrentCell.Value.ToString().Equals("Anulado") || dgvCitas.CurrentCell.Value.ToString().Equals("Permiso"))
                 {
                     c.paciente = paciente;                    
                     switch (columna)

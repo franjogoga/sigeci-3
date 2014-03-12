@@ -220,7 +220,36 @@ namespace Vista
 
         private void btnPermiso_Click(object sender, EventArgs e)
         {
-
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea realizar un permiso de esta cita?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                try
+                {
+                    if (!dgvCitas.CurrentRow.Cells[7].Value.ToString().Equals("Permiso"))
+                    {
+                        Cita cita = buscarCita(int.Parse(dgvCitas.CurrentRow.Cells[0].Value.ToString()));
+                        Pago pago = new Pago();
+                        pago.idCita = cita.idCita;
+                        pago.fecha = DateTime.Now;
+                        pago.monto = (-1) * int.Parse(dgvCitas.CurrentRow.Cells[6].Value.ToString());
+                        pago.estado = "Anulado";
+                        if (controladorCita.permisoCita(cita, pago))
+                        {
+                            MessageBox.Show("Cita con permiso");
+                            llenarCitas("", "", "", cita.servicio.idServicio.ToString(), Convert.ToDateTime(dgvCitas.CurrentRow.Cells[1].Value.ToString()));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione una cita reservada o confirmada");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("No ha seleccionado una cita");
+                }
+            }
         }
 
 

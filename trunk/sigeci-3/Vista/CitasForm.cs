@@ -218,6 +218,11 @@ namespace Vista
             }
         }
 
+        private void btnPermiso_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }

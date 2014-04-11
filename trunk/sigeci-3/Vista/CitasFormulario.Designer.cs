@@ -99,7 +99,7 @@
             this.groupBox1.Controls.Add(this.txtNumeroHistoria);
             this.groupBox1.Location = new System.Drawing.Point(10, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(830, 117);
+            this.groupBox1.Size = new System.Drawing.Size(546, 112);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Paciente";
@@ -111,9 +111,9 @@
             // 
             this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(447, 41);
+            this.labelX4.Location = new System.Drawing.Point(264, 41);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(107, 23);
+            this.labelX4.Size = new System.Drawing.Size(97, 23);
             this.labelX4.TabIndex = 12;
             this.labelX4.Text = "Apellido Materno :";
             // 
@@ -124,9 +124,9 @@
             // 
             this.labelX5.BackgroundStyle.Class = "";
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(66, 76);
+            this.labelX5.Location = new System.Drawing.Point(10, 76);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(107, 23);
+            this.labelX5.Size = new System.Drawing.Size(93, 23);
             this.labelX5.TabIndex = 12;
             this.labelX5.Text = "DNI :";
             // 
@@ -137,34 +137,34 @@
             // 
             this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(66, 44);
+            this.labelX3.Location = new System.Drawing.Point(10, 44);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(107, 23);
+            this.labelX3.Size = new System.Drawing.Size(93, 23);
             this.labelX3.TabIndex = 12;
             this.labelX3.Text = "Apellido Paterno :";
             // 
             // txtApellidoMaterno
             // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(560, 44);
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(367, 44);
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.ReadOnly = true;
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(189, 20);
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(166, 20);
             this.txtApellidoMaterno.TabIndex = 11;
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(179, 79);
+            this.txtDNI.Location = new System.Drawing.Point(109, 79);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.ReadOnly = true;
-            this.txtDNI.Size = new System.Drawing.Size(182, 20);
+            this.txtDNI.Size = new System.Drawing.Size(143, 20);
             this.txtDNI.TabIndex = 11;
             // 
             // txtApellidoPaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(179, 47);
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(109, 47);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.ReadOnly = true;
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(182, 20);
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(143, 20);
             this.txtApellidoPaterno.TabIndex = 11;
             // 
             // labelX2
@@ -174,18 +174,18 @@
             // 
             this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(447, 12);
+            this.labelX2.Location = new System.Drawing.Point(264, 12);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(107, 23);
+            this.labelX2.Size = new System.Drawing.Size(97, 23);
             this.labelX2.TabIndex = 10;
             this.labelX2.Text = "Nombres :";
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(560, 15);
+            this.txtNombres.Location = new System.Drawing.Point(367, 15);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.ReadOnly = true;
-            this.txtNombres.Size = new System.Drawing.Size(189, 20);
+            this.txtNombres.Size = new System.Drawing.Size(166, 20);
             this.txtNombres.TabIndex = 9;
             // 
             // btnBuscarPaciente
@@ -194,7 +194,7 @@
             this.btnBuscarPaciente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnBuscarPaciente.Image = global::Vista.Properties.Resources.buscar;
             this.btnBuscarPaciente.ImageFixedSize = new System.Drawing.Size(17, 17);
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(332, 15);
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(223, 15);
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
             this.btnBuscarPaciente.Size = new System.Drawing.Size(29, 20);
             this.btnBuscarPaciente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -208,18 +208,18 @@
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(66, 12);
+            this.labelX1.Location = new System.Drawing.Point(10, 12);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(107, 23);
+            this.labelX1.Size = new System.Drawing.Size(93, 23);
             this.labelX1.TabIndex = 7;
             this.labelX1.Text = "Historia Clinica :";
             // 
             // txtNumeroHistoria
             // 
-            this.txtNumeroHistoria.Location = new System.Drawing.Point(179, 15);
+            this.txtNumeroHistoria.Location = new System.Drawing.Point(109, 15);
             this.txtNumeroHistoria.Name = "txtNumeroHistoria";
             this.txtNumeroHistoria.ReadOnly = true;
-            this.txtNumeroHistoria.Size = new System.Drawing.Size(147, 20);
+            this.txtNumeroHistoria.Size = new System.Drawing.Size(108, 20);
             this.txtNumeroHistoria.TabIndex = 6;
             // 
             // groupBox2
@@ -232,9 +232,9 @@
             this.groupBox2.Controls.Add(this.labelX7);
             this.groupBox2.Controls.Add(this.labelX8);
             this.groupBox2.Controls.Add(this.labelX6);
-            this.groupBox2.Location = new System.Drawing.Point(10, 125);
+            this.groupBox2.Location = new System.Drawing.Point(562, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(830, 90);
+            this.groupBox2.Size = new System.Drawing.Size(546, 112);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Servicio";
@@ -246,7 +246,7 @@
             this.comboModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboModalidad.FormattingEnabled = true;
             this.comboModalidad.ItemHeight = 14;
-            this.comboModalidad.Location = new System.Drawing.Point(558, 55);
+            this.comboModalidad.Location = new System.Drawing.Point(343, 67);
             this.comboModalidad.Name = "comboModalidad";
             this.comboModalidad.Size = new System.Drawing.Size(191, 20);
             this.comboModalidad.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -259,7 +259,7 @@
             this.comboTerapeuta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTerapeuta.FormattingEnabled = true;
             this.comboTerapeuta.ItemHeight = 14;
-            this.comboTerapeuta.Location = new System.Drawing.Point(179, 55);
+            this.comboTerapeuta.Location = new System.Drawing.Point(74, 67);
             this.comboTerapeuta.Name = "comboTerapeuta";
             this.comboTerapeuta.Size = new System.Drawing.Size(182, 20);
             this.comboTerapeuta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -272,7 +272,7 @@
             this.comboTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTurno.FormattingEnabled = true;
             this.comboTurno.ItemHeight = 14;
-            this.comboTurno.Location = new System.Drawing.Point(558, 19);
+            this.comboTurno.Location = new System.Drawing.Point(343, 28);
             this.comboTurno.Name = "comboTurno";
             this.comboTurno.Size = new System.Drawing.Size(191, 20);
             this.comboTurno.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -285,7 +285,7 @@
             this.comboServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboServicios.FormattingEnabled = true;
             this.comboServicios.ItemHeight = 14;
-            this.comboServicios.Location = new System.Drawing.Point(179, 19);
+            this.comboServicios.Location = new System.Drawing.Point(74, 28);
             this.comboServicios.Name = "comboServicios";
             this.comboServicios.Size = new System.Drawing.Size(182, 20);
             this.comboServicios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -299,9 +299,9 @@
             // 
             this.labelX11.BackgroundStyle.Class = "";
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(445, 52);
+            this.labelX11.Location = new System.Drawing.Point(273, 64);
             this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(107, 23);
+            this.labelX11.Size = new System.Drawing.Size(64, 23);
             this.labelX11.TabIndex = 14;
             this.labelX11.Text = "Modalidad :";
             // 
@@ -312,9 +312,9 @@
             // 
             this.labelX7.BackgroundStyle.Class = "";
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(445, 19);
+            this.labelX7.Location = new System.Drawing.Point(273, 28);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(107, 23);
+            this.labelX7.Size = new System.Drawing.Size(64, 23);
             this.labelX7.TabIndex = 14;
             this.labelX7.Text = "Turno :";
             // 
@@ -325,9 +325,9 @@
             // 
             this.labelX8.BackgroundStyle.Class = "";
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.Location = new System.Drawing.Point(66, 52);
+            this.labelX8.Location = new System.Drawing.Point(8, 64);
             this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(107, 23);
+            this.labelX8.Size = new System.Drawing.Size(60, 23);
             this.labelX8.TabIndex = 14;
             this.labelX8.Text = "Terapeuta :";
             // 
@@ -338,9 +338,9 @@
             // 
             this.labelX6.BackgroundStyle.Class = "";
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(66, 19);
+            this.labelX6.Location = new System.Drawing.Point(8, 28);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(107, 23);
+            this.labelX6.Size = new System.Drawing.Size(60, 23);
             this.labelX6.TabIndex = 14;
             this.labelX6.Text = "Servicio :";
             // 
@@ -351,9 +351,9 @@
             this.groupBox3.Controls.Add(this.navFecha);
             this.groupBox3.Controls.Add(this.dateFechaCita);
             this.groupBox3.Controls.Add(this.labelX9);
-            this.groupBox3.Location = new System.Drawing.Point(8, 221);
+            this.groupBox3.Location = new System.Drawing.Point(8, 120);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(832, 328);
+            this.groupBox3.Size = new System.Drawing.Size(1098, 429);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cita";
@@ -364,7 +364,7 @@
             this.btnBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnBuscar.Image = global::Vista.Properties.Resources.buscar;
             this.btnBuscar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnBuscar.Location = new System.Drawing.Point(508, 22);
+            this.btnBuscar.Location = new System.Drawing.Point(441, 19);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(123, 32);
             this.btnBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -388,8 +388,8 @@
             this.dgvCitas.Location = new System.Drawing.Point(11, 60);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
-            this.dgvCitas.RowTemplate.Height = 33;
-            this.dgvCitas.Size = new System.Drawing.Size(815, 262);
+            this.dgvCitas.RowTemplate.Height = 35;
+            this.dgvCitas.Size = new System.Drawing.Size(1077, 363);
             this.dgvCitas.TabIndex = 18;
             this.dgvCitas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCitas_MouseDoubleClick);
             // 
@@ -449,7 +449,7 @@
             // 
             this.navFecha.BackgroundStyle.Class = "";
             this.navFecha.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.navFecha.Location = new System.Drawing.Point(343, 27);
+            this.navFecha.Location = new System.Drawing.Point(311, 27);
             this.navFecha.Name = "navFecha";
             this.navFecha.NextPageTooltip = "Día Siguiente";
             this.navFecha.PreviousPageTooltip = "Día Anterior";
@@ -465,7 +465,7 @@
             // 
             this.dateFechaCita.Checked = false;
             this.dateFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaCita.Location = new System.Drawing.Point(157, 27);
+            this.dateFechaCita.Location = new System.Drawing.Point(125, 27);
             this.dateFechaCita.Name = "dateFechaCita";
             this.dateFechaCita.Size = new System.Drawing.Size(180, 20);
             this.dateFechaCita.TabIndex = 16;
@@ -529,7 +529,7 @@
             this.groupBox4.Controls.Add(this.txtCosto);
             this.groupBox4.Location = new System.Drawing.Point(6, 555);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(834, 78);
+            this.groupBox4.Size = new System.Drawing.Size(1100, 78);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pago";
@@ -541,7 +541,7 @@
             // 
             this.labelX14.BackgroundStyle.Class = "";
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(520, 12);
+            this.labelX14.Location = new System.Drawing.Point(806, 12);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(87, 23);
             this.labelX14.TabIndex = 16;
@@ -549,10 +549,10 @@
             // 
             // txtCostoFinal
             // 
-            this.txtCostoFinal.Location = new System.Drawing.Point(616, 15);
+            this.txtCostoFinal.Location = new System.Drawing.Point(902, 15);
             this.txtCostoFinal.Name = "txtCostoFinal";
             this.txtCostoFinal.ReadOnly = true;
-            this.txtCostoFinal.Size = new System.Drawing.Size(86, 20);
+            this.txtCostoFinal.Size = new System.Drawing.Size(150, 20);
             this.txtCostoFinal.TabIndex = 15;
             this.txtCostoFinal.Text = "0";
             this.txtCostoFinal.TextChanged += new System.EventHandler(this.txtCostoFinal_TextChanged);
@@ -564,7 +564,7 @@
             // 
             this.labelX16.BackgroundStyle.Class = "";
             this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Location = new System.Drawing.Point(254, 44);
+            this.labelX16.Location = new System.Drawing.Point(364, 43);
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(111, 23);
             this.labelX16.TabIndex = 16;
@@ -577,7 +577,7 @@
             // 
             this.labelX13.BackgroundStyle.Class = "";
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(253, 15);
+            this.labelX13.Location = new System.Drawing.Point(363, 14);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(87, 23);
             this.labelX13.TabIndex = 16;
@@ -585,18 +585,18 @@
             // 
             // txtSaldoRestante
             // 
-            this.txtSaldoRestante.Location = new System.Drawing.Point(371, 48);
+            this.txtSaldoRestante.Location = new System.Drawing.Point(481, 47);
             this.txtSaldoRestante.Name = "txtSaldoRestante";
             this.txtSaldoRestante.ReadOnly = true;
-            this.txtSaldoRestante.Size = new System.Drawing.Size(86, 20);
+            this.txtSaldoRestante.Size = new System.Drawing.Size(175, 20);
             this.txtSaldoRestante.TabIndex = 15;
             this.txtSaldoRestante.Text = "0";
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(371, 16);
+            this.txtDescuento.Location = new System.Drawing.Point(481, 15);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(86, 20);
+            this.txtDescuento.Size = new System.Drawing.Size(175, 20);
             this.txtDescuento.TabIndex = 15;
             this.txtDescuento.Text = "0";
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
@@ -619,7 +619,7 @@
             // 
             this.txtAdelanto.Location = new System.Drawing.Point(113, 43);
             this.txtAdelanto.Name = "txtAdelanto";
-            this.txtAdelanto.Size = new System.Drawing.Size(86, 20);
+            this.txtAdelanto.Size = new System.Drawing.Size(167, 20);
             this.txtAdelanto.TabIndex = 13;
             this.txtAdelanto.Text = "0";
             this.txtAdelanto.TextChanged += new System.EventHandler(this.txtAdelanto_TextChanged);
@@ -643,7 +643,7 @@
             this.txtCosto.Location = new System.Drawing.Point(113, 13);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.ReadOnly = true;
-            this.txtCosto.Size = new System.Drawing.Size(86, 20);
+            this.txtCosto.Size = new System.Drawing.Size(167, 20);
             this.txtCosto.TabIndex = 13;
             // 
             // CitasFornulario
@@ -651,7 +651,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(852, 683);
+            this.ClientSize = new System.Drawing.Size(1118, 683);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);

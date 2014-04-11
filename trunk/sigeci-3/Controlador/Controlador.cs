@@ -791,7 +791,7 @@ namespace Controlador
             OleDbDataReader r = null;
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
-            OleDbCommand comando = new OleDbCommand("SELECT * from persona, terapeuta, servicioxterapeuta where persona.idPersona = terapeuta.persona_idPersona and terapeuta.persona_idPersona = servicioxterapeuta.persona_idPersona and servicioxterapeuta.idServicio = @idServicio order by persona.idPersona asc");
+            OleDbCommand comando = new OleDbCommand("SELECT * from persona, terapeuta, servicioxterapeuta where persona.idPersona = terapeuta.persona_idPersona and terapeuta.persona_idPersona = servicioxterapeuta.persona_idPersona and servicioxterapeuta.idServicio = @idServicio and persona.estado='activo' order by persona.idPersona asc");
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {

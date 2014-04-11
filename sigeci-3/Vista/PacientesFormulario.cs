@@ -350,14 +350,14 @@ namespace Vista
 
         private void txtDistrito_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar) || e.KeyChar.Equals('-') || Char.IsControl(e.KeyChar) || Char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            //if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar) || e.KeyChar.Equals('-') || Char.IsWhiteSpace(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            //else
+            //{
+            //    e.Handled = true;
+            //}
         }
 
         private void txtTelefonoCasa_KeyPress(object sender, KeyPressEventArgs e)
@@ -517,18 +517,19 @@ namespace Vista
         }
 
         public int calculaEdad(DateTime fechaNacimiento)
-        {
-             //Obtengo la diferencia en años.
-             int edad = DateTime.Now.Year - fechaNacimiento.Year;
-             //Obtengo la fecha de cumpleaños de este año.
-             DateTime nacimientoAhora = fechaNacimiento.AddYears(edad);
-             //Le resto un año si la fecha actual es anterior 
-             //al día de nacimiento.
-             if (DateTime.Now.CompareTo(nacimientoAhora) > 0)
-             { 
-              edad--; 
-             }        
-             return edad;
+        {            
+            int edad = DateTime.Now.Year - fechaNacimiento.Year;
+            int difmes = DateTime.Now.Month - fechaNacimiento.Month;
+            int difdias = DateTime.Now.Day - fechaNacimiento.Day;
+            if (!((difmes == 0 && difdias > 0) || (difmes > 0))) edad--;            
+            //DateTime nacimientoAhora = fechaNacimiento.AddYears(edad);
+            ////Le resto un año si la fecha actual es anterior 
+            ////al día de nacimiento.
+            //if (DateTime.Now.CompareTo(nacimientoAhora) > 0)
+            //{ 
+            //    edad--; 
+            //}
+            return edad;
         }
 
         private void dateFechaNacimiento_ValueChanged(object sender, EventArgs e)
